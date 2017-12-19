@@ -21,4 +21,17 @@ public partial class _Default : Page
         proxy = new webservice.webservice();
     }
 
+    /*protected void Sumar(Object sender, EventArgs e)
+    {
+        try
+        {
+            Resultado.Text = proxy.suma(double.Parse(parametro1.Text),
+                                double.Parse(parametro2.Text));
+        }
+        catch (FormatException)
+        {
+            Resultado.Text = "Invalide Input";
+        }
+        //UpdatePanelAddition.Update();
+    }*/
 }
