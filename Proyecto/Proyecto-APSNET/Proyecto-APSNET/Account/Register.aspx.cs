@@ -23,9 +23,7 @@ namespace Proyecto_APSNET.Account
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             if (Correo.Text.Contains("@") && Correo.Text.Contains(".com"))
-            {
-                //proxy.Registrarse(UserName.Text, Nombre.Text, Apellido.Text, Nacimiento.Text, Correo.Text, Password.Text);
-
+            {                
                 if (proxy.Registrarse(UserName.Text, Nombre.Text, Apellido.Text, Nacimiento.Text, Correo.Text, Password.Text) == true)
                 {
                     Response.Redirect("/Account/Login.aspx");

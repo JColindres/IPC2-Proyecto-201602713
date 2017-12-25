@@ -25,15 +25,21 @@ namespace Proyecto_APSNET.Account
             {
                 try
                 {
-
-                    //proxy.IniciarSesion(UserName.Text, Password.Text);
                     if (proxy.IniciarSesion(UserName.Text, Password.Text) == true)
                     {
                         Session["NombreUsuario"] = UserName.Text;
                         Response.Write("<script language=javascript>");
                         Response.Write("alert('Se inició sesión')");
                         Response.Write("</script>");
-                        //Response.Redirect("/Account/Administrador.aspx");
+
+                        if (UserName.Text == "admin" && Password.Text == "soft123warlock")
+                        {
+                            Response.Redirect("/About.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("/Contact.aspx");
+                        }
                     }
                     else
                     {
@@ -41,7 +47,6 @@ namespace Proyecto_APSNET.Account
                         Response.Write("alert('Datos Incorrectos')");
                         Response.Write("</script>");
                     }
-
                 }
                 catch (Exception exx)
                 {

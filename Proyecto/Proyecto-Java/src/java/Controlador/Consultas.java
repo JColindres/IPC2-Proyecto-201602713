@@ -100,5 +100,6 @@ public class Consultas extends Conexion{
         }
         
         return false;
-    }
+    }   
+    
 }
