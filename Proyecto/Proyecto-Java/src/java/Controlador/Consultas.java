@@ -102,4 +102,205 @@ public class Consultas extends Conexion{
         return false;
     }   
     
+    public int obtenerID(String usuario){
+    
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        
+        try {
+            
+            String consulta = "select * from USUARIO where USERNAME = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1,usuario);
+            rs = pst.executeQuery();
+            int id = 0;
+            
+            if (rs.absolute(1)) {
+                
+                id = rs.getInt("ID_US");
+                return id;
+                
+            }
+            
+        } catch (Exception e) {
+            
+            System.err.println("Error"+e);
+            
+        } finally{
+        
+            try {
+                
+                if(getConexion() != null) getConexion().close();
+                if(pst != null) pst.close();
+                if(rs != null) rs.close();
+                
+            } catch (Exception e) {
+            
+                System.err.println("Error"+e);
+                
+            }
+            
+        }
+        return 0;
+    }
+    
+    public boolean estado(String mensaje, int id_us){
+    
+        PreparedStatement pst = null;
+        
+        try {
+            
+            String consulta = "insert into ESTADO (MENSAJE, ID_US) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, mensaje);
+            pst.setInt(2, id_us);
+            
+            if(pst.executeUpdate() == 1){
+            
+                return true;
+            }
+            
+        } catch (Exception e) {
+            
+            System.err.println("Error"+e);
+            
+        } finally{
+        
+            try {
+                
+                if(getConexion() != null) getConexion().close();
+                if(pst != null) pst.close();
+                
+            } catch (Exception e) {
+            
+                System.err.println("Error"+e);
+                
+            }
+        
+        }
+        
+        return false;
+    }
+    
+    public boolean comentario(String mensaje, int id_us, int id_est){
+    
+        PreparedStatement pst = null;
+        
+        try {
+            
+            String consulta = "insert into COMENTARIO (MENSAJE, ID_US, ID_EST) values (?,?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, mensaje);
+            pst.setInt(2, id_us);
+            pst.setInt(3, id_est);
+            
+            if(pst.executeUpdate() == 1){
+            
+                return true;
+            }
+            
+        } catch (Exception e) {
+            
+            System.err.println("Error"+e);
+            
+        } finally{
+        
+            try {
+                
+                if(getConexion() != null) getConexion().close();
+                if(pst != null) pst.close();
+                
+            } catch (Exception e) {
+            
+                System.err.println("Error"+e);
+                
+            }
+        
+        }
+        
+        return false;
+    }
+    
+    public int obtenerIDEST(String estado){
+    
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        
+        try {
+            
+            String consulta = "select * from ESTADO where MENSAJE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1,estado);
+            rs = pst.executeQuery();
+            int id = 0;
+            
+            if (rs.absolute(1)) {
+                
+                id = rs.getInt("ID_EST");
+                return id;
+                
+            }
+            
+        } catch (Exception e) {
+            
+            System.err.println("Error"+e);
+            
+        } finally{
+        
+            try {
+                
+                if(getConexion() != null) getConexion().close();
+                if(pst != null) pst.close();
+                if(rs != null) rs.close();
+                
+            } catch (Exception e) {
+            
+                System.err.println("Error"+e);
+                
+            }
+            
+        }
+        return 0;
+    }
+    
+    public String mostrarEstados(){
+        
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        
+        try {
+            
+            String consulta = "select u.USERNAME, e.MENSAJE from estado e, usuario u where e.ID_US = u.ID_US";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+                
+                resultado = /*rs.getString("u.USERNAME") + " dice: " + */rs.getString("e.MENSAJE") + "\n\n ";
+                
+            }
+            
+            return resultado;
+            
+        } catch (Exception e) {
+            
+            System.err.println("Error"+e);
+            
+        } finally{
+        
+            try {
+                
+                if(getConexion() != null) getConexion().close();
+                if(pst != null) pst.close();
+                if(rs != null) rs.close();
+                
+            } catch (Exception e) {
+            
+                System.err.println("Error"+e);
+                
+            }
+            
+        }
+        return "No se encontraron resultados";
+    }
 }

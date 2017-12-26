@@ -5,11 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/Proyecto-Java/webservice?xsd=1" namespace="http://webservice/" />
     </xsd:schema>
   </types>
-  <message name="IniciarSesion">
-    <part name="parameters" element="tns:IniciarSesion" />
+  <message name="PublicarEstado">
+    <part name="parameters" element="tns:PublicarEstado" />
   </message>
-  <message name="IniciarSesionResponse">
-    <part name="parameters" element="tns:IniciarSesionResponse" />
+  <message name="PublicarEstadoResponse">
+    <part name="parameters" element="tns:PublicarEstadoResponse" />
+  </message>
+  <message name="obtenerIDEst">
+    <part name="parameters" element="tns:obtenerIDEst" />
+  </message>
+  <message name="obtenerIDEstResponse">
+    <part name="parameters" element="tns:obtenerIDEstResponse" />
+  </message>
+  <message name="obtenerIDUS">
+    <part name="parameters" element="tns:obtenerIDUS" />
+  </message>
+  <message name="obtenerIDUSResponse">
+    <part name="parameters" element="tns:obtenerIDUSResponse" />
   </message>
   <message name="Registrarse">
     <part name="parameters" element="tns:Registrarse" />
@@ -17,19 +29,75 @@
   <message name="RegistrarseResponse">
     <part name="parameters" element="tns:RegistrarseResponse" />
   </message>
+  <message name="IniciarSesion">
+    <part name="parameters" element="tns:IniciarSesion" />
+  </message>
+  <message name="IniciarSesionResponse">
+    <part name="parameters" element="tns:IniciarSesionResponse" />
+  </message>
+  <message name="desplegarEstados">
+    <part name="parameters" element="tns:desplegarEstados" />
+  </message>
+  <message name="desplegarEstadosResponse">
+    <part name="parameters" element="tns:desplegarEstadosResponse" />
+  </message>
+  <message name="PublicarComentario">
+    <part name="parameters" element="tns:PublicarComentario" />
+  </message>
+  <message name="PublicarComentarioResponse">
+    <part name="parameters" element="tns:PublicarComentarioResponse" />
+  </message>
   <portType name="webservice">
-    <operation name="IniciarSesion">
-      <input wsam:Action="http://webservice/webservice/IniciarSesionRequest" message="tns:IniciarSesion" />
-      <output wsam:Action="http://webservice/webservice/IniciarSesionResponse" message="tns:IniciarSesionResponse" />
+    <operation name="PublicarEstado">
+      <input wsam:Action="http://webservice/webservice/PublicarEstadoRequest" message="tns:PublicarEstado" />
+      <output wsam:Action="http://webservice/webservice/PublicarEstadoResponse" message="tns:PublicarEstadoResponse" />
+    </operation>
+    <operation name="obtenerIDEst">
+      <input wsam:Action="http://webservice/webservice/obtenerIDEstRequest" message="tns:obtenerIDEst" />
+      <output wsam:Action="http://webservice/webservice/obtenerIDEstResponse" message="tns:obtenerIDEstResponse" />
+    </operation>
+    <operation name="obtenerIDUS">
+      <input wsam:Action="http://webservice/webservice/obtenerIDUSRequest" message="tns:obtenerIDUS" />
+      <output wsam:Action="http://webservice/webservice/obtenerIDUSResponse" message="tns:obtenerIDUSResponse" />
     </operation>
     <operation name="Registrarse">
       <input wsam:Action="http://webservice/webservice/RegistrarseRequest" message="tns:Registrarse" />
       <output wsam:Action="http://webservice/webservice/RegistrarseResponse" message="tns:RegistrarseResponse" />
     </operation>
+    <operation name="IniciarSesion">
+      <input wsam:Action="http://webservice/webservice/IniciarSesionRequest" message="tns:IniciarSesion" />
+      <output wsam:Action="http://webservice/webservice/IniciarSesionResponse" message="tns:IniciarSesionResponse" />
+    </operation>
+    <operation name="desplegarEstados">
+      <input wsam:Action="http://webservice/webservice/desplegarEstadosRequest" message="tns:desplegarEstados" />
+      <output wsam:Action="http://webservice/webservice/desplegarEstadosResponse" message="tns:desplegarEstadosResponse" />
+    </operation>
+    <operation name="PublicarComentario">
+      <input wsam:Action="http://webservice/webservice/PublicarComentarioRequest" message="tns:PublicarComentario" />
+      <output wsam:Action="http://webservice/webservice/PublicarComentarioResponse" message="tns:PublicarComentarioResponse" />
+    </operation>
   </portType>
   <binding name="webservicePortBinding" type="tns:webservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="IniciarSesion">
+    <operation name="PublicarEstado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIDEst">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIDUS">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -39,6 +107,33 @@
       </output>
     </operation>
     <operation name="Registrarse">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IniciarSesion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="desplegarEstados">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PublicarComentario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

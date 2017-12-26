@@ -41,4 +41,61 @@ public class webservice {
         
     }
     
+    @WebMethod(operationName = "obtenerIDUS")
+    public int obtenerIDUS(@WebParam(name = "Usuario") String Usuario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.obtenerID(Usuario);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "PublicarEstado")
+    public boolean PublicarEstado(@WebParam(name = "Mensaje") String Mensaje, @WebParam(name = "IdUs") int IdUs){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.estado(Mensaje, IdUs);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+    
+    @WebMethod(operationName = "PublicarComentario")
+    public boolean PublicarComentario(@WebParam(name = "Mensaje") String Mensaje, @WebParam(name = "IdUs") int IdUs, @WebParam(name = "IdEst") int IdEst){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.comentario(Mensaje, IdUs, IdEst);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+    
+    @WebMethod(operationName = "obtenerIDEst")
+    public int obtenerIDEst(@WebParam(name = "Mensaje") String Mensaje) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.obtenerIDEST(Mensaje);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "desplegarEstados")
+    public String desplegarEstados() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.mostrarEstados();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

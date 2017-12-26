@@ -2,8 +2,41 @@
 <xs:schema xmlns:tns="http://webservice/" targetNamespace="http://webservice/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="IniciarSesion" type="tns:IniciarSesion" />
   <xs:element name="IniciarSesionResponse" type="tns:IniciarSesionResponse" />
+  <xs:element name="PublicarComentario" type="tns:PublicarComentario" />
+  <xs:element name="PublicarComentarioResponse" type="tns:PublicarComentarioResponse" />
+  <xs:element name="PublicarEstado" type="tns:PublicarEstado" />
+  <xs:element name="PublicarEstadoResponse" type="tns:PublicarEstadoResponse" />
   <xs:element name="Registrarse" type="tns:Registrarse" />
   <xs:element name="RegistrarseResponse" type="tns:RegistrarseResponse" />
+  <xs:element name="desplegarEstados" type="tns:desplegarEstados" />
+  <xs:element name="desplegarEstadosResponse" type="tns:desplegarEstadosResponse" />
+  <xs:element name="obtenerIDEst" type="tns:obtenerIDEst" />
+  <xs:element name="obtenerIDEstResponse" type="tns:obtenerIDEstResponse" />
+  <xs:element name="obtenerIDUS" type="tns:obtenerIDUS" />
+  <xs:element name="obtenerIDUSResponse" type="tns:obtenerIDUSResponse" />
+  <xs:complexType name="PublicarComentario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+      <xs:element name="IdUs" type="xs:int" />
+      <xs:element name="IdEst" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PublicarComentarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PublicarEstado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+      <xs:element name="IdUs" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PublicarEstadoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="IniciarSesion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Usuario" type="xs:string" />
@@ -13,6 +46,34 @@
   <xs:complexType name="IniciarSesionResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="desplegarEstados">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="desplegarEstadosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDEst">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDEstResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDUSResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Registrarse">

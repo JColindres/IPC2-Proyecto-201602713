@@ -255,10 +255,10 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <Content Include="Web References\webservice\Reference.map">
+    <None Include="Web References\webservice\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\webservice\webservice.wsdl" />
     <None Include="Web References\webservice\webservice.xsd">
       <SubType>Designer</SubType>
