@@ -87,6 +87,18 @@ public class webservice {
         
     }
     
+    @WebMethod(operationName = "desplegarUS")
+    public String desplegarUS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.mostrarEstadosUsuario();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
     @WebMethod(operationName = "desplegarEstados")
     public String desplegarEstados() {
         Consultas consultas = new Consultas();
@@ -95,6 +107,30 @@ public class webservice {
         } catch (Exception e) {
         
             return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "BackupUsuarios")
+    public boolean BackupUsuarios() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.crearBackupU();
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "BackupAso")
+    public boolean BackupAso() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.crearBackupA();
+        } catch (Exception e) {
+        
+            return false;        
         }        
         
     }

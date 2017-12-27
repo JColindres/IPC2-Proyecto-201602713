@@ -34,11 +34,11 @@ namespace Proyecto_APSNET.Account
 
                         if (UserName.Text == "admin" && Password.Text == "soft123warlock")
                         {
-                            Response.Redirect("/About.aspx");
+                            Response.Redirect("/IniciadaAdministrador.aspx");
                         }
                         else
                         {
-                            Response.Redirect("/Contact.aspx");
+                            Response.Redirect("/IniciadaNormal.aspx");
                         }
                     }
                     else

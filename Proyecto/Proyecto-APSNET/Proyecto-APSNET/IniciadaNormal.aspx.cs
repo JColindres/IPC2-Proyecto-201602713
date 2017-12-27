@@ -16,7 +16,7 @@ namespace Proyecto_APSNET
         {
             proxy = new webservice.webservice();
             Label1.Text = Convert.ToString(Session["NombreUsuario"]);
-            Label2.Text = proxy.desplegarEstados();
+            TextBox3.Text = proxy.desplegarEstados();
         }
 
         protected void Publicar(object sender, EventArgs e)
@@ -28,9 +28,21 @@ namespace Proyecto_APSNET
         protected void Comentar(object sender, EventArgs e)
         {
             int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
+            //int idE = proxy.obtenerIDEst(proxy.desplegarEstados());
+            Label2.Text = TextBox3.Text;
             int idE = proxy.obtenerIDEst(Label2.Text);
-            string mensaje = TextBox2.Text;
-            proxy.PublicarComentario(mensaje, idU, idE);
+
+            if (idE != 0)
+            {
+                proxy.PublicarComentario(TextBox2.Text, idU, idE);
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo realizar el comentario')");
+                Response.Write("</script>");
+            }
         }
+        
     }
 }
