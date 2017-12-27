@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/Proyecto-Java/webservice?xsd=1" namespace="http://webservice/" />
     </xsd:schema>
   </types>
+  <message name="USPROY">
+    <part name="parameters" element="tns:USPROY" />
+  </message>
+  <message name="USPROYResponse">
+    <part name="parameters" element="tns:USPROYResponse" />
+  </message>
   <message name="Registrarse">
     <part name="parameters" element="tns:Registrarse" />
   </message>
@@ -65,7 +71,41 @@
   <message name="desplegarUSResponse">
     <part name="parameters" element="tns:desplegarUSResponse" />
   </message>
+  <message name="CrearListaTAREA">
+    <part name="parameters" element="tns:CrearListaTAREA" />
+  </message>
+  <message name="CrearListaTAREAResponse">
+    <part name="parameters" element="tns:CrearListaTAREAResponse" />
+  </message>
+  <message name="CrearTarea">
+    <part name="parameters" element="tns:CrearTarea" />
+  </message>
+  <message name="CrearTareaResponse">
+    <part name="parameters" element="tns:CrearTareaResponse" />
+  </message>
+  <message name="CrearProyecto">
+    <part name="parameters" element="tns:CrearProyecto" />
+  </message>
+  <message name="CrearProyectoResponse">
+    <part name="parameters" element="tns:CrearProyectoResponse" />
+  </message>
+  <message name="ObtenerTarea">
+    <part name="parameters" element="tns:ObtenerTarea" />
+  </message>
+  <message name="ObtenerTareaResponse">
+    <part name="parameters" element="tns:ObtenerTareaResponse" />
+  </message>
+  <message name="ObtenerProyecto">
+    <part name="parameters" element="tns:ObtenerProyecto" />
+  </message>
+  <message name="ObtenerProyectoResponse">
+    <part name="parameters" element="tns:ObtenerProyectoResponse" />
+  </message>
   <portType name="webservice">
+    <operation name="USPROY">
+      <input wsam:Action="http://webservice/webservice/USPROYRequest" message="tns:USPROY" />
+      <output wsam:Action="http://webservice/webservice/USPROYResponse" message="tns:USPROYResponse" />
+    </operation>
     <operation name="Registrarse">
       <input wsam:Action="http://webservice/webservice/RegistrarseRequest" message="tns:Registrarse" />
       <output wsam:Action="http://webservice/webservice/RegistrarseResponse" message="tns:RegistrarseResponse" />
@@ -106,9 +146,38 @@
       <input wsam:Action="http://webservice/webservice/desplegarUSRequest" message="tns:desplegarUS" />
       <output wsam:Action="http://webservice/webservice/desplegarUSResponse" message="tns:desplegarUSResponse" />
     </operation>
+    <operation name="CrearListaTAREA">
+      <input wsam:Action="http://webservice/webservice/CrearListaTAREARequest" message="tns:CrearListaTAREA" />
+      <output wsam:Action="http://webservice/webservice/CrearListaTAREAResponse" message="tns:CrearListaTAREAResponse" />
+    </operation>
+    <operation name="CrearTarea">
+      <input wsam:Action="http://webservice/webservice/CrearTareaRequest" message="tns:CrearTarea" />
+      <output wsam:Action="http://webservice/webservice/CrearTareaResponse" message="tns:CrearTareaResponse" />
+    </operation>
+    <operation name="CrearProyecto">
+      <input wsam:Action="http://webservice/webservice/CrearProyectoRequest" message="tns:CrearProyecto" />
+      <output wsam:Action="http://webservice/webservice/CrearProyectoResponse" message="tns:CrearProyectoResponse" />
+    </operation>
+    <operation name="ObtenerTarea">
+      <input wsam:Action="http://webservice/webservice/ObtenerTareaRequest" message="tns:ObtenerTarea" />
+      <output wsam:Action="http://webservice/webservice/ObtenerTareaResponse" message="tns:ObtenerTareaResponse" />
+    </operation>
+    <operation name="ObtenerProyecto">
+      <input wsam:Action="http://webservice/webservice/ObtenerProyectoRequest" message="tns:ObtenerProyecto" />
+      <output wsam:Action="http://webservice/webservice/ObtenerProyectoResponse" message="tns:ObtenerProyectoResponse" />
+    </operation>
   </portType>
   <binding name="webservicePortBinding" type="tns:webservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="USPROY">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="Registrarse">
       <soap:operation soapAction="" />
       <input>
@@ -191,6 +260,51 @@
       </output>
     </operation>
     <operation name="desplegarUS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CrearListaTAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CrearTarea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CrearProyecto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerTarea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerProyecto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

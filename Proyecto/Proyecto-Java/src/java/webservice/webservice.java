@@ -134,4 +134,73 @@ public class webservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "CrearProyecto")
+    public boolean CrearProyecto(@WebParam(name = "Nombre") String Nombre, @WebParam(name = "Fecha") String Fecha){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.crearProy(Nombre, Fecha);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+
+    @WebMethod(operationName = "ObtenerProyecto")
+    public int ObtenerProyecto(@WebParam(name = "Nombre") String Nombre) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.obtenerProy(Nombre);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+
+    @WebMethod(operationName = "CrearTarea")
+    public boolean CrearTarea(@WebParam(name = "Nombre") String Nombre, @WebParam(name = "Descripcion") String Descripcion, @WebParam(name = "Fecha") String Fecha){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.crearTarea(Nombre, Descripcion, Fecha);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+
+    @WebMethod(operationName = "ObtenerTarea")
+    public int ObtenerTarea(@WebParam(name = "Nombre") String Nombre) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.obtenerTarea(Nombre);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+
+    @WebMethod(operationName = "CrearListaTAREA")
+    public boolean CrearListaTAREA(@WebParam(name = "Id_proy") int Id_proy, @WebParam(name = "Id_tar") int Id_tar){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.crearListaTarea(Id_proy, Id_tar);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+
+    @WebMethod(operationName = "USPROY")
+    public boolean USPROY(@WebParam(name = "Id_us") int Id_us, @WebParam(name = "Id_proy") int Id_proy){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.usuarioProyecto(Id_us, Id_proy);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+    
 }

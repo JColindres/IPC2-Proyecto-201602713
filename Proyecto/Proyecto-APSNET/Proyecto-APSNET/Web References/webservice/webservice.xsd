@@ -4,14 +4,26 @@
   <xs:element name="BackupAsoResponse" type="tns:BackupAsoResponse" />
   <xs:element name="BackupUsuarios" type="tns:BackupUsuarios" />
   <xs:element name="BackupUsuariosResponse" type="tns:BackupUsuariosResponse" />
+  <xs:element name="CrearListaTAREA" type="tns:CrearListaTAREA" />
+  <xs:element name="CrearListaTAREAResponse" type="tns:CrearListaTAREAResponse" />
+  <xs:element name="CrearProyecto" type="tns:CrearProyecto" />
+  <xs:element name="CrearProyectoResponse" type="tns:CrearProyectoResponse" />
+  <xs:element name="CrearTarea" type="tns:CrearTarea" />
+  <xs:element name="CrearTareaResponse" type="tns:CrearTareaResponse" />
   <xs:element name="IniciarSesion" type="tns:IniciarSesion" />
   <xs:element name="IniciarSesionResponse" type="tns:IniciarSesionResponse" />
+  <xs:element name="ObtenerProyecto" type="tns:ObtenerProyecto" />
+  <xs:element name="ObtenerProyectoResponse" type="tns:ObtenerProyectoResponse" />
+  <xs:element name="ObtenerTarea" type="tns:ObtenerTarea" />
+  <xs:element name="ObtenerTareaResponse" type="tns:ObtenerTareaResponse" />
   <xs:element name="PublicarComentario" type="tns:PublicarComentario" />
   <xs:element name="PublicarComentarioResponse" type="tns:PublicarComentarioResponse" />
   <xs:element name="PublicarEstado" type="tns:PublicarEstado" />
   <xs:element name="PublicarEstadoResponse" type="tns:PublicarEstadoResponse" />
   <xs:element name="Registrarse" type="tns:Registrarse" />
   <xs:element name="RegistrarseResponse" type="tns:RegistrarseResponse" />
+  <xs:element name="USPROY" type="tns:USPROY" />
+  <xs:element name="USPROYResponse" type="tns:USPROYResponse" />
   <xs:element name="desplegarEstados" type="tns:desplegarEstados" />
   <xs:element name="desplegarEstadosResponse" type="tns:desplegarEstadosResponse" />
   <xs:element name="desplegarUS" type="tns:desplegarUS" />
@@ -20,14 +32,6 @@
   <xs:element name="obtenerIDEstResponse" type="tns:obtenerIDEstResponse" />
   <xs:element name="obtenerIDUS" type="tns:obtenerIDUS" />
   <xs:element name="obtenerIDUSResponse" type="tns:obtenerIDUSResponse" />
-  <xs:complexType name="BackupAso">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="BackupAsoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="PublicarComentario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
@@ -47,6 +51,76 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="IniciarSesionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="desplegarUS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="desplegarUSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearProyecto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearProyectoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerTareaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDUSResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearListaTAREA">
+    <xs:sequence>
+      <xs:element name="Id_proy" type="xs:int" />
+      <xs:element name="Id_tar" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearListaTAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BackupAso">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="BackupAsoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearTareaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
@@ -78,12 +152,15 @@
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="desplegarUS">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="desplegarUSResponse">
+  <xs:complexType name="USPROY">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
+      <xs:element name="Id_us" type="xs:int" />
+      <xs:element name="Id_proy" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="USPROYResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerIDEst">
@@ -92,16 +169,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerIDEstResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerIDUS">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerIDUSResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -119,6 +186,16 @@
   <xs:complexType name="RegistrarseResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerProyecto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerProyectoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

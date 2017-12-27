@@ -314,7 +314,7 @@ public class Consultas extends Conexion {
             String resultado = "";
             while (rs.next()) {
 
-                resultado = rs.getString("u.USERNAME");
+                resultado = resultado + " " + rs.getString("u.USERNAME") + ",";
                 System.out.println(resultado);
             }
 
@@ -361,7 +361,7 @@ public class Consultas extends Conexion {
             String resultado = "";
             while (rs.next()) {
 
-                resultado = rs.getString("e.MENSAJE");
+                resultado = resultado + " " + rs.getString("e.MENSAJE") + ",";
                 System.out.println(resultado);
             }
 
@@ -559,31 +559,16 @@ public class Consultas extends Conexion {
         return false;
     }
 
-    public boolean cargarUsuarios(String archivo) {
+    public boolean crearProy(String nombre, String fecha) {
 
-        PreparedStatement pst = null;        
-        //JsonParser parser = new JsonParser();
-        
-        String usuario = "";
-        String nombre = "";
-        String apellido = "";
-        String nacimiento = "";
-        String correo = "";
-        String contraseña = "";
-        
+        PreparedStatement pst = null;
+
         try {
-            
-            String consulta = "insert into USUARIO (USERNAME, NOMBRE, APELLIDO, NACIMIENTO, CORREO, CONTRASEÑA) values (?,?,?,?,?,?)";
+
+            String consulta = "insert into PROYECTO (NOMBRE, FECHA_I) values (?,?)";
             pst = getConexion().prepareStatement(consulta);
-            
-            //Object obj = parser.parse(new FileReader());
-            
-            pst.setString(1, usuario);
-            pst.setString(2, nombre);
-            pst.setString(3, apellido);
-            pst.setString(4, nacimiento);
-            pst.setString(5, correo);
-            pst.setString(6, contraseña);
+            pst.setString(1, nombre);
+            pst.setString(2, fecha);
 
             if (pst.executeUpdate() == 1) {
 
@@ -615,4 +600,228 @@ public class Consultas extends Conexion {
 
         return false;
     }
+    
+    public int obtenerProy(String nombre) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from PROYECTO where NOMBRE like ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, nombre);
+            rs = pst.executeQuery();
+            int id = 0;
+
+            if (rs.absolute(1)) {
+
+                id = rs.getInt("ID_PROY");
+                return id;
+
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return 0;
+    }
+    
+    public boolean crearTarea(String nombre, String descripcion, String fecha) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into TAREA (NOMBRE, DESCRIPCION, FECHA_I) values (?,?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, nombre);
+            pst.setString(2, descripcion);
+            pst.setString(3, fecha);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public int obtenerTarea(String nombre) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from TAREA where NOMBRE like ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, nombre);
+            rs = pst.executeQuery();
+            int id = 0;
+
+            if (rs.absolute(1)) {
+
+                id = rs.getInt("ID_TAR");
+                return id;
+
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return 0;
+    }
+    
+    public boolean crearListaTarea(int id_proy, int id_tar) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into LISTA_TAREA (ID_PROY, ID_TAR) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, id_proy);
+            pst.setInt(2, id_tar);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean usuarioProyecto(int id_us, int id_proy ) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into US_PROY (ID_US, ID_PROY) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, id_us);
+            pst.setInt(2, id_proy);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+        
 }
