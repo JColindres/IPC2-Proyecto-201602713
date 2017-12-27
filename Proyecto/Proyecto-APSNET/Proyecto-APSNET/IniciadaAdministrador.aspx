@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pagina Administrador" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IniciadaAdministrador.aspx.cs" Inherits="Proyecto_APSNET.About" %>
+﻿<%@ Page Title="Pagina Administrador" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="IniciadaAdministrador.aspx.cs" Inherits="Proyecto_APSNET.About" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
@@ -6,6 +6,11 @@
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
+                <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button runat="server" OnClick="CerrarSesion" Text="Cerrar Sesion" CssClass="btn btn-default" />
+                        </div>
+                    </div>
                 <div class="form-horizontal">
                     <hr />
                     <h4>¿Desea Crear Backups?</h4>

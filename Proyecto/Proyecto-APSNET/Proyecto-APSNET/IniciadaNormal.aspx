@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pagina Principal" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IniciadaNormal.aspx.cs" Inherits="Proyecto_APSNET.Contact" %>
+﻿<%@ Page Title="Pagina Principal" Language="C#" MasterPageFile="~/SiteNormal.Master" AutoEventWireup="true" CodeBehind="IniciadaNormal.aspx.cs" Inherits="Proyecto_APSNET.Contact" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
@@ -6,6 +6,11 @@
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
+                <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button runat="server" OnClick="CerrarSesion" Text="Cerrar Sesion" CssClass="btn btn-default" />
+                        </div>
+                    </div>
                 <div class="form-horizontal">
                     <hr />
                     <h4>¿Que tienes en mente?</h4>

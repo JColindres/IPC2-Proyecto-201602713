@@ -14,6 +14,11 @@ namespace Proyecto_APSNET
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["NombreUsuario"] == null)
+            {
+                Response.Redirect("/Default.aspx");
+            }
+
             proxy = new webservice.webservice();
         }
 
@@ -63,6 +68,12 @@ namespace Proyecto_APSNET
         protected void CargarAsociaciones(object sender, EventArgs e)
         {
 
+        }
+
+        protected void CerrarSesion(object sender, EventArgs e)
+        {
+            Session.Remove("NombreUsuario");
+            Response.Redirect("/Default.aspx");
         }
     }
 }

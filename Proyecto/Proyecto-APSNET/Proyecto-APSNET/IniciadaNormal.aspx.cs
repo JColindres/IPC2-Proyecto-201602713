@@ -14,6 +14,11 @@ namespace Proyecto_APSNET
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["NombreUsuario"] == null)
+            {
+                Response.Redirect("/Default.aspx");
+            }
+
             proxy = new webservice.webservice();
             Label1.Text = proxy.desplegarUS();
 
@@ -191,6 +196,12 @@ namespace Proyecto_APSNET
                 Response.Write("alert('No se pudo crear')");
                 Response.Write("</script>");
             }
+        }
+
+        protected void CerrarSesion(object sender, EventArgs e)
+        {
+            Session.Remove("NombreUsuario");
+            Response.Redirect("/Default.aspx");
         }
     }
 }
