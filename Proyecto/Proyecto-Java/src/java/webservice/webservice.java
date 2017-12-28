@@ -225,4 +225,38 @@ public class webservice {
             return false;        
         }
     }
+    
+    @WebMethod(operationName = "CrearASO")
+    public boolean CrearASO(@WebParam(name = "nombre") String nombre, @WebParam(name = "objetivo") String objetivo){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.crearAsociacion(nombre, objetivo);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+    
+    @WebMethod(operationName = "ObtenerASO")
+    public int ObtenerASO(@WebParam(name = "Nombre") String Nombre) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.obtenerAsociacion(Nombre);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "US_ASO")
+    public boolean US_ASO(@WebParam(name = "us") int us, @WebParam(name = "aso") int aso){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.us_aso(us, aso);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
 }

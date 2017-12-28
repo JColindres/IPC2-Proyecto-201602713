@@ -912,4 +912,137 @@ public class Consultas extends Conexion {
 
         return false;
     }
+    
+    public boolean crearAsociacion(String nombre, String objetivo) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into ASOCIACION (NOMBRE, OBJETIVO) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, nombre);
+            pst.setString(2, objetivo);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public int obtenerAsociacion(String nombre) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from ASOCIACION where NOMBRE like ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, nombre);
+            rs = pst.executeQuery();
+            int id = 0;
+
+            if (rs.absolute(1)) {
+
+                id = rs.getInt("ID_ASO");
+                return id;
+
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return 0;
+    }
+    
+    public boolean us_aso(int usuario, int aso) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into US_ASO (ID_US, ID_ASO) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            pst.setInt(2, aso);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
 }
