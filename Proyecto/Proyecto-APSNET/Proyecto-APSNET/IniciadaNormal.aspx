@@ -1,16 +1,60 @@
-﻿<%@ Page Title="Pagina Principal" Language="C#" MasterPageFile="~/SiteNormal.Master" AutoEventWireup="true" CodeBehind="IniciadaNormal.aspx.cs" Inherits="Proyecto_APSNET.Contact" %>
+﻿<%@ Page Title="Pagina Principal" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IniciadaNormal.aspx.cs" Inherits="Proyecto_APSNET.Contact" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
 
     <div class="row">
         <div class="col-md-8">
-            <section id="loginForm">
+            <section id="loginForm7">
+                <hr />
                 <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="CerrarSesion" Text="Cerrar Sesion" CssClass="btn btn-default" />
                         </div>
                     </div>
+                <hr />                
+        <div class="form-group">
+            <div class="col-md-10">
+                <a class="btn btn-default" href="/Login.aspx">Buscar  &raquo;</a>
+            </div>
+        </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm7">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm5">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Busca y Agrega Nuevos Amigos!</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:ListBox ID="ListBox1" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button ID="Button2" runat="server" Text="Agregar" OnClick="Button2_Click" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm5">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
                 <div class="form-horizontal">
                     <hr />
                     <h4>¿Que tienes en mente?</h4>
@@ -95,7 +139,7 @@
             <section id="loginForm2">
                 <div class="form-horizontal">
                     <hr />
-                    <h4>Mira los estados de otros usuarios</h4>
+                    <h4>TIMELINE - Mira los estados de otros usuarios</h4>
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">

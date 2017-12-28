@@ -824,4 +824,92 @@ public class Consultas extends Conexion {
         return false;
     }
         
+    public String ListaUsuarios() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from USUARIO";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("USERNAME") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public boolean agregarContacto(int id_us, int id_amigo) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into CONTACTO (ID_US, ID_AMIGO) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, id_us);
+            pst.setInt(2, id_amigo);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
 }

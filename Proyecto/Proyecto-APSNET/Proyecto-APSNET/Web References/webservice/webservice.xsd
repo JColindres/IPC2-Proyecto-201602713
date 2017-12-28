@@ -10,8 +10,12 @@
   <xs:element name="CrearProyectoResponse" type="tns:CrearProyectoResponse" />
   <xs:element name="CrearTarea" type="tns:CrearTarea" />
   <xs:element name="CrearTareaResponse" type="tns:CrearTareaResponse" />
+  <xs:element name="HacerAmigo" type="tns:HacerAmigo" />
+  <xs:element name="HacerAmigoResponse" type="tns:HacerAmigoResponse" />
   <xs:element name="IniciarSesion" type="tns:IniciarSesion" />
   <xs:element name="IniciarSesionResponse" type="tns:IniciarSesionResponse" />
+  <xs:element name="ListaUS" type="tns:ListaUS" />
+  <xs:element name="ListaUSResponse" type="tns:ListaUSResponse" />
   <xs:element name="ObtenerProyecto" type="tns:ObtenerProyecto" />
   <xs:element name="ObtenerProyectoResponse" type="tns:ObtenerProyectoResponse" />
   <xs:element name="ObtenerTarea" type="tns:ObtenerTarea" />
@@ -32,6 +36,14 @@
   <xs:element name="obtenerIDEstResponse" type="tns:obtenerIDEstResponse" />
   <xs:element name="obtenerIDUS" type="tns:obtenerIDUS" />
   <xs:element name="obtenerIDUSResponse" type="tns:obtenerIDUSResponse" />
+  <xs:complexType name="ListaUS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListaUSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="PublicarComentario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
@@ -105,14 +117,6 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="BackupAso">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="BackupAsoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="CrearTarea">
     <xs:sequence>
       <xs:element minOccurs="0" name="Nombre" type="xs:string" />
@@ -121,6 +125,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CrearTareaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BackupAso">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="BackupAsoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HacerAmigo">
+    <xs:sequence>
+      <xs:element name="Id_us" type="xs:int" />
+      <xs:element name="Id_amigo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HacerAmigoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BackupUsuarios">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="BackupUsuariosResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
@@ -136,20 +167,22 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="BackupUsuarios">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="BackupUsuariosResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="desplegarEstados">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="desplegarEstadosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDEst">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerIDEstResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="USPROY">
@@ -161,16 +194,6 @@
   <xs:complexType name="USPROYResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerIDEst">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerIDEstResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Registrarse">

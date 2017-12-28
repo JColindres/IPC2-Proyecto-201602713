@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pagina Administrador" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="IniciadaAdministrador.aspx.cs" Inherits="Proyecto_APSNET.About" %>
+﻿<%@ Page Title="Pagina Administrador" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IniciadaAdministrador.aspx.cs" Inherits="Proyecto_APSNET.About" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>

@@ -20,7 +20,7 @@ namespace Proyecto_APSNET
             }
 
             proxy = new webservice.webservice();
-            Label1.Text = proxy.desplegarUS();
+            //Label1.Text = proxy.desplegarUS();
 
             String usuarios = Convert.ToString(proxy.desplegarUS());
             Array us = usuarios.Split(',');
@@ -73,6 +73,19 @@ namespace Proyecto_APSNET
 
                 }
             }
+                        
+             
+            String lista = Convert.ToString(proxy.ListaUS());
+            Array listus = lista.Split(',');
+
+            foreach (string item in listus)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    ListBox1.Items.Add(listus.GetValue(i).ToString());
+                }
+            }
+
         }
 
         protected void Publicar(object sender, EventArgs e)
@@ -167,9 +180,9 @@ namespace Proyecto_APSNET
 
             if (proyecto == true)
             {
-                Response.Write("Se creó proyecto, ahora eres un Project Manager");
                 int idProy = proxy.ObtenerProyecto(NombreProyecto.Text);
                 proxy.USPROY(idUsuario, idProy);
+                Response.Write("Se creó proyecto, ahora eres un Project Manager");
             }
             else
             {
@@ -202,6 +215,28 @@ namespace Proyecto_APSNET
         {
             Session.Remove("NombreUsuario");
             Response.Redirect("/Default.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (ListBox1.SelectedItem != null)
+            {
+                string amigo = ListBox1.SelectedItem.ToString();
+                int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
+                int idAmigo = proxy.obtenerIDUS(amigo);
+                bool contacto = proxy.HacerAmigo(idUsuario, idAmigo);
+
+                if (contacto == true)
+                {
+                    Response.Write("A agregó a contactos");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo agregar')");
+                    Response.Write("</script>");
+                }
+            }
         }
     }
 }

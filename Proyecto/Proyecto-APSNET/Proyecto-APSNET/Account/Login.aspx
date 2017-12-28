@@ -39,7 +39,7 @@
                 </div>
     <div class="form-group">
             <div class="col-md-10">
-                <a class="btn btn-default" href="RC">Recordar Contraseña &raquo;</a>
+                <a class="btn btn-default" href="/Login.aspx">Recordar Contraseña &raquo;</a>
             </div>
         </div>
             </section>

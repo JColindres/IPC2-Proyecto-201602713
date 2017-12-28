@@ -203,4 +203,26 @@ public class webservice {
         }
     }
     
+    @WebMethod(operationName = "ListaUS")
+    public String ListaUS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ListaUsuarios();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "HacerAmigo")
+    public boolean HacerAmigo(@WebParam(name = "Id_us") int Id_us, @WebParam(name = "Id_amigo") int Id_amigo){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.agregarContacto(Id_us, Id_amigo);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
 }
