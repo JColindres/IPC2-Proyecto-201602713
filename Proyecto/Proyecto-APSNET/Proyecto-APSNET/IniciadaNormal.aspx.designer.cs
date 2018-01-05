@@ -67,24 +67,6 @@ namespace Proyecto_APSNET {
         protected global::System.Web.UI.WebControls.TextBox FechaTarea;
         
         /// <summary>
-        /// NombreAso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreAso;
-        
-        /// <summary>
-        /// ObjetivoAso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ObjetivoAso;
-        
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>

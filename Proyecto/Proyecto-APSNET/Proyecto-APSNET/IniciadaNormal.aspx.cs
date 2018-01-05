@@ -20,7 +20,6 @@ namespace Proyecto_APSNET
             }
 
             proxy = new webservice.webservice();
-            //Label1.Text = proxy.desplegarUS();
 
             String usuarios = Convert.ToString(proxy.desplegarUS());
             Array us = usuarios.Split(',');
@@ -202,25 +201,6 @@ namespace Proyecto_APSNET
         {
             Session.Remove("NombreUsuario");
             Response.Redirect("/Default.aspx");
-        }
-        
-        protected void CrearAso(object sender, EventArgs e)
-        {
-            int id = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            bool asociacion = proxy.CrearASO(NombreAso.Text, ObjetivoAso.Text);
-
-            if (asociacion == true)
-            {
-                int idAso = proxy.ObtenerASO(NombreAso.Text);
-                proxy.US_ASO(id, idAso);
-                Response.Write("Se creó asociacion");
-            }
-            else
-            {
-                Response.Write("<script language=javascript>");
-                Response.Write("alert('No se pudo publicar')");
-                Response.Write("</script>");
-            }
         }
     }
 }
