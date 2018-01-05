@@ -183,7 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IniciadaAdministrador.aspx" />
-    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Amigos.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Lockout.aspx" />
@@ -271,12 +271,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AddPhoneNumber.aspx.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    <Compile Include="Account\Amigos.aspx.cs">
+      <DependentUpon>Amigos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    <Compile Include="Account\Amigos.aspx.designer.cs">
+      <DependentUpon>Amigos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>

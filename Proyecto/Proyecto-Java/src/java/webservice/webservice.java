@@ -259,4 +259,27 @@ public class webservice {
             return false;        
         }
     }
+    
+    @WebMethod(operationName = "ELIMINARAMIGO")
+    public boolean ELIMINARAMIGO(@WebParam(name = "us") int us, @WebParam(name = "amigo") int amigo){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.eliminarContacto(us, amigo);
+        } catch (Exception e) {
+        
+            return false;        
+        }   
+    }
+    
+    @WebMethod(operationName = "LISTAAMIGOS")
+    public String LISTAAMIGOS(@WebParam(name = "us") int us) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ListaAmigos(us);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

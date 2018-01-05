@@ -12,12 +12,6 @@
                             <asp:Button runat="server" OnClick="CerrarSesion" Text="Cerrar Sesion" CssClass="btn btn-default" />
                         </div>
                     </div>
-                <hr />                
-        <div class="form-group">
-            <div class="col-md-10">
-                <a class="btn btn-default" href="/Login.aspx">Buscar  &raquo;</a>
-            </div>
-        </div>
             </section>
         </div>
 
@@ -31,16 +25,11 @@
             <section id="loginForm5">
                 <div class="form-horizontal">
                     <hr />
-                    <h4>Busca y Agrega Nuevos Amigos!</h4>
+                    <h4>Gestionar Contactos</h4>
                     <hr />
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:ListBox ID="ListBox1" runat="server" Height="125px" Width="121px"></asp:ListBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="Button2" runat="server" Text="Agregar" OnClick="Button2_Click" />
+                        <div class="col-md-10">
+                            <a class="btn btn-default" href="Account/Amigos.aspx">Ir a los contactos &raquo;</a>
                         </div>
                     </div>
                 </div>

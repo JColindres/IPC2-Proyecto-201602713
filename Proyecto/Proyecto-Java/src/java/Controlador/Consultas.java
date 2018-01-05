@@ -1045,4 +1045,94 @@ public class Consultas extends Conexion {
         return false;
     }
     
+    public boolean eliminarContacto(int usuario, int amigo) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "delete from CONTACTO where ID_US = ? and ID_AMIGO = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            pst.setInt(2, amigo);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String ListaAmigos(int us) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME from USUARIO u, CONTACTO c where c.ID_US = ? and c.ID_AMIGO = u.ID_US";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, us);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
 }

@@ -73,19 +73,6 @@ namespace Proyecto_APSNET
 
                 }
             }
-                        
-             
-            String lista = Convert.ToString(proxy.ListaUS());
-            Array listus = lista.Split(',');
-
-            foreach (string item in listus)
-            {
-                for (int i = 0; i < item.Length; i++)
-                {
-                    ListBox1.Items.Add(listus.GetValue(i).ToString());
-                }
-            }
-
         }
 
         protected void Publicar(object sender, EventArgs e)
@@ -216,29 +203,7 @@ namespace Proyecto_APSNET
             Session.Remove("NombreUsuario");
             Response.Redirect("/Default.aspx");
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            if (ListBox1.SelectedItem != null)
-            {
-                string amigo = ListBox1.SelectedItem.ToString();
-                int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-                int idAmigo = proxy.obtenerIDUS(amigo);
-                bool contacto = proxy.HacerAmigo(idUsuario, idAmigo);
-
-                if (contacto == true)
-                {
-                    Response.Write("A agregó a contactos");
-                }
-                else
-                {
-                    Response.Write("<script language=javascript>");
-                    Response.Write("alert('No se pudo agregar')");
-                    Response.Write("</script>");
-                }
-            }
-        }
-
+        
         protected void CrearAso(object sender, EventArgs e)
         {
             int id = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
