@@ -184,8 +184,8 @@
   <ItemGroup>
     <Content Include="IniciadaAdministrador.aspx" />
     <Content Include="Account\Amigos.aspx" />
-    <Content Include="Account\Confirm.aspx" />
-    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Denuncias.aspx" />
+    <Content Include="Account\Perfil.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
@@ -278,19 +278,19 @@
     <Compile Include="Account\Amigos.aspx.designer.cs">
       <DependentUpon>Amigos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Confirm.aspx.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
+    <Compile Include="Account\Denuncias.aspx.cs">
+      <DependentUpon>Denuncias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Confirm.aspx.designer.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
+    <Compile Include="Account\Denuncias.aspx.designer.cs">
+      <DependentUpon>Denuncias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Forgot.aspx.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
+    <Compile Include="Account\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Forgot.aspx.designer.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
+    <Compile Include="Account\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>

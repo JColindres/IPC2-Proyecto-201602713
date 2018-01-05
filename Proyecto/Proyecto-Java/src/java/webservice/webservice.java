@@ -282,4 +282,111 @@ public class webservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "IDCONTACTO")
+    public int IDCONTACTO(@WebParam(name = "usuario") int usuario, @WebParam(name = "amigo") int amigo) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ID_CONTACTO(usuario, amigo);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "MENSAJIN")
+    public boolean MENSAJIN(@WebParam(name = "Mensaje") String Mensaje, @WebParam(name = "contact") int contact){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.mensajeDirecto(Mensaje, contact);
+        } catch (Exception e) {
+        
+            return false;        
+        }   
+    }
+    
+    @WebMethod(operationName = "LISTAESTADOS")
+    public String LISTAESTADOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ListaEstados();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTACOMENTARIOS")
+    public String LISTACOMENTARIOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ListaComentarios();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTAPROYECTOS")
+    public String LISTAPROYECTOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ListaProyectos();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTATAREAS")
+    public String LISTATAREAS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ListaTareas();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "DATOSUSUARIO")
+    public String DATOSUSUARIO(@WebParam(name = "us") int us) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.datosUsuario(us);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "ESTADODELUSUARIO")
+    public String ESTADODELUSUARIO(@WebParam(name = "us") int us) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.EstadoDelUsuario(us);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "COMENTARIODELUSUARIO")
+    public String COMENTARIODELUSUARIO(@WebParam(name = "us") int us) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ComentarioDelUsuario(us);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

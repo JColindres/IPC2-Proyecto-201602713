@@ -5,23 +5,107 @@
       <xsd:import schemaLocation="http://localhost:8080/Proyecto-Java/webservice?xsd=1" namespace="http://webservice/" />
     </xsd:schema>
   </types>
+  <message name="USPROY">
+    <part name="parameters" element="tns:USPROY" />
+  </message>
+  <message name="USPROYResponse">
+    <part name="parameters" element="tns:USPROYResponse" />
+  </message>
+  <message name="ListaUS">
+    <part name="parameters" element="tns:ListaUS" />
+  </message>
+  <message name="ListaUSResponse">
+    <part name="parameters" element="tns:ListaUSResponse" />
+  </message>
+  <message name="HacerAmigo">
+    <part name="parameters" element="tns:HacerAmigo" />
+  </message>
+  <message name="HacerAmigoResponse">
+    <part name="parameters" element="tns:HacerAmigoResponse" />
+  </message>
+  <message name="CrearASO">
+    <part name="parameters" element="tns:CrearASO" />
+  </message>
+  <message name="CrearASOResponse">
+    <part name="parameters" element="tns:CrearASOResponse" />
+  </message>
+  <message name="ObtenerASO">
+    <part name="parameters" element="tns:ObtenerASO" />
+  </message>
+  <message name="ObtenerASOResponse">
+    <part name="parameters" element="tns:ObtenerASOResponse" />
+  </message>
+  <message name="US_ASO">
+    <part name="parameters" element="tns:US_ASO" />
+  </message>
+  <message name="US_ASOResponse">
+    <part name="parameters" element="tns:US_ASOResponse" />
+  </message>
   <message name="ELIMINARAMIGO">
     <part name="parameters" element="tns:ELIMINARAMIGO" />
   </message>
   <message name="ELIMINARAMIGOResponse">
     <part name="parameters" element="tns:ELIMINARAMIGOResponse" />
   </message>
-  <message name="PublicarComentario">
-    <part name="parameters" element="tns:PublicarComentario" />
+  <message name="CrearListaTAREA">
+    <part name="parameters" element="tns:CrearListaTAREA" />
   </message>
-  <message name="PublicarComentarioResponse">
-    <part name="parameters" element="tns:PublicarComentarioResponse" />
+  <message name="CrearListaTAREAResponse">
+    <part name="parameters" element="tns:CrearListaTAREAResponse" />
+  </message>
+  <message name="BackupAso">
+    <part name="parameters" element="tns:BackupAso" />
+  </message>
+  <message name="BackupAsoResponse">
+    <part name="parameters" element="tns:BackupAsoResponse" />
+  </message>
+  <message name="obtenerIDUS">
+    <part name="parameters" element="tns:obtenerIDUS" />
+  </message>
+  <message name="obtenerIDUSResponse">
+    <part name="parameters" element="tns:obtenerIDUSResponse" />
+  </message>
+  <message name="obtenerIDEst">
+    <part name="parameters" element="tns:obtenerIDEst" />
+  </message>
+  <message name="obtenerIDEstResponse">
+    <part name="parameters" element="tns:obtenerIDEstResponse" />
+  </message>
+  <message name="ObtenerProyecto">
+    <part name="parameters" element="tns:ObtenerProyecto" />
+  </message>
+  <message name="ObtenerProyectoResponse">
+    <part name="parameters" element="tns:ObtenerProyectoResponse" />
+  </message>
+  <message name="desplegarEstados">
+    <part name="parameters" element="tns:desplegarEstados" />
+  </message>
+  <message name="desplegarEstadosResponse">
+    <part name="parameters" element="tns:desplegarEstadosResponse" />
+  </message>
+  <message name="IniciarSesion">
+    <part name="parameters" element="tns:IniciarSesion" />
+  </message>
+  <message name="IniciarSesionResponse">
+    <part name="parameters" element="tns:IniciarSesionResponse" />
   </message>
   <message name="PublicarEstado">
     <part name="parameters" element="tns:PublicarEstado" />
   </message>
   <message name="PublicarEstadoResponse">
     <part name="parameters" element="tns:PublicarEstadoResponse" />
+  </message>
+  <message name="desplegarUS">
+    <part name="parameters" element="tns:desplegarUS" />
+  </message>
+  <message name="desplegarUSResponse">
+    <part name="parameters" element="tns:desplegarUSResponse" />
+  </message>
+  <message name="CrearProyecto">
+    <part name="parameters" element="tns:CrearProyecto" />
+  </message>
+  <message name="CrearProyectoResponse">
+    <part name="parameters" element="tns:CrearProyectoResponse" />
   </message>
   <message name="CrearTarea">
     <part name="parameters" element="tns:CrearTarea" />
@@ -35,65 +119,11 @@
   <message name="BackupUsuariosResponse">
     <part name="parameters" element="tns:BackupUsuariosResponse" />
   </message>
-  <message name="ListaUS">
-    <part name="parameters" element="tns:ListaUS" />
-  </message>
-  <message name="ListaUSResponse">
-    <part name="parameters" element="tns:ListaUSResponse" />
-  </message>
-  <message name="US_ASO">
-    <part name="parameters" element="tns:US_ASO" />
-  </message>
-  <message name="US_ASOResponse">
-    <part name="parameters" element="tns:US_ASOResponse" />
-  </message>
-  <message name="desplegarUS">
-    <part name="parameters" element="tns:desplegarUS" />
-  </message>
-  <message name="desplegarUSResponse">
-    <part name="parameters" element="tns:desplegarUSResponse" />
-  </message>
-  <message name="ObtenerProyecto">
-    <part name="parameters" element="tns:ObtenerProyecto" />
-  </message>
-  <message name="ObtenerProyectoResponse">
-    <part name="parameters" element="tns:ObtenerProyectoResponse" />
-  </message>
   <message name="Registrarse">
     <part name="parameters" element="tns:Registrarse" />
   </message>
   <message name="RegistrarseResponse">
     <part name="parameters" element="tns:RegistrarseResponse" />
-  </message>
-  <message name="desplegarEstados">
-    <part name="parameters" element="tns:desplegarEstados" />
-  </message>
-  <message name="desplegarEstadosResponse">
-    <part name="parameters" element="tns:desplegarEstadosResponse" />
-  </message>
-  <message name="BackupAso">
-    <part name="parameters" element="tns:BackupAso" />
-  </message>
-  <message name="BackupAsoResponse">
-    <part name="parameters" element="tns:BackupAsoResponse" />
-  </message>
-  <message name="obtenerIDEst">
-    <part name="parameters" element="tns:obtenerIDEst" />
-  </message>
-  <message name="obtenerIDEstResponse">
-    <part name="parameters" element="tns:obtenerIDEstResponse" />
-  </message>
-  <message name="CrearProyecto">
-    <part name="parameters" element="tns:CrearProyecto" />
-  </message>
-  <message name="CrearProyectoResponse">
-    <part name="parameters" element="tns:CrearProyectoResponse" />
-  </message>
-  <message name="obtenerIDUS">
-    <part name="parameters" element="tns:obtenerIDUS" />
-  </message>
-  <message name="obtenerIDUSResponse">
-    <part name="parameters" element="tns:obtenerIDUSResponse" />
   </message>
   <message name="ObtenerTarea">
     <part name="parameters" element="tns:ObtenerTarea" />
@@ -101,60 +131,140 @@
   <message name="ObtenerTareaResponse">
     <part name="parameters" element="tns:ObtenerTareaResponse" />
   </message>
-  <message name="CrearListaTAREA">
-    <part name="parameters" element="tns:CrearListaTAREA" />
-  </message>
-  <message name="CrearListaTAREAResponse">
-    <part name="parameters" element="tns:CrearListaTAREAResponse" />
-  </message>
-  <message name="USPROY">
-    <part name="parameters" element="tns:USPROY" />
-  </message>
-  <message name="USPROYResponse">
-    <part name="parameters" element="tns:USPROYResponse" />
-  </message>
-  <message name="ObtenerASO">
-    <part name="parameters" element="tns:ObtenerASO" />
-  </message>
-  <message name="ObtenerASOResponse">
-    <part name="parameters" element="tns:ObtenerASOResponse" />
-  </message>
-  <message name="IniciarSesion">
-    <part name="parameters" element="tns:IniciarSesion" />
-  </message>
-  <message name="IniciarSesionResponse">
-    <part name="parameters" element="tns:IniciarSesionResponse" />
-  </message>
-  <message name="CrearASO">
-    <part name="parameters" element="tns:CrearASO" />
-  </message>
-  <message name="CrearASOResponse">
-    <part name="parameters" element="tns:CrearASOResponse" />
-  </message>
-  <message name="HacerAmigo">
-    <part name="parameters" element="tns:HacerAmigo" />
-  </message>
-  <message name="HacerAmigoResponse">
-    <part name="parameters" element="tns:HacerAmigoResponse" />
-  </message>
   <message name="LISTAAMIGOS">
     <part name="parameters" element="tns:LISTAAMIGOS" />
   </message>
   <message name="LISTAAMIGOSResponse">
     <part name="parameters" element="tns:LISTAAMIGOSResponse" />
   </message>
+  <message name="PublicarComentario">
+    <part name="parameters" element="tns:PublicarComentario" />
+  </message>
+  <message name="PublicarComentarioResponse">
+    <part name="parameters" element="tns:PublicarComentarioResponse" />
+  </message>
+  <message name="MENSAJIN">
+    <part name="parameters" element="tns:MENSAJIN" />
+  </message>
+  <message name="MENSAJINResponse">
+    <part name="parameters" element="tns:MENSAJINResponse" />
+  </message>
+  <message name="ESTADODELUSUARIO">
+    <part name="parameters" element="tns:ESTADODELUSUARIO" />
+  </message>
+  <message name="ESTADODELUSUARIOResponse">
+    <part name="parameters" element="tns:ESTADODELUSUARIOResponse" />
+  </message>
+  <message name="COMENTARIODELUSUARIO">
+    <part name="parameters" element="tns:COMENTARIODELUSUARIO" />
+  </message>
+  <message name="COMENTARIODELUSUARIOResponse">
+    <part name="parameters" element="tns:COMENTARIODELUSUARIOResponse" />
+  </message>
+  <message name="LISTACOMENTARIOS">
+    <part name="parameters" element="tns:LISTACOMENTARIOS" />
+  </message>
+  <message name="LISTACOMENTARIOSResponse">
+    <part name="parameters" element="tns:LISTACOMENTARIOSResponse" />
+  </message>
+  <message name="LISTAPROYECTOS">
+    <part name="parameters" element="tns:LISTAPROYECTOS" />
+  </message>
+  <message name="LISTAPROYECTOSResponse">
+    <part name="parameters" element="tns:LISTAPROYECTOSResponse" />
+  </message>
+  <message name="LISTATAREAS">
+    <part name="parameters" element="tns:LISTATAREAS" />
+  </message>
+  <message name="LISTATAREASResponse">
+    <part name="parameters" element="tns:LISTATAREASResponse" />
+  </message>
+  <message name="DATOSUSUARIO">
+    <part name="parameters" element="tns:DATOSUSUARIO" />
+  </message>
+  <message name="DATOSUSUARIOResponse">
+    <part name="parameters" element="tns:DATOSUSUARIOResponse" />
+  </message>
+  <message name="LISTAESTADOS">
+    <part name="parameters" element="tns:LISTAESTADOS" />
+  </message>
+  <message name="LISTAESTADOSResponse">
+    <part name="parameters" element="tns:LISTAESTADOSResponse" />
+  </message>
+  <message name="IDCONTACTO">
+    <part name="parameters" element="tns:IDCONTACTO" />
+  </message>
+  <message name="IDCONTACTOResponse">
+    <part name="parameters" element="tns:IDCONTACTOResponse" />
+  </message>
   <portType name="webservice">
+    <operation name="USPROY">
+      <input wsam:Action="http://webservice/webservice/USPROYRequest" message="tns:USPROY" />
+      <output wsam:Action="http://webservice/webservice/USPROYResponse" message="tns:USPROYResponse" />
+    </operation>
+    <operation name="ListaUS">
+      <input wsam:Action="http://webservice/webservice/ListaUSRequest" message="tns:ListaUS" />
+      <output wsam:Action="http://webservice/webservice/ListaUSResponse" message="tns:ListaUSResponse" />
+    </operation>
+    <operation name="HacerAmigo">
+      <input wsam:Action="http://webservice/webservice/HacerAmigoRequest" message="tns:HacerAmigo" />
+      <output wsam:Action="http://webservice/webservice/HacerAmigoResponse" message="tns:HacerAmigoResponse" />
+    </operation>
+    <operation name="CrearASO">
+      <input wsam:Action="http://webservice/webservice/CrearASORequest" message="tns:CrearASO" />
+      <output wsam:Action="http://webservice/webservice/CrearASOResponse" message="tns:CrearASOResponse" />
+    </operation>
+    <operation name="ObtenerASO">
+      <input wsam:Action="http://webservice/webservice/ObtenerASORequest" message="tns:ObtenerASO" />
+      <output wsam:Action="http://webservice/webservice/ObtenerASOResponse" message="tns:ObtenerASOResponse" />
+    </operation>
+    <operation name="US_ASO">
+      <input wsam:Action="http://webservice/webservice/US_ASORequest" message="tns:US_ASO" />
+      <output wsam:Action="http://webservice/webservice/US_ASOResponse" message="tns:US_ASOResponse" />
+    </operation>
     <operation name="ELIMINARAMIGO">
       <input wsam:Action="http://webservice/webservice/ELIMINARAMIGORequest" message="tns:ELIMINARAMIGO" />
       <output wsam:Action="http://webservice/webservice/ELIMINARAMIGOResponse" message="tns:ELIMINARAMIGOResponse" />
     </operation>
-    <operation name="PublicarComentario">
-      <input wsam:Action="http://webservice/webservice/PublicarComentarioRequest" message="tns:PublicarComentario" />
-      <output wsam:Action="http://webservice/webservice/PublicarComentarioResponse" message="tns:PublicarComentarioResponse" />
+    <operation name="CrearListaTAREA">
+      <input wsam:Action="http://webservice/webservice/CrearListaTAREARequest" message="tns:CrearListaTAREA" />
+      <output wsam:Action="http://webservice/webservice/CrearListaTAREAResponse" message="tns:CrearListaTAREAResponse" />
+    </operation>
+    <operation name="BackupAso">
+      <input wsam:Action="http://webservice/webservice/BackupAsoRequest" message="tns:BackupAso" />
+      <output wsam:Action="http://webservice/webservice/BackupAsoResponse" message="tns:BackupAsoResponse" />
+    </operation>
+    <operation name="obtenerIDUS">
+      <input wsam:Action="http://webservice/webservice/obtenerIDUSRequest" message="tns:obtenerIDUS" />
+      <output wsam:Action="http://webservice/webservice/obtenerIDUSResponse" message="tns:obtenerIDUSResponse" />
+    </operation>
+    <operation name="obtenerIDEst">
+      <input wsam:Action="http://webservice/webservice/obtenerIDEstRequest" message="tns:obtenerIDEst" />
+      <output wsam:Action="http://webservice/webservice/obtenerIDEstResponse" message="tns:obtenerIDEstResponse" />
+    </operation>
+    <operation name="ObtenerProyecto">
+      <input wsam:Action="http://webservice/webservice/ObtenerProyectoRequest" message="tns:ObtenerProyecto" />
+      <output wsam:Action="http://webservice/webservice/ObtenerProyectoResponse" message="tns:ObtenerProyectoResponse" />
+    </operation>
+    <operation name="desplegarEstados">
+      <input wsam:Action="http://webservice/webservice/desplegarEstadosRequest" message="tns:desplegarEstados" />
+      <output wsam:Action="http://webservice/webservice/desplegarEstadosResponse" message="tns:desplegarEstadosResponse" />
+    </operation>
+    <operation name="IniciarSesion">
+      <input wsam:Action="http://webservice/webservice/IniciarSesionRequest" message="tns:IniciarSesion" />
+      <output wsam:Action="http://webservice/webservice/IniciarSesionResponse" message="tns:IniciarSesionResponse" />
     </operation>
     <operation name="PublicarEstado">
       <input wsam:Action="http://webservice/webservice/PublicarEstadoRequest" message="tns:PublicarEstado" />
       <output wsam:Action="http://webservice/webservice/PublicarEstadoResponse" message="tns:PublicarEstadoResponse" />
+    </operation>
+    <operation name="desplegarUS">
+      <input wsam:Action="http://webservice/webservice/desplegarUSRequest" message="tns:desplegarUS" />
+      <output wsam:Action="http://webservice/webservice/desplegarUSResponse" message="tns:desplegarUSResponse" />
+    </operation>
+    <operation name="CrearProyecto">
+      <input wsam:Action="http://webservice/webservice/CrearProyectoRequest" message="tns:CrearProyecto" />
+      <output wsam:Action="http://webservice/webservice/CrearProyectoResponse" message="tns:CrearProyectoResponse" />
     </operation>
     <operation name="CrearTarea">
       <input wsam:Action="http://webservice/webservice/CrearTareaRequest" message="tns:CrearTarea" />
@@ -164,81 +274,115 @@
       <input wsam:Action="http://webservice/webservice/BackupUsuariosRequest" message="tns:BackupUsuarios" />
       <output wsam:Action="http://webservice/webservice/BackupUsuariosResponse" message="tns:BackupUsuariosResponse" />
     </operation>
-    <operation name="ListaUS">
-      <input wsam:Action="http://webservice/webservice/ListaUSRequest" message="tns:ListaUS" />
-      <output wsam:Action="http://webservice/webservice/ListaUSResponse" message="tns:ListaUSResponse" />
-    </operation>
-    <operation name="US_ASO">
-      <input wsam:Action="http://webservice/webservice/US_ASORequest" message="tns:US_ASO" />
-      <output wsam:Action="http://webservice/webservice/US_ASOResponse" message="tns:US_ASOResponse" />
-    </operation>
-    <operation name="desplegarUS">
-      <input wsam:Action="http://webservice/webservice/desplegarUSRequest" message="tns:desplegarUS" />
-      <output wsam:Action="http://webservice/webservice/desplegarUSResponse" message="tns:desplegarUSResponse" />
-    </operation>
-    <operation name="ObtenerProyecto">
-      <input wsam:Action="http://webservice/webservice/ObtenerProyectoRequest" message="tns:ObtenerProyecto" />
-      <output wsam:Action="http://webservice/webservice/ObtenerProyectoResponse" message="tns:ObtenerProyectoResponse" />
-    </operation>
     <operation name="Registrarse">
       <input wsam:Action="http://webservice/webservice/RegistrarseRequest" message="tns:Registrarse" />
       <output wsam:Action="http://webservice/webservice/RegistrarseResponse" message="tns:RegistrarseResponse" />
-    </operation>
-    <operation name="desplegarEstados">
-      <input wsam:Action="http://webservice/webservice/desplegarEstadosRequest" message="tns:desplegarEstados" />
-      <output wsam:Action="http://webservice/webservice/desplegarEstadosResponse" message="tns:desplegarEstadosResponse" />
-    </operation>
-    <operation name="BackupAso">
-      <input wsam:Action="http://webservice/webservice/BackupAsoRequest" message="tns:BackupAso" />
-      <output wsam:Action="http://webservice/webservice/BackupAsoResponse" message="tns:BackupAsoResponse" />
-    </operation>
-    <operation name="obtenerIDEst">
-      <input wsam:Action="http://webservice/webservice/obtenerIDEstRequest" message="tns:obtenerIDEst" />
-      <output wsam:Action="http://webservice/webservice/obtenerIDEstResponse" message="tns:obtenerIDEstResponse" />
-    </operation>
-    <operation name="CrearProyecto">
-      <input wsam:Action="http://webservice/webservice/CrearProyectoRequest" message="tns:CrearProyecto" />
-      <output wsam:Action="http://webservice/webservice/CrearProyectoResponse" message="tns:CrearProyectoResponse" />
-    </operation>
-    <operation name="obtenerIDUS">
-      <input wsam:Action="http://webservice/webservice/obtenerIDUSRequest" message="tns:obtenerIDUS" />
-      <output wsam:Action="http://webservice/webservice/obtenerIDUSResponse" message="tns:obtenerIDUSResponse" />
     </operation>
     <operation name="ObtenerTarea">
       <input wsam:Action="http://webservice/webservice/ObtenerTareaRequest" message="tns:ObtenerTarea" />
       <output wsam:Action="http://webservice/webservice/ObtenerTareaResponse" message="tns:ObtenerTareaResponse" />
     </operation>
-    <operation name="CrearListaTAREA">
-      <input wsam:Action="http://webservice/webservice/CrearListaTAREARequest" message="tns:CrearListaTAREA" />
-      <output wsam:Action="http://webservice/webservice/CrearListaTAREAResponse" message="tns:CrearListaTAREAResponse" />
-    </operation>
-    <operation name="USPROY">
-      <input wsam:Action="http://webservice/webservice/USPROYRequest" message="tns:USPROY" />
-      <output wsam:Action="http://webservice/webservice/USPROYResponse" message="tns:USPROYResponse" />
-    </operation>
-    <operation name="ObtenerASO">
-      <input wsam:Action="http://webservice/webservice/ObtenerASORequest" message="tns:ObtenerASO" />
-      <output wsam:Action="http://webservice/webservice/ObtenerASOResponse" message="tns:ObtenerASOResponse" />
-    </operation>
-    <operation name="IniciarSesion">
-      <input wsam:Action="http://webservice/webservice/IniciarSesionRequest" message="tns:IniciarSesion" />
-      <output wsam:Action="http://webservice/webservice/IniciarSesionResponse" message="tns:IniciarSesionResponse" />
-    </operation>
-    <operation name="CrearASO">
-      <input wsam:Action="http://webservice/webservice/CrearASORequest" message="tns:CrearASO" />
-      <output wsam:Action="http://webservice/webservice/CrearASOResponse" message="tns:CrearASOResponse" />
-    </operation>
-    <operation name="HacerAmigo">
-      <input wsam:Action="http://webservice/webservice/HacerAmigoRequest" message="tns:HacerAmigo" />
-      <output wsam:Action="http://webservice/webservice/HacerAmigoResponse" message="tns:HacerAmigoResponse" />
-    </operation>
     <operation name="LISTAAMIGOS">
       <input wsam:Action="http://webservice/webservice/LISTAAMIGOSRequest" message="tns:LISTAAMIGOS" />
       <output wsam:Action="http://webservice/webservice/LISTAAMIGOSResponse" message="tns:LISTAAMIGOSResponse" />
     </operation>
+    <operation name="PublicarComentario">
+      <input wsam:Action="http://webservice/webservice/PublicarComentarioRequest" message="tns:PublicarComentario" />
+      <output wsam:Action="http://webservice/webservice/PublicarComentarioResponse" message="tns:PublicarComentarioResponse" />
+    </operation>
+    <operation name="MENSAJIN">
+      <input wsam:Action="http://webservice/webservice/MENSAJINRequest" message="tns:MENSAJIN" />
+      <output wsam:Action="http://webservice/webservice/MENSAJINResponse" message="tns:MENSAJINResponse" />
+    </operation>
+    <operation name="ESTADODELUSUARIO">
+      <input wsam:Action="http://webservice/webservice/ESTADODELUSUARIORequest" message="tns:ESTADODELUSUARIO" />
+      <output wsam:Action="http://webservice/webservice/ESTADODELUSUARIOResponse" message="tns:ESTADODELUSUARIOResponse" />
+    </operation>
+    <operation name="COMENTARIODELUSUARIO">
+      <input wsam:Action="http://webservice/webservice/COMENTARIODELUSUARIORequest" message="tns:COMENTARIODELUSUARIO" />
+      <output wsam:Action="http://webservice/webservice/COMENTARIODELUSUARIOResponse" message="tns:COMENTARIODELUSUARIOResponse" />
+    </operation>
+    <operation name="LISTACOMENTARIOS">
+      <input wsam:Action="http://webservice/webservice/LISTACOMENTARIOSRequest" message="tns:LISTACOMENTARIOS" />
+      <output wsam:Action="http://webservice/webservice/LISTACOMENTARIOSResponse" message="tns:LISTACOMENTARIOSResponse" />
+    </operation>
+    <operation name="LISTAPROYECTOS">
+      <input wsam:Action="http://webservice/webservice/LISTAPROYECTOSRequest" message="tns:LISTAPROYECTOS" />
+      <output wsam:Action="http://webservice/webservice/LISTAPROYECTOSResponse" message="tns:LISTAPROYECTOSResponse" />
+    </operation>
+    <operation name="LISTATAREAS">
+      <input wsam:Action="http://webservice/webservice/LISTATAREASRequest" message="tns:LISTATAREAS" />
+      <output wsam:Action="http://webservice/webservice/LISTATAREASResponse" message="tns:LISTATAREASResponse" />
+    </operation>
+    <operation name="DATOSUSUARIO">
+      <input wsam:Action="http://webservice/webservice/DATOSUSUARIORequest" message="tns:DATOSUSUARIO" />
+      <output wsam:Action="http://webservice/webservice/DATOSUSUARIOResponse" message="tns:DATOSUSUARIOResponse" />
+    </operation>
+    <operation name="LISTAESTADOS">
+      <input wsam:Action="http://webservice/webservice/LISTAESTADOSRequest" message="tns:LISTAESTADOS" />
+      <output wsam:Action="http://webservice/webservice/LISTAESTADOSResponse" message="tns:LISTAESTADOSResponse" />
+    </operation>
+    <operation name="IDCONTACTO">
+      <input wsam:Action="http://webservice/webservice/IDCONTACTORequest" message="tns:IDCONTACTO" />
+      <output wsam:Action="http://webservice/webservice/IDCONTACTOResponse" message="tns:IDCONTACTOResponse" />
+    </operation>
   </portType>
   <binding name="webservicePortBinding" type="tns:webservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="USPROY">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListaUS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HacerAmigo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CrearASO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerASO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="US_ASO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="ELIMINARAMIGO">
       <soap:operation soapAction="" />
       <input>
@@ -248,7 +392,61 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="PublicarComentario">
+    <operation name="CrearListaTAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BackupAso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIDUS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIDEst">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerProyecto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="desplegarEstados">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IniciarSesion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -258,6 +456,24 @@
       </output>
     </operation>
     <operation name="PublicarEstado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="desplegarUS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CrearProyecto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -284,88 +500,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="ListaUS">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="US_ASO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="desplegarUS">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ObtenerProyecto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="Registrarse">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="desplegarEstados">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="BackupAso">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerIDEst">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="CrearProyecto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerIDUS">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -383,61 +518,97 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="CrearListaTAREA">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="USPROY">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ObtenerASO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="IniciarSesion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="CrearASO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="HacerAmigo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="LISTAAMIGOS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PublicarComentario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="MENSAJIN">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ESTADODELUSUARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="COMENTARIODELUSUARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LISTACOMENTARIOS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LISTAPROYECTOS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LISTATAREAS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DATOSUSUARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LISTAESTADOS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IDCONTACTO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

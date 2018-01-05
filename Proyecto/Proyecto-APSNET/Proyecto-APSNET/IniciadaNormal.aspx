@@ -12,6 +12,11 @@
                             <asp:Button runat="server" OnClick="CerrarSesion" Text="Cerrar Sesion" CssClass="btn btn-default" />
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <a class="btn btn-default" href="Account/Perfil.aspx">Ver Perfil &raquo;</a>
+                        </div>
+                    </div>
             </section>
         </div>
 
@@ -38,6 +43,27 @@
 
         <div class="col-md-4">
             <section id="socialLoginForm5">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm51">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Realizar Denuncia</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <a class="btn btn-default" href="Account/Denuncias.aspx">Ir a denunciar &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm51">
             </section>
         </div>
     </div>

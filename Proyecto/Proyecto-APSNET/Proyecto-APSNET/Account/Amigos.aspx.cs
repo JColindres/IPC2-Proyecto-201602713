@@ -41,9 +41,16 @@ namespace Proyecto_APSNET.Account
 
             foreach (string item in listus2)
             {
-                for (int i = 0; i < item.Length; i++)
+                for (int j = 0; j < item.Length; j++)
                 {
-                    ListBox2.Items.Add(listus2.GetValue(i).ToString());
+                    try
+                    {
+                        ListBox2.Items.Add(listus2.GetValue(j).ToString());
+                    }
+                    catch (Exception exx)
+                    {
+                        Console.WriteLine(exx);
+                    }
                 }
             }
 
@@ -107,7 +114,31 @@ namespace Proyecto_APSNET.Account
 
         protected void Enviar(object sender, EventArgs e)
         {
+            if (TextBox1.Text != " ")
+            {                
+                int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
+                int idAmigo = proxy.obtenerIDUS(TextBox3.Text);
+                String mensaje = TextBox4.Text;
+                int id_contacto = proxy.IDCONTACTO(idUsuario, idAmigo);
+                bool mensajin = proxy.MENSAJIN(mensaje, id_contacto);
 
+                if (mensajin == true)
+                {
+                    Response.Write("Mensaje enviado");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo enviar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Llene los campos')");
+                Response.Write("</script>");
+            }
         }
     }
 }
