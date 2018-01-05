@@ -180,14 +180,16 @@ namespace Proyecto_APSNET
 
         protected void CrearTarea(object sender, EventArgs e)
         {
+            int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
             bool tarea = proxy.CrearTarea(NombreTarea.Text, DescripcionTarea.Text, FechaTarea.Text);
 
             if (tarea == true)
             {
-                Response.Write("Se agregó tarea al proyecto");
                 int idTarea = proxy.ObtenerTarea(NombreTarea.Text);
                 int idProy = proxy.ObtenerProyecto(NombreProyecto.Text);
                 proxy.CrearListaTAREA(idProy, idTarea);
+                proxy.USTAR(idUsuario, idTarea);
+                Response.Write("Se agregó tarea al proyecto");
             }
             else
             {

@@ -96,22 +96,98 @@ namespace Proyecto_APSNET.Account
 
         protected void DenunciarEstado(object sender, EventArgs e)
         {
-
+            if (TextBox1.Text != " " | TextBox1.Text != "")
+            {
+                bool denuncia = proxy.DENUNCIAESTADO(Convert.ToInt16(TextBox1.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se denunció");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo denunciar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
         }
 
         protected void DenunciarComentario(object sender, EventArgs e)
         {
-
+            if (TextBox1.Text != " " | TextBox1.Text != "")
+            {
+                bool denuncia = proxy.DENUNCIACOMENTARIO(Convert.ToInt16(TextBox3.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se denunció");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo denunciar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
         }
 
         protected void DenunciarProyecto(object sender, EventArgs e)
         {
-
+            if (TextBox1.Text != " " | TextBox1.Text != "")
+            {
+                bool denuncia = proxy.DENUNCIAPROYECTO(Convert.ToInt16(TextBox2.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se denunció");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo denunciar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
         }
 
         protected void DenunciarTarea(object sender, EventArgs e)
         {
-
+            if (TextBox1.Text != " " | TextBox1.Text != "")
+            {
+                bool denuncia = proxy.DENUNCIATAREA(Convert.ToInt16(TextBox4.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se denunció");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo denunciar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
         }
     }
 }

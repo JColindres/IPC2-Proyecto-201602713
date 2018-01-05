@@ -6,6 +6,8 @@
   <xs:element name="BackupUsuariosResponse" type="tns:BackupUsuariosResponse" />
   <xs:element name="COMENTARIODELUSUARIO" type="tns:COMENTARIODELUSUARIO" />
   <xs:element name="COMENTARIODELUSUARIOResponse" type="tns:COMENTARIODELUSUARIOResponse" />
+  <xs:element name="COMENTARIOSDENUNCIADOS" type="tns:COMENTARIOSDENUNCIADOS" />
+  <xs:element name="COMENTARIOSDENUNCIADOSResponse" type="tns:COMENTARIOSDENUNCIADOSResponse" />
   <xs:element name="CrearASO" type="tns:CrearASO" />
   <xs:element name="CrearASOResponse" type="tns:CrearASOResponse" />
   <xs:element name="CrearListaTAREA" type="tns:CrearListaTAREA" />
@@ -16,10 +18,20 @@
   <xs:element name="CrearTareaResponse" type="tns:CrearTareaResponse" />
   <xs:element name="DATOSUSUARIO" type="tns:DATOSUSUARIO" />
   <xs:element name="DATOSUSUARIOResponse" type="tns:DATOSUSUARIOResponse" />
+  <xs:element name="DENUNCIACOMENTARIO" type="tns:DENUNCIACOMENTARIO" />
+  <xs:element name="DENUNCIACOMENTARIOResponse" type="tns:DENUNCIACOMENTARIOResponse" />
+  <xs:element name="DENUNCIAESTADO" type="tns:DENUNCIAESTADO" />
+  <xs:element name="DENUNCIAESTADOResponse" type="tns:DENUNCIAESTADOResponse" />
+  <xs:element name="DENUNCIAPROYECTO" type="tns:DENUNCIAPROYECTO" />
+  <xs:element name="DENUNCIAPROYECTOResponse" type="tns:DENUNCIAPROYECTOResponse" />
+  <xs:element name="DENUNCIATAREA" type="tns:DENUNCIATAREA" />
+  <xs:element name="DENUNCIATAREAResponse" type="tns:DENUNCIATAREAResponse" />
   <xs:element name="ELIMINARAMIGO" type="tns:ELIMINARAMIGO" />
   <xs:element name="ELIMINARAMIGOResponse" type="tns:ELIMINARAMIGOResponse" />
   <xs:element name="ESTADODELUSUARIO" type="tns:ESTADODELUSUARIO" />
   <xs:element name="ESTADODELUSUARIOResponse" type="tns:ESTADODELUSUARIOResponse" />
+  <xs:element name="ESTADOSDENUNCIADOS" type="tns:ESTADOSDENUNCIADOS" />
+  <xs:element name="ESTADOSDENUNCIADOSResponse" type="tns:ESTADOSDENUNCIADOSResponse" />
   <xs:element name="HacerAmigo" type="tns:HacerAmigo" />
   <xs:element name="HacerAmigoResponse" type="tns:HacerAmigoResponse" />
   <xs:element name="IDCONTACTO" type="tns:IDCONTACTO" />
@@ -46,16 +58,28 @@
   <xs:element name="ObtenerProyectoResponse" type="tns:ObtenerProyectoResponse" />
   <xs:element name="ObtenerTarea" type="tns:ObtenerTarea" />
   <xs:element name="ObtenerTareaResponse" type="tns:ObtenerTareaResponse" />
+  <xs:element name="PERTENECESA" type="tns:PERTENECESA" />
+  <xs:element name="PERTENECESAResponse" type="tns:PERTENECESAResponse" />
+  <xs:element name="PROYECTOSDENUNCIADOS" type="tns:PROYECTOSDENUNCIADOS" />
+  <xs:element name="PROYECTOSDENUNCIADOSResponse" type="tns:PROYECTOSDENUNCIADOSResponse" />
   <xs:element name="PublicarComentario" type="tns:PublicarComentario" />
   <xs:element name="PublicarComentarioResponse" type="tns:PublicarComentarioResponse" />
   <xs:element name="PublicarEstado" type="tns:PublicarEstado" />
   <xs:element name="PublicarEstadoResponse" type="tns:PublicarEstadoResponse" />
   <xs:element name="Registrarse" type="tns:Registrarse" />
   <xs:element name="RegistrarseResponse" type="tns:RegistrarseResponse" />
+  <xs:element name="TAREASDENUNCIADOS" type="tns:TAREASDENUNCIADOS" />
+  <xs:element name="TAREASDENUNCIADOSResponse" type="tns:TAREASDENUNCIADOSResponse" />
+  <xs:element name="TUSCOMPASSON" type="tns:TUSCOMPASSON" />
+  <xs:element name="TUSCOMPASSONResponse" type="tns:TUSCOMPASSONResponse" />
   <xs:element name="USPROY" type="tns:USPROY" />
   <xs:element name="USPROYResponse" type="tns:USPROYResponse" />
+  <xs:element name="USTAR" type="tns:USTAR" />
+  <xs:element name="USTARResponse" type="tns:USTARResponse" />
   <xs:element name="US_ASO" type="tns:US_ASO" />
   <xs:element name="US_ASOResponse" type="tns:US_ASOResponse" />
+  <xs:element name="VALIDARSOCIO" type="tns:VALIDARSOCIO" />
+  <xs:element name="VALIDARSOCIOResponse" type="tns:VALIDARSOCIOResponse" />
   <xs:element name="desplegarEstados" type="tns:desplegarEstados" />
   <xs:element name="desplegarEstadosResponse" type="tns:desplegarEstadosResponse" />
   <xs:element name="desplegarUS" type="tns:desplegarUS" />
@@ -64,10 +88,31 @@
   <xs:element name="obtenerIDEstResponse" type="tns:obtenerIDEstResponse" />
   <xs:element name="obtenerIDUS" type="tns:obtenerIDUS" />
   <xs:element name="obtenerIDUSResponse" type="tns:obtenerIDUSResponse" />
+  <xs:complexType name="USTAR">
+    <xs:sequence>
+      <xs:element name="Id_us" type="xs:int" />
+      <xs:element name="Id_tar" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="USTARResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="LISTAPROYECTOS">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="LISTAPROYECTOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TUSCOMPASSON">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aso" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TUSCOMPASSONResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
@@ -84,23 +129,22 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ObtenerASO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ObtenerASOResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="US_ASO">
+  <xs:complexType name="PERTENECESA">
     <xs:sequence>
       <xs:element name="us" type="xs:int" />
-      <xs:element name="aso" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="US_ASOResponse">
+  <xs:complexType name="PERTENECESAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIATAREA">
+    <xs:sequence>
+      <xs:element name="Tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIATAREAResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
@@ -116,12 +160,49 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="US_ASO">
+    <xs:sequence>
+      <xs:element name="us" type="xs:int" />
+      <xs:element name="aso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="US_ASOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerASO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerASOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="COMENTARIOSDENUNCIADOS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="COMENTARIOSDENUNCIADOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="LISTAAMIGOS">
     <xs:sequence>
       <xs:element name="us" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="LISTAAMIGOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LISTAESTADOS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LISTAESTADOSResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
@@ -135,14 +216,6 @@
   <xs:complexType name="MENSAJINResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="LISTAESTADOS">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="LISTAESTADOSResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CrearListaTAREA">
@@ -200,6 +273,16 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="DENUNCIAPROYECTO">
+    <xs:sequence>
+      <xs:element name="Proyecto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIAPROYECTOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ObtenerProyecto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Nombre" type="xs:string" />
@@ -216,6 +299,16 @@
   <xs:complexType name="LISTACOMENTARIOSResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIACOMENTARIO">
+    <xs:sequence>
+      <xs:element name="Comentario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIACOMENTARIOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ELIMINARAMIGO">
@@ -264,6 +357,24 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="VALIDARSOCIO">
+    <xs:sequence>
+      <xs:element name="Usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VALIDARSOCIOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAREASDENUNCIADOS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="TAREASDENUNCIADOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ObtenerTarea">
     <xs:sequence>
       <xs:element minOccurs="0" name="Nombre" type="xs:string" />
@@ -305,6 +416,18 @@
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="CrearTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearTareaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="HacerAmigo">
     <xs:sequence>
       <xs:element name="Id_us" type="xs:int" />
@@ -320,18 +443,6 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="BackupAsoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="CrearTarea">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="Descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="CrearTareaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
@@ -373,6 +484,32 @@
   <xs:complexType name="DATOSUSUARIOResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ESTADOSDENUNCIADOS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ESTADOSDENUNCIADOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PROYECTOSDENUNCIADOS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="PROYECTOSDENUNCIADOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIAESTADO">
+    <xs:sequence>
+      <xs:element name="Estado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIAESTADOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CrearASO">

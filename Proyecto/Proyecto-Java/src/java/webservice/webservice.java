@@ -203,6 +203,17 @@ public class webservice {
         }
     }
     
+    @WebMethod(operationName = "USTAR")
+    public boolean USTAR(@WebParam(name = "Id_us") int Id_us, @WebParam(name = "Id_tar") int Id_tar){
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.usuarioTarea(Id_us, Id_tar);
+        } catch (Exception e) {
+        
+            return false;        
+        }
+    }
+    
     @WebMethod(operationName = "ListaUS")
     public String ListaUS() {
         Consultas consultas = new Consultas();
@@ -383,6 +394,138 @@ public class webservice {
         Consultas consultas = new Consultas();
         try {
             return consultas.ComentarioDelUsuario(us);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "VALIDARSOCIO")
+    public boolean VALIDARSOCIO(@WebParam(name = "Usuario") int Usuario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.validarSocio(Usuario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "PERTENECESA")
+    public String PERTENECESA(@WebParam(name = "us") int us) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.pertenecesA(us);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TUSCOMPASSON")
+    public String TUSCOMPASSON(@WebParam(name = "aso") String aso) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.tusCompañerosSon(aso);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "DENUNCIAESTADO")
+    public boolean DENUNCIAESTADO(@WebParam(name = "Estado") int Estado) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.DenunciaEstado(Estado);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "DENUNCIACOMENTARIO")
+    public boolean DENUNCIACOMENTARIO(@WebParam(name = "Comentario") int Comentario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.DenunciaComentario(Comentario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "DENUNCIAPROYECTO")
+    public boolean DENUNCIAPROYECTO(@WebParam(name = "Proyecto") int Proyecto) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.DenunciaProyecto(Proyecto);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "DENUNCIATAREA")
+    public boolean DENUNCIATAREA(@WebParam(name = "Tarea") int Tarea) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.DenunciaTarea(Tarea);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "ESTADOSDENUNCIADOS")
+    public String ESTADOSDENUNCIADOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.estadosDenunciados();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "COMENTARIOSDENUNCIADOS")
+    public String COMENTARIOSDENUNCIADOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.comentariosDenunciados();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "PROYECTOSDENUNCIADOS")
+    public String PROYECTOSDENUNCIADOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.ProyectosDenunciados();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREASDENUNCIADOS")
+    public String TAREASDENUNCIADOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.tareasDenunciados();
         } catch (Exception e) {
         
             return "Sorry not sorry";        

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Account Confirmation" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Denuncias.aspx.cs" Inherits="Proyecto_APSNET.Account.Confirm" Async="true" %>
+﻿<%@ Page Title="Denuncias" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Denuncias.aspx.cs" Inherits="Proyecto_APSNET.Account.Confirm" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
@@ -19,9 +19,9 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             Estado:
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox1" runat="server" Width="30px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                            </div>
+                            Ingrese el identificador correspondiente</div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -40,9 +40,9 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             Comentario:&nbsp;
-                            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" Width="30px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                            </div>
+                            Ingrese el identificador correspondiente</div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -61,9 +61,9 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             Proyecto:&nbsp;
-                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" Width="30px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                            </div>
+                            Ingrese el identificador correspondiente</div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -82,9 +82,9 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             Tarea:&nbsp;
-                            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox4" runat="server" Width="30px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                            </div>
+                            Ingrese el identificador correspondiente</div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">

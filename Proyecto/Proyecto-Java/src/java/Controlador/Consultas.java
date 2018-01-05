@@ -823,6 +823,48 @@ public class Consultas extends Conexion {
 
         return false;
     }
+    
+    public boolean usuarioTarea(int id_us, int id_tar ) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into US_TAR (ID_US, ID_TAR) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, id_us);
+            pst.setInt(2, id_tar);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
         
     public String ListaUsuarios() {
 
@@ -1557,4 +1599,503 @@ public class Consultas extends Conexion {
         }
         return "No se encontraron resultados";
     }
+    
+    public boolean validarSocio(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select a.NOMBRE, u.USERNAME from us_aso ua,asociacion a, usuario u where ua.ID_US = u.ID_US and ua.ID_ASO = a.ID_ASO and u.ID_US = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+
+            if (rs.absolute(1)) {
+
+                return true;
+
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return false;
+    }
+    
+    public String pertenecesA(int us) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select a.NOMBRE, u.USERNAME from us_aso ua,asociacion a, usuario u where ua.ID_US = u.ID_US and ua.ID_ASO = a.ID_ASO and u.ID_US = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, us);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = rs.getString("a.NOMBRE");
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String tusCompañerosSon(String aso) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select a.NOMBRE, u.USERNAME from us_aso ua,asociacion a, usuario u where ua.ID_US = u.ID_US and ua.ID_ASO = a.ID_ASO and a.NOMBRE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, aso);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public boolean DenunciaEstado(int estado) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update ESTADO set DENUNCIA = ? where ID_EST = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setBoolean(1, true);
+            pst.setInt(2, estado);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean DenunciaComentario(int comentario) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update COMENTARIO set DENUNCIA = ? where ID_COM = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setBoolean(1, true);
+            pst.setInt(2, comentario);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean DenunciaProyecto(int proyecto) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update PROYECTO set DENUNCIA = ? where ID_PROY = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setBoolean(1, true);
+            pst.setInt(2, proyecto);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean DenunciaTarea(int tarea) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update TAREA set DENUNCIA = ? where ID_TAR = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setBoolean(1, true);
+            pst.setInt(2, tarea);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String estadosDenunciados() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, e.MENSAJE from estado e, usuario u where e.ID_US = u.ID_US and denuncia = 1";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + " dijo: " + rs.getString("e.MENSAJE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String comentariosDenunciados() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, e.MENSAJE from comentario e, usuario u where e.ID_US = u.ID_US and denuncia = 1";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + " dijo: " + rs.getString("e.MENSAJE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String ProyectosDenunciados() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME ,p.NOMBRE from us_proy up, proyecto p, usuario u where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and denuncia = 1";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + " creó: " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String tareasDenunciados() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME ,t.NOMBRE from us_tar ut, tarea t, usuario u where ut.ID_US = u.ID_US and ut.ID_TAR = t.ID_TAR and denuncia = 1";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + " creó: " + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
 }
