@@ -29,11 +29,41 @@
   <message name="PROYECTOSDENUNCIADOSResponse">
     <part name="parameters" element="tns:PROYECTOSDENUNCIADOSResponse" />
   </message>
+  <message name="QUITARDENUNCIAESTADO">
+    <part name="parameters" element="tns:QUITARDENUNCIAESTADO" />
+  </message>
+  <message name="QUITARDENUNCIAESTADOResponse">
+    <part name="parameters" element="tns:QUITARDENUNCIAESTADOResponse" />
+  </message>
+  <message name="QUITARDENUNCIACOMENTARIO">
+    <part name="parameters" element="tns:QUITARDENUNCIACOMENTARIO" />
+  </message>
+  <message name="QUITARDENUNCIACOMENTARIOResponse">
+    <part name="parameters" element="tns:QUITARDENUNCIACOMENTARIOResponse" />
+  </message>
+  <message name="QUITARDENUNCIAPROYECTO">
+    <part name="parameters" element="tns:QUITARDENUNCIAPROYECTO" />
+  </message>
+  <message name="QUITARDENUNCIAPROYECTOResponse">
+    <part name="parameters" element="tns:QUITARDENUNCIAPROYECTOResponse" />
+  </message>
+  <message name="QUITARDENUNCIATAREA">
+    <part name="parameters" element="tns:QUITARDENUNCIATAREA" />
+  </message>
+  <message name="QUITARDENUNCIATAREAResponse">
+    <part name="parameters" element="tns:QUITARDENUNCIATAREAResponse" />
+  </message>
   <message name="DENUNCIACOMENTARIO">
     <part name="parameters" element="tns:DENUNCIACOMENTARIO" />
   </message>
   <message name="DENUNCIACOMENTARIOResponse">
     <part name="parameters" element="tns:DENUNCIACOMENTARIOResponse" />
+  </message>
+  <message name="QUITARSUSPENCION">
+    <part name="parameters" element="tns:QUITARSUSPENCION" />
+  </message>
+  <message name="QUITARSUSPENCIONResponse">
+    <part name="parameters" element="tns:QUITARSUSPENCIONResponse" />
   </message>
   <message name="DENUNCIAESTADO">
     <part name="parameters" element="tns:DENUNCIAESTADO" />
@@ -251,6 +281,24 @@
   <message name="ESTADODELUSUARIOResponse">
     <part name="parameters" element="tns:ESTADODELUSUARIOResponse" />
   </message>
+  <message name="SUSPENDER">
+    <part name="parameters" element="tns:SUSPENDER" />
+  </message>
+  <message name="SUSPENDERResponse">
+    <part name="parameters" element="tns:SUSPENDERResponse" />
+  </message>
+  <message name="VERIFICARSANCION">
+    <part name="parameters" element="tns:VERIFICARSANCION" />
+  </message>
+  <message name="VERIFICARSANCIONResponse">
+    <part name="parameters" element="tns:VERIFICARSANCIONResponse" />
+  </message>
+  <message name="MOSTRARSANCIONADOS">
+    <part name="parameters" element="tns:MOSTRARSANCIONADOS" />
+  </message>
+  <message name="MOSTRARSANCIONADOSResponse">
+    <part name="parameters" element="tns:MOSTRARSANCIONADOSResponse" />
+  </message>
   <message name="PERTENECESA">
     <part name="parameters" element="tns:PERTENECESA" />
   </message>
@@ -286,9 +334,29 @@
       <input wsam:Action="http://webservice/webservice/PROYECTOSDENUNCIADOSRequest" message="tns:PROYECTOSDENUNCIADOS" />
       <output wsam:Action="http://webservice/webservice/PROYECTOSDENUNCIADOSResponse" message="tns:PROYECTOSDENUNCIADOSResponse" />
     </operation>
+    <operation name="QUITARDENUNCIAESTADO">
+      <input wsam:Action="http://webservice/webservice/QUITARDENUNCIAESTADORequest" message="tns:QUITARDENUNCIAESTADO" />
+      <output wsam:Action="http://webservice/webservice/QUITARDENUNCIAESTADOResponse" message="tns:QUITARDENUNCIAESTADOResponse" />
+    </operation>
+    <operation name="QUITARDENUNCIACOMENTARIO">
+      <input wsam:Action="http://webservice/webservice/QUITARDENUNCIACOMENTARIORequest" message="tns:QUITARDENUNCIACOMENTARIO" />
+      <output wsam:Action="http://webservice/webservice/QUITARDENUNCIACOMENTARIOResponse" message="tns:QUITARDENUNCIACOMENTARIOResponse" />
+    </operation>
+    <operation name="QUITARDENUNCIAPROYECTO">
+      <input wsam:Action="http://webservice/webservice/QUITARDENUNCIAPROYECTORequest" message="tns:QUITARDENUNCIAPROYECTO" />
+      <output wsam:Action="http://webservice/webservice/QUITARDENUNCIAPROYECTOResponse" message="tns:QUITARDENUNCIAPROYECTOResponse" />
+    </operation>
+    <operation name="QUITARDENUNCIATAREA">
+      <input wsam:Action="http://webservice/webservice/QUITARDENUNCIATAREARequest" message="tns:QUITARDENUNCIATAREA" />
+      <output wsam:Action="http://webservice/webservice/QUITARDENUNCIATAREAResponse" message="tns:QUITARDENUNCIATAREAResponse" />
+    </operation>
     <operation name="DENUNCIACOMENTARIO">
       <input wsam:Action="http://webservice/webservice/DENUNCIACOMENTARIORequest" message="tns:DENUNCIACOMENTARIO" />
       <output wsam:Action="http://webservice/webservice/DENUNCIACOMENTARIOResponse" message="tns:DENUNCIACOMENTARIOResponse" />
+    </operation>
+    <operation name="QUITARSUSPENCION">
+      <input wsam:Action="http://webservice/webservice/QUITARSUSPENCIONRequest" message="tns:QUITARSUSPENCION" />
+      <output wsam:Action="http://webservice/webservice/QUITARSUSPENCIONResponse" message="tns:QUITARSUSPENCIONResponse" />
     </operation>
     <operation name="DENUNCIAESTADO">
       <input wsam:Action="http://webservice/webservice/DENUNCIAESTADORequest" message="tns:DENUNCIAESTADO" />
@@ -434,6 +502,18 @@
       <input wsam:Action="http://webservice/webservice/ESTADODELUSUARIORequest" message="tns:ESTADODELUSUARIO" />
       <output wsam:Action="http://webservice/webservice/ESTADODELUSUARIOResponse" message="tns:ESTADODELUSUARIOResponse" />
     </operation>
+    <operation name="SUSPENDER">
+      <input wsam:Action="http://webservice/webservice/SUSPENDERRequest" message="tns:SUSPENDER" />
+      <output wsam:Action="http://webservice/webservice/SUSPENDERResponse" message="tns:SUSPENDERResponse" />
+    </operation>
+    <operation name="VERIFICARSANCION">
+      <input wsam:Action="http://webservice/webservice/VERIFICARSANCIONRequest" message="tns:VERIFICARSANCION" />
+      <output wsam:Action="http://webservice/webservice/VERIFICARSANCIONResponse" message="tns:VERIFICARSANCIONResponse" />
+    </operation>
+    <operation name="MOSTRARSANCIONADOS">
+      <input wsam:Action="http://webservice/webservice/MOSTRARSANCIONADOSRequest" message="tns:MOSTRARSANCIONADOS" />
+      <output wsam:Action="http://webservice/webservice/MOSTRARSANCIONADOSResponse" message="tns:MOSTRARSANCIONADOSResponse" />
+    </operation>
     <operation name="PERTENECESA">
       <input wsam:Action="http://webservice/webservice/PERTENECESARequest" message="tns:PERTENECESA" />
       <output wsam:Action="http://webservice/webservice/PERTENECESAResponse" message="tns:PERTENECESAResponse" />
@@ -485,7 +565,52 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="QUITARDENUNCIAESTADO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="QUITARDENUNCIACOMENTARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="QUITARDENUNCIAPROYECTO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="QUITARDENUNCIATAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="DENUNCIACOMENTARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="QUITARSUSPENCION">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -810,6 +935,33 @@
       </output>
     </operation>
     <operation name="ESTADODELUSUARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SUSPENDER">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VERIFICARSANCION">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="MOSTRARSANCIONADOS">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

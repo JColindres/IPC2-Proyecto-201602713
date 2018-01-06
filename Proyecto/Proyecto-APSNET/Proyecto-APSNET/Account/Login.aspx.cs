@@ -25,26 +25,37 @@ namespace Proyecto_APSNET.Account
             {
                 try
                 {
-                    if (proxy.IniciarSesion(UserName.Text, Password.Text) == true)
+                    int idU = proxy.obtenerIDUS(UserName.Text);
+                    bool suspension = proxy.VERIFICARSANCION(idU);
+                    if (suspension == false)
                     {
-                        Session["NombreUsuario"] = UserName.Text;
-                        Response.Write("<script language=javascript>");
-                        Response.Write("alert('Se inició sesión')");
-                        Response.Write("</script>");
-
-                        if (UserName.Text == "admin" && Password.Text == "soft123warlock")
+                        if (proxy.IniciarSesion(UserName.Text, Password.Text) == true)
                         {
-                            Response.Redirect("/IniciadaAdministrador.aspx");
+                            Session["NombreUsuario"] = UserName.Text;
+                            Response.Write("<script language=javascript>");
+                            Response.Write("alert('Se inició sesión')");
+                            Response.Write("</script>");
+
+                            if (UserName.Text == "admin" && Password.Text == "soft123warlock")
+                            {
+                                Response.Redirect("/IniciadaAdministrador.aspx");
+                            }
+                            else
+                            {
+                                Response.Redirect("/IniciadaNormal.aspx");
+                            }
                         }
                         else
                         {
-                            Response.Redirect("/IniciadaNormal.aspx");
+                            Response.Write("<script language=javascript>");
+                            Response.Write("alert('Datos Incorrectos')");
+                            Response.Write("</script>");
                         }
                     }
                     else
                     {
                         Response.Write("<script language=javascript>");
-                        Response.Write("alert('Datos Incorrectos')");
+                        Response.Write("alert('Esta cuenta a sido suspendida por contenido indebido')");
                         Response.Write("</script>");
                     }
                 }

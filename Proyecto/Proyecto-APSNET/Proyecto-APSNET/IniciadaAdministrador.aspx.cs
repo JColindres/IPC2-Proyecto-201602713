@@ -11,6 +11,7 @@ namespace Proyecto_APSNET
     {
 
         webservice.webservice proxy;
+        otrowebservice.otrowebservice proxy2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +21,7 @@ namespace Proyecto_APSNET
             }
 
             proxy = new webservice.webservice();
+            proxy2 = new otrowebservice.otrowebservice();
 
             String lista = Convert.ToString(proxy.ESTADOSDENUNCIADOS());
             Array listus = lista.Split(',');
@@ -92,6 +94,24 @@ namespace Proyecto_APSNET
                     }
                 }
             }
+
+            String lista45 = Convert.ToString(proxy.MOSTRARSANCIONADOS());
+            Array listus45 = lista45.Split(',');
+
+            foreach (string item in listus4)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox5.Items.Add(listus45.GetValue(i).ToString());
+                    }
+                    catch (Exception exx)
+                    {
+                        Console.WriteLine(exx);
+                    }
+                }
+            }
         }
 
         protected void Usuarios(object sender, EventArgs e)
@@ -146,6 +166,304 @@ namespace Proyecto_APSNET
         {
             Session.Remove("NombreUsuario");
             Response.Redirect("/Default.aspx");
+        }
+
+        protected void Suspender_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text != " ")
+            {
+                int idUs = proxy.obtenerIDUS(TextBox1.Text);
+                bool suspencion = proxy.SUSPENDER(idUs);
+                if (suspencion == true)
+                {
+                    Response.Write("Se suspendió usuario");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo suspender')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('ingrese un usuario')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void Quitar_Click(object sender, EventArgs e)
+        {
+            if (TextBox2.Text != "")
+            {
+                int idUs = proxy.obtenerIDUS(TextBox2.Text);
+                bool quitar = proxy.QUITARSUSPENCION(idUs);
+                if (quitar == true)
+                {
+                    Response.Write("Se habilitó usuario");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo suspender')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('ingrese un usuario')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void QuitarDenunciarEstado(object sender, EventArgs e)
+        {
+            if (TextBox3.Text != "")
+            {
+                bool denuncia = proxy.QUITARDENUNCIAESTADO(Convert.ToInt16(TextBox3.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se quitó denuncia");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo quitar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void QuitarDenunciarComentario(object sender, EventArgs e)
+        {
+            if (TextBox4.Text != "")
+            {
+                bool denuncia = proxy.QUITARDENUNCIACOMENTARIO(Convert.ToInt16(TextBox4.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se quitó denuncia");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo quitar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void QuitarDenunciarProyecto(object sender, EventArgs e)
+        {
+            if (TextBox5.Text != "")
+            {
+                bool denuncia = proxy.QUITARDENUNCIAPROYECTO(Convert.ToInt16(TextBox5.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se quitó denuncia");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo quitar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void QuitarDenunciarTarea(object sender, EventArgs e)
+        {
+            if (TextBox6.Text != "")
+            {
+                bool denuncia = proxy.QUITARDENUNCIATAREA(Convert.ToInt16(TextBox6.Text));
+                if (denuncia == true)
+                {
+                    Response.Write("Se quitó denuncia");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo quitar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void BorrarEstado(object sender, EventArgs e)
+        {
+            if (TextBox3.Text != "")
+            {
+                bool borrarDeComentario = proxy2.ELIMINARESTADODELCOMENTARIO(Convert.ToInt16(TextBox3.Text));
+                if (borrarDeComentario == true)
+                {
+                    bool borrarEstado = proxy2.ELIMINARESTADODEFINITIVO(Convert.ToInt16(TextBox3.Text));
+                    if (borrarEstado == true)
+                    {
+                        Response.Write("Se borró el estado");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>");
+                        Response.Write("alert('No se pudo borrar')");
+                        Response.Write("</script>");
+                    }
+                }
+                else
+                {
+                    bool borrarEstado = proxy2.ELIMINARESTADODEFINITIVO(Convert.ToInt16(TextBox3.Text));
+                    if (borrarEstado == true)
+                    {
+                        Response.Write("Se borró el estado");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>");
+                        Response.Write("alert('No se pudo borrar')");
+                        Response.Write("</script>");
+                    }
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void BorrarComentario(object sender, EventArgs e)
+        {
+            if (TextBox4.Text != "")
+            {
+                bool borrarComentario = proxy2.ELIMINARCOMENTARIO(Convert.ToInt16(TextBox4.Text));
+                if (borrarComentario == true)
+                {
+                    Response.Write("Se borró el comentario");
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>");
+                    Response.Write("alert('No se pudo borrar')");
+                    Response.Write("</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void BorrarProyecto(object sender, EventArgs e)
+        {
+            if (TextBox5.Text != "")
+            {
+                bool borrarDeUs = proxy2.ELIMINARUSPROY(Convert.ToInt16(TextBox5.Text));
+                bool borrarDeListaTar = proxy2.ELIMINARPROYLISTATAREA(Convert.ToInt16(TextBox5.Text));
+                if (borrarDeUs == true && borrarDeListaTar == true)
+                {
+                    bool borrarProyecto = proxy2.ELIMINARPROYECTO(Convert.ToInt16(TextBox5.Text));
+                    if (borrarProyecto == true)
+                    {
+                        Response.Write("Se borró el proyecto");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>");
+                        Response.Write("alert('No se pudo borrar')");
+                        Response.Write("</script>");
+                    }
+                }
+                else
+                {
+                    bool borrarProyecto = proxy2.ELIMINARPROYECTO(Convert.ToInt16(TextBox5.Text));
+                    if (borrarProyecto == true)
+                    {
+                        Response.Write("Se borró el proyecto");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>");
+                        Response.Write("alert('No se pudo borrar')");
+                        Response.Write("</script>");
+                    }
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void BorrarTarea(object sender, EventArgs e)
+        {
+            if (TextBox6.Text != "")
+            {
+                bool borrarDeUs = proxy2.ELIMINARUSTAR(Convert.ToInt16(TextBox6.Text));
+                bool borrarDeListaTar = proxy2.ELIMINARTARLISTATAREA(Convert.ToInt16(TextBox6.Text));
+                if (borrarDeUs == true && borrarDeListaTar == true)
+                {
+                    bool borrarTarea = proxy2.ELIMINARTAREA(Convert.ToInt16(TextBox6.Text));
+                    if (borrarTarea == true)
+                    {
+                        Response.Write("Se borró la tarea");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>");
+                        Response.Write("alert('No se pudo borrar')");
+                        Response.Write("</script>");
+                    }
+                }
+                else
+                {
+                    bool borrarTarea = proxy2.ELIMINARTAREA(Convert.ToInt16(TextBox6.Text));
+                    if (borrarTarea == true)
+                    {
+                        Response.Write("Se borró la tarea");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>");
+                        Response.Write("alert('No se pudo borrar')");
+                        Response.Write("</script>");
+                    }
+                }
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Ingresé un numero de la lista')");
+                Response.Write("</script>");
+            }
         }
     }
 }

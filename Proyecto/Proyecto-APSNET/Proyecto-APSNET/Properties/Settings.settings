@@ -5,5 +5,8 @@
     <Setting Name="Proyecto_APSNET_webservice_webservice" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:8080/Proyecto-Java/webservice</Value>
     </Setting>
+    <Setting Name="Proyecto_APSNET_otrowebservice_otrowebservice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Proyecto-Java/otrowebservice</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

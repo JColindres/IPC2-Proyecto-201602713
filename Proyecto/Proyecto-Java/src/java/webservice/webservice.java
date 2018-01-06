@@ -532,4 +532,100 @@ public class webservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "SUSPENDER")
+    public boolean SUSPENDER(@WebParam(name = "Usuario") int Usuario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.suspender(Usuario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "QUITARSUSPENCION")
+    public boolean QUITARSUSPENCION(@WebParam(name = "Usuario") int Usuario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.quitarSuspencion(Usuario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "VERIFICARSANCION")
+    public boolean VERIFICARSANCION(@WebParam(name = "Usuario") int Usuario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.verficarSancion(Usuario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "MOSTRARSANCIONADOS")
+    public String MOSTRARSANCIONADOS() {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.mostrarSancionados();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "QUITARDENUNCIAESTADO")
+    public boolean QUITARDENUNCIAESTADO(@WebParam(name = "Estado") int Estado) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.quitarDenunciaEstado(Estado);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "QUITARDENUNCIACOMENTARIO")
+    public boolean QUITARDENUNCIACOMENTARIO(@WebParam(name = "Comentario") int Comentario) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.quitarDenunciaComentario(Comentario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "QUITARDENUNCIAPROYECTO")
+    public boolean QUITARDENUNCIAPROYECTO(@WebParam(name = "Proyecto") int Proyecto) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.quitarDenunciaProyecto(Proyecto);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "QUITARDENUNCIATAREA")
+    public boolean QUITARDENUNCIATAREA(@WebParam(name = "Tarea") int Tarea) {
+        Consultas consultas = new Consultas();
+        try {
+            return consultas.quitarDenunciaTarea(Tarea);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
 }

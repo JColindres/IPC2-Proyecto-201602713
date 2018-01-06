@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webservice/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="otrowebservice" targetNamespace="http://webservice/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/Proyecto-Java/otrowebservice?xsd=1" namespace="http://webservice/" />
+    </xsd:schema>
+  </types>
+  <message name="ELIMINARUSTAR">
+    <part name="parameters" element="tns:ELIMINARUSTAR" />
+  </message>
+  <message name="ELIMINARUSTARResponse">
+    <part name="parameters" element="tns:ELIMINARUSTARResponse" />
+  </message>
+  <message name="ELIMINARTAREA">
+    <part name="parameters" element="tns:ELIMINARTAREA" />
+  </message>
+  <message name="ELIMINARTAREAResponse">
+    <part name="parameters" element="tns:ELIMINARTAREAResponse" />
+  </message>
+  <message name="ELIMINARPROYECTO">
+    <part name="parameters" element="tns:ELIMINARPROYECTO" />
+  </message>
+  <message name="ELIMINARPROYECTOResponse">
+    <part name="parameters" element="tns:ELIMINARPROYECTOResponse" />
+  </message>
+  <message name="ELIMINARUSPROY">
+    <part name="parameters" element="tns:ELIMINARUSPROY" />
+  </message>
+  <message name="ELIMINARUSPROYResponse">
+    <part name="parameters" element="tns:ELIMINARUSPROYResponse" />
+  </message>
+  <message name="ELIMINARESTADODELCOMENTARIO">
+    <part name="parameters" element="tns:ELIMINARESTADODELCOMENTARIO" />
+  </message>
+  <message name="ELIMINARESTADODELCOMENTARIOResponse">
+    <part name="parameters" element="tns:ELIMINARESTADODELCOMENTARIOResponse" />
+  </message>
+  <message name="ELIMINARESTADODEFINITIVO">
+    <part name="parameters" element="tns:ELIMINARESTADODEFINITIVO" />
+  </message>
+  <message name="ELIMINARESTADODEFINITIVOResponse">
+    <part name="parameters" element="tns:ELIMINARESTADODEFINITIVOResponse" />
+  </message>
+  <message name="ELIMINARPROYLISTATAREA">
+    <part name="parameters" element="tns:ELIMINARPROYLISTATAREA" />
+  </message>
+  <message name="ELIMINARPROYLISTATAREAResponse">
+    <part name="parameters" element="tns:ELIMINARPROYLISTATAREAResponse" />
+  </message>
+  <message name="ELIMINARCOMENTARIO">
+    <part name="parameters" element="tns:ELIMINARCOMENTARIO" />
+  </message>
+  <message name="ELIMINARCOMENTARIOResponse">
+    <part name="parameters" element="tns:ELIMINARCOMENTARIOResponse" />
+  </message>
+  <message name="ELIMINARTARLISTATAREA">
+    <part name="parameters" element="tns:ELIMINARTARLISTATAREA" />
+  </message>
+  <message name="ELIMINARTARLISTATAREAResponse">
+    <part name="parameters" element="tns:ELIMINARTARLISTATAREAResponse" />
+  </message>
+  <portType name="otrowebservice">
+    <operation name="ELIMINARUSTAR">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARUSTARRequest" message="tns:ELIMINARUSTAR" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARUSTARResponse" message="tns:ELIMINARUSTARResponse" />
+    </operation>
+    <operation name="ELIMINARTAREA">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARTAREARequest" message="tns:ELIMINARTAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARTAREAResponse" message="tns:ELIMINARTAREAResponse" />
+    </operation>
+    <operation name="ELIMINARPROYECTO">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARPROYECTORequest" message="tns:ELIMINARPROYECTO" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARPROYECTOResponse" message="tns:ELIMINARPROYECTOResponse" />
+    </operation>
+    <operation name="ELIMINARUSPROY">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARUSPROYRequest" message="tns:ELIMINARUSPROY" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARUSPROYResponse" message="tns:ELIMINARUSPROYResponse" />
+    </operation>
+    <operation name="ELIMINARESTADODELCOMENTARIO">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODELCOMENTARIORequest" message="tns:ELIMINARESTADODELCOMENTARIO" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODELCOMENTARIOResponse" message="tns:ELIMINARESTADODELCOMENTARIOResponse" />
+    </operation>
+    <operation name="ELIMINARESTADODEFINITIVO">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODEFINITIVORequest" message="tns:ELIMINARESTADODEFINITIVO" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODEFINITIVOResponse" message="tns:ELIMINARESTADODEFINITIVOResponse" />
+    </operation>
+    <operation name="ELIMINARPROYLISTATAREA">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARPROYLISTATAREARequest" message="tns:ELIMINARPROYLISTATAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARPROYLISTATAREAResponse" message="tns:ELIMINARPROYLISTATAREAResponse" />
+    </operation>
+    <operation name="ELIMINARCOMENTARIO">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARCOMENTARIORequest" message="tns:ELIMINARCOMENTARIO" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARCOMENTARIOResponse" message="tns:ELIMINARCOMENTARIOResponse" />
+    </operation>
+    <operation name="ELIMINARTARLISTATAREA">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARTARLISTATAREARequest" message="tns:ELIMINARTARLISTATAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARTARLISTATAREAResponse" message="tns:ELIMINARTARLISTATAREAResponse" />
+    </operation>
+  </portType>
+  <binding name="otrowebservicePortBinding" type="tns:otrowebservice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ELIMINARUSTAR">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARTAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARPROYECTO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARUSPROY">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARESTADODELCOMENTARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARESTADODEFINITIVO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARPROYLISTATAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARCOMENTARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ELIMINARTARLISTATAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="otrowebservice">
+    <port name="otrowebservicePort" binding="tns:otrowebservicePortBinding">
+      <soap:address location="http://localhost:8080/Proyecto-Java/otrowebservice" />
+    </port>
+  </service>
+</definitions>

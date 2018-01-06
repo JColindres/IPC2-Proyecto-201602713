@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservice/" targetNamespace="http://webservice/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ELIMINARCOMENTARIO" type="tns:ELIMINARCOMENTARIO" />
+  <xs:element name="ELIMINARCOMENTARIOResponse" type="tns:ELIMINARCOMENTARIOResponse" />
+  <xs:element name="ELIMINARESTADODEFINITIVO" type="tns:ELIMINARESTADODEFINITIVO" />
+  <xs:element name="ELIMINARESTADODEFINITIVOResponse" type="tns:ELIMINARESTADODEFINITIVOResponse" />
+  <xs:element name="ELIMINARESTADODELCOMENTARIO" type="tns:ELIMINARESTADODELCOMENTARIO" />
+  <xs:element name="ELIMINARESTADODELCOMENTARIOResponse" type="tns:ELIMINARESTADODELCOMENTARIOResponse" />
+  <xs:element name="ELIMINARPROYECTO" type="tns:ELIMINARPROYECTO" />
+  <xs:element name="ELIMINARPROYECTOResponse" type="tns:ELIMINARPROYECTOResponse" />
+  <xs:element name="ELIMINARPROYLISTATAREA" type="tns:ELIMINARPROYLISTATAREA" />
+  <xs:element name="ELIMINARPROYLISTATAREAResponse" type="tns:ELIMINARPROYLISTATAREAResponse" />
+  <xs:element name="ELIMINARTAREA" type="tns:ELIMINARTAREA" />
+  <xs:element name="ELIMINARTAREAResponse" type="tns:ELIMINARTAREAResponse" />
+  <xs:element name="ELIMINARTARLISTATAREA" type="tns:ELIMINARTARLISTATAREA" />
+  <xs:element name="ELIMINARTARLISTATAREAResponse" type="tns:ELIMINARTARLISTATAREAResponse" />
+  <xs:element name="ELIMINARUSPROY" type="tns:ELIMINARUSPROY" />
+  <xs:element name="ELIMINARUSPROYResponse" type="tns:ELIMINARUSPROYResponse" />
+  <xs:element name="ELIMINARUSTAR" type="tns:ELIMINARUSTAR" />
+  <xs:element name="ELIMINARUSTARResponse" type="tns:ELIMINARUSTARResponse" />
+  <xs:complexType name="ELIMINARTAREA">
+    <xs:sequence>
+      <xs:element name="Tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARTAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARESTADODEFINITIVO">
+    <xs:sequence>
+      <xs:element name="Estado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARESTADODEFINITIVOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARUSTAR">
+    <xs:sequence>
+      <xs:element name="Tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARUSTARResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARESTADODELCOMENTARIO">
+    <xs:sequence>
+      <xs:element name="Estado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARESTADODELCOMENTARIOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARCOMENTARIO">
+    <xs:sequence>
+      <xs:element name="Comentario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARCOMENTARIOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARPROYECTO">
+    <xs:sequence>
+      <xs:element name="Proyecto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARPROYECTOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARUSPROY">
+    <xs:sequence>
+      <xs:element name="Proyecto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARUSPROYResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARTARLISTATAREA">
+    <xs:sequence>
+      <xs:element name="Tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARTARLISTATAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARPROYLISTATAREA">
+    <xs:sequence>
+      <xs:element name="Proyecto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARPROYLISTATAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

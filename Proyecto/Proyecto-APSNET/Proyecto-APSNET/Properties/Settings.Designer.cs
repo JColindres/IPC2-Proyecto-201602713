@@ -32,5 +32,15 @@ namespace Proyecto_APSNET.Properties {
                 return ((string)(this["Proyecto_APSNET_webservice_webservice"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/Proyecto-Java/otrowebservice")]
+        public string Proyecto_APSNET_otrowebservice_otrowebservice {
+            get {
+                return ((string)(this["Proyecto_APSNET_otrowebservice_otrowebservice"]));
+            }
+        }
     }
 }

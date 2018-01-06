@@ -96,7 +96,7 @@ namespace Proyecto_APSNET.Account
 
         protected void DenunciarEstado(object sender, EventArgs e)
         {
-            if (TextBox1.Text != " " | TextBox1.Text != "")
+            if (TextBox1.Text != "")
             {
                 bool denuncia = proxy.DENUNCIAESTADO(Convert.ToInt16(TextBox1.Text));
                 if (denuncia == true)
@@ -120,7 +120,7 @@ namespace Proyecto_APSNET.Account
 
         protected void DenunciarComentario(object sender, EventArgs e)
         {
-            if (TextBox1.Text != " " | TextBox1.Text != "")
+            if (TextBox3.Text != "")
             {
                 bool denuncia = proxy.DENUNCIACOMENTARIO(Convert.ToInt16(TextBox3.Text));
                 if (denuncia == true)
@@ -144,7 +144,7 @@ namespace Proyecto_APSNET.Account
 
         protected void DenunciarProyecto(object sender, EventArgs e)
         {
-            if (TextBox1.Text != " " | TextBox1.Text != "")
+            if (TextBox2.Text != "")
             {
                 bool denuncia = proxy.DENUNCIAPROYECTO(Convert.ToInt16(TextBox2.Text));
                 if (denuncia == true)
@@ -168,7 +168,7 @@ namespace Proyecto_APSNET.Account
 
         protected void DenunciarTarea(object sender, EventArgs e)
         {
-            if (TextBox1.Text != " " | TextBox1.Text != "")
+            if (TextBox4.Text != "")
             {
                 bool denuncia = proxy.DENUNCIATAREA(Convert.ToInt16(TextBox4.Text));
                 if (denuncia == true)

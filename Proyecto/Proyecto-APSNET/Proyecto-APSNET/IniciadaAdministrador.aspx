@@ -73,6 +73,21 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Estado:
+                            <asp:TextBox ID="TextBox3" runat="server" Width="30px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            Ingrese el identificador correspondiente</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tiene dos opciones:<br />
+                            <asp:Button ID="Button2" runat="server" Text="Quitar Denuncia" OnClick="QuitarDenunciarEstado" />
+                        &nbsp; o&nbsp;
+                            <asp:Button ID="Button5" runat="server" Text="Borrar definitivamente" OnClick="BorrarEstado" />
+                        </div>
+                    </div>
                     <hr />
                     <h4>Comentarios Denunciados</h4>
                     <hr />
@@ -80,6 +95,21 @@
                         <div class="col-md-offset-2 col-md-10">
                             <asp:ListBox ID="ListBox2" runat="server" Height="100px" Width="345px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Comentario:
+                            <asp:TextBox ID="TextBox4" runat="server" Width="30px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            Ingrese el identificador correspondiente</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tiene dos opciones:<br />
+                            <asp:Button ID="Button1" runat="server" Text="Quitar Denuncia" OnClick="QuitarDenunciarComentario" />
+                        &nbsp; o&nbsp;
+                            <asp:Button ID="Button6" runat="server" Text="Borrar definitivamente" OnClick="BorrarComentario" />
                         </div>
                     </div>
                     <hr />
@@ -91,13 +121,43 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Proyecto:
+                            <asp:TextBox ID="TextBox5" runat="server" Width="30px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            Ingrese el identificador correspondiente</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tiene dos opciones:<br />
+                            <asp:Button ID="Button3" runat="server" Text="Quitar Denuncia" OnClick="QuitarDenunciarProyecto" />
+                        &nbsp; o&nbsp;
+                            <asp:Button ID="Button7" runat="server" Text="Borrar definitivamente" OnClick="BorrarProyecto" />
+                        </div>
+                    </div>
                     <hr />
-                    <h4>Tareas Denunciados</h4>
+                    <h4>Tareas Denunciadas</h4>
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:ListBox ID="ListBox4" runat="server" Height="100px" Width="345px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tarea:
+                            <asp:TextBox ID="TextBox6" runat="server" Width="30px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            Ingrese el identificador correspondiente</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tiene dos opciones:<br />
+                            <asp:Button ID="Button4" runat="server" Text="Quitar Denuncia" OnClick="QuitarDenunciarTarea" />
+                        &nbsp; o&nbsp;
+                            <asp:Button ID="Button8" runat="server" Text="Borrar definitivamente" OnClick="BorrarTarea" />
                         </div>
                     </div>
                 </div>
@@ -106,6 +166,54 @@
 
         <div class="col-md-4">
             <section id="socialLoginForm5">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm52">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Administrar Suspensiones</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+
+                            Ingresa el nombre del usuario a suspender:<br />
+                            <br />
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Button ID="Suspender" runat="server" Text="Suspender" OnClick="Suspender_Click" />
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            &nbsp;Lista de usuarios suspendidos:<br />
+                            <br />
+                            <asp:ListBox ID="ListBox5" runat="server" Height="100px" Width="200px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+
+                            Ingresa el nombre del usuario a suspender:<br />
+                            <br />
+                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:Button ID="Quitar" runat="server" Text="Quitar Suspension" OnClick="Quitar_Click" />
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm52">
             </section>
         </div>
     </div>
