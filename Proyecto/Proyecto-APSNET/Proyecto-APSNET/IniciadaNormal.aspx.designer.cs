@@ -40,6 +40,33 @@ namespace Proyecto_APSNET {
         protected global::System.Web.UI.WebControls.TextBox FechaProyecto;
         
         /// <summary>
+        /// FechaCierreP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FechaCierreP;
+        
+        /// <summary>
+        /// Sueldo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Sueldo;
+        
+        /// <summary>
+        /// NombreProy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NombreProy;
+        
+        /// <summary>
         /// NombreTarea control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,15 @@ namespace Proyecto_APSNET {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FechaTarea;
+        
+        /// <summary>
+        /// FechaCierreT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FechaCierreT;
         
         /// <summary>
         /// Label1 control.

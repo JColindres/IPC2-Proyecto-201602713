@@ -25,6 +25,11 @@
                             <asp:Button runat="server" OnClick="Asociaciones" Text="Crear copia de Asociaciones" CssClass="btn btn-default" />
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button runat="server" OnClick="EstadosComentarios" Text="Crear copia de Estados y Comentarios" CssClass="btn btn-default" />
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

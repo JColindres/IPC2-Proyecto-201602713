@@ -112,6 +112,16 @@
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="PERTENECESA">
+    <xs:sequence>
+      <xs:element name="us" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PERTENECESAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="PublicarComentario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
@@ -122,16 +132,6 @@
   <xs:complexType name="PublicarComentarioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="PERTENECESA">
-    <xs:sequence>
-      <xs:element name="us" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="PERTENECESAResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DENUNCIATAREA">
@@ -208,6 +208,14 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="LISTACOMENTARIOS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LISTACOMENTARIOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="DENUNCIAPROYECTO">
     <xs:sequence>
       <xs:element name="Proyecto" type="xs:int" />
@@ -216,14 +224,6 @@
   <xs:complexType name="DENUNCIAPROYECTOResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="LISTACOMENTARIOS">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="LISTACOMENTARIOSResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="QUITARDENUNCIATAREA">
@@ -238,8 +238,11 @@
   </xs:complexType>
   <xs:complexType name="CrearProyecto">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Creador" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaI" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaC" type="xs:string" />
+      <xs:element name="Sueldo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CrearProyectoResponse">
@@ -486,6 +489,16 @@
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="ObtenerTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerTareaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="TAREASDENUNCIADOS">
     <xs:sequence />
   </xs:complexType>
@@ -494,12 +507,12 @@
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ObtenerTarea">
+  <xs:complexType name="obtenerIDUS">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ObtenerTareaResponse">
+  <xs:complexType name="obtenerIDUSResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -514,16 +527,6 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerIDUS">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerIDUSResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="COMENTARIODELUSUARIO">
     <xs:sequence>
       <xs:element name="us" type="xs:int" />
@@ -536,9 +539,11 @@
   </xs:complexType>
   <xs:complexType name="CrearTarea">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Creador" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" type="xs:string" />
       <xs:element minOccurs="0" name="Descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaI" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaC" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CrearTareaResponse">

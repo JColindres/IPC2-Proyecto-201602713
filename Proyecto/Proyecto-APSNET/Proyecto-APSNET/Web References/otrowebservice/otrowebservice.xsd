@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://webservice/" targetNamespace="http://webservice/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CREARBACKUPEYC" type="tns:CREARBACKUPEYC" />
+  <xs:element name="CREARBACKUPEYCResponse" type="tns:CREARBACKUPEYCResponse" />
   <xs:element name="ELIMINARCOMENTARIO" type="tns:ELIMINARCOMENTARIO" />
   <xs:element name="ELIMINARCOMENTARIOResponse" type="tns:ELIMINARCOMENTARIOResponse" />
   <xs:element name="ELIMINARESTADODEFINITIVO" type="tns:ELIMINARESTADODEFINITIVO" />
@@ -24,6 +26,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ELIMINARTAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CREARBACKUPEYC">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="CREARBACKUPEYCResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>

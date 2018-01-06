@@ -125,14 +125,34 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="FechaProyecto" CssClass="col-md-2 control-label">Fecha del Proyecto</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="FechaProyecto" CssClass="col-md-2 control-label">Fecha de inicio del Proyecto</asp:Label>
                         <div class="col-md-offset-2 col-md-10">
                             <asp:TextBox ID="FechaProyecto" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="FechaCierreP" CssClass="col-md-2 control-label">Fecha de cierre del Proyecto</asp:Label>
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:TextBox ID="FechaCierreP" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="Sueldo" CssClass="col-md-2 control-label">Sueldo del Proyecto</asp:Label>
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:TextBox ID="Sueldo" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="CrearProyecto" Text="Crear" CssClass="btn btn-default" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="NombreProy" CssClass="col-md-2 control-label">Nombre del Proyecto</asp:Label>
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:TextBox ID="NombreProy" runat="server"></asp:TextBox>
+                        &nbsp; (no es obligatorio, pueden haber tareas independientes)
                         </div>
                     </div>
                     <div class="form-group">
@@ -151,6 +171,12 @@
                         <asp:Label runat="server" AssociatedControlID="FechaTarea" CssClass="col-md-2 control-label">Fecha de la Tarea</asp:Label>
                         <div class="col-md-offset-2 col-md-10">
                             <asp:TextBox ID="FechaTarea" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="FechaCierreT" CssClass="col-md-2 control-label">Fecha de la Tarea</asp:Label>
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:TextBox ID="FechaCierreT" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">

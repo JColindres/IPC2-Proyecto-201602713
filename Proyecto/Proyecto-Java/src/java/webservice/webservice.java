@@ -136,10 +136,10 @@ public class webservice {
     }
     
     @WebMethod(operationName = "CrearProyecto")
-    public boolean CrearProyecto(@WebParam(name = "Nombre") String Nombre, @WebParam(name = "Fecha") String Fecha){
+    public boolean CrearProyecto(@WebParam(name = "Creador") String Creador, @WebParam(name = "Nombre") String Nombre, @WebParam(name = "FechaI") String FechaI, @WebParam(name = "FechaC") String FechaC, @WebParam(name = "Sueldo") int Sueldo){
         Consultas consultas = new Consultas();
         try {
-            return consultas.crearProy(Nombre, Fecha);
+            return consultas.crearProy(Creador, Nombre, FechaI, FechaC, Sueldo);
         } catch (Exception e) {
         
             return false;        
@@ -159,10 +159,10 @@ public class webservice {
     }
 
     @WebMethod(operationName = "CrearTarea")
-    public boolean CrearTarea(@WebParam(name = "Nombre") String Nombre, @WebParam(name = "Descripcion") String Descripcion, @WebParam(name = "Fecha") String Fecha){
+    public boolean CrearTarea(@WebParam(name = "Creador") String Creador, @WebParam(name = "Nombre") String Nombre, @WebParam(name = "Descripcion") String Descripcion, @WebParam(name = "FechaI") String FechaI, @WebParam(name = "FechaC") String FechaC){
         Consultas consultas = new Consultas();
         try {
-            return consultas.crearTarea(Nombre, Descripcion, Fecha);
+            return consultas.crearTarea(Creador, Nombre, Descripcion, FechaI, FechaC);
         } catch (Exception e) {
         
             return false;        

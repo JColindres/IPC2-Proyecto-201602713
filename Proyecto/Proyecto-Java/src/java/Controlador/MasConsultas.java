@@ -389,7 +389,7 @@ public class MasConsultas extends Conexion{
         return false;
     }
     
-    public boolean crearBackupA() {
+    public boolean crearBackupEyC() {
 
         PreparedStatement pst = null;
         ResultSet rs = null;
@@ -400,8 +400,6 @@ public class MasConsultas extends Conexion{
         String usuarioC = "";
         String textoE = "";
         String textoC = "";
-        String nombre = "";
-        String miembros = "";
 
         try {
 
@@ -410,31 +408,11 @@ public class MasConsultas extends Conexion{
             rs = pst.executeQuery();
 
             JSONObject root = new JSONObject();
-            JSONArray Miembros = new JSONArray();
-            JSONArray Asociaciones = new JSONArray();
             JSONArray Comentarios = new JSONArray();
             JSONArray Estados = new JSONArray();
             JSONArray Respuestas = new JSONArray();
             while (rs.next()) {
                                 
-                /*id = rs.getInt("a.ID_ASO");
-                nombre = rs.getString("a.NOMBRE");
-                miembros = rs.getString("u.USERNAME");
-
-                JSONObject asoObjeto = new JSONObject();
-
-                asoObjeto.put("id asociacion", id);
-                asoObjeto.put("nombre", nombre);
-                asoObjeto.put("Miembros", Miembros);
-
-                ItemList asoObjeto2 = new ItemList();
-
-                asoObjeto2.add(miembros);
-                Miembros.add(String.valueOf(asoObjeto2));
-
-                Asociaciones.add(asoObjeto);
-                
-                
                 usuarioE = rs.getString("u.USERNAME");
                 idE = rs.getInt("e.ID_EST");
                 textoE = rs.getString("e.MENSAJE");
@@ -444,20 +422,29 @@ public class MasConsultas extends Conexion{
                 
                 JSONObject est_com = new JSONObject();
                 
-                est_com.put("usuario", idE);
+                est_com.put("usuario", usuarioE);
                 est_com.put("Estados", Estados);
+                Comentarios.add(est_com);
                 
-                ItemList estados = new ItemList();
+                JSONObject estados = new JSONObject();
                 
-                estados.add(String.valueOf(idE));
-                estados.add(textoE);
-                estados.add(E);*/
+                estados.put("id", idE);
+                estados.put("texto", textoE);
+                estados.put("Respuestas", Respuestas);
+                Estados.add(estados);
+                
+                JSONObject respuestas = new JSONObject();
+                
+                respuestas.put("id", idC);
+                respuestas.put("usuario", usuarioC);
+                respuestas.put("texto", textoC);
+                Respuestas.add(respuestas);
 
             }
-            root.put("Asociaciones", Comentarios);
+            root.put("Comentarios", Comentarios);
             System.out.println(root.toJSONString());
 
-            File file = new File("C:/Users/pablo/Desktop/asociaciones.json");
+            File file = new File("C:/Users/pablo/Desktop/estadosyasociaciones.json");
 
             try (PrintWriter writer = new PrintWriter(file)) {
                 writer.print(root.toJSONString());

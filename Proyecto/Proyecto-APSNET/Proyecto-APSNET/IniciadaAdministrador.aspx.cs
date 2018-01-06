@@ -465,5 +465,24 @@ namespace Proyecto_APSNET
                 Response.Write("</script>");
             }
         }
+
+        protected void EstadosComentarios(object sender, EventArgs e)
+        {
+            if (proxy2.CREARBACKUPEYC() == true)
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('Se creó exitósamente')");
+                Response.Write("alert('Buscar archivo en el escritorio')");
+                Response.Write("</script>");
+
+                Response.Write("Se creó backup: archivo guardado en el escritorio");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo crear')");
+                Response.Write("</script>");
+            }
+        }
     }
 }

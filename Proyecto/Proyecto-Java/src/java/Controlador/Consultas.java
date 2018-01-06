@@ -559,16 +559,21 @@ public class Consultas extends Conexion {
         return false;
     }
 
-    public boolean crearProy(String nombre, String fecha) {
+    public boolean crearProy(String creador, String nombre, String fechainicio, String fechacierre, double sueldo) {
 
         PreparedStatement pst = null;
 
         try {
 
-            String consulta = "insert into PROYECTO (NOMBRE, FECHA_I) values (?,?)";
+            String consulta = "insert into PROYECTO (CREADOR, NOMBRE, FECHA_I, FECHA_C, SUELDO, ESTADO, DENUNCIA) values (?,?,?,?,?,?,?)";
             pst = getConexion().prepareStatement(consulta);
-            pst.setString(1, nombre);
-            pst.setString(2, fecha);
+            pst.setString(1, creador);
+            pst.setString(2, nombre);
+            pst.setString(3, fechainicio);
+            pst.setString(4, fechacierre);
+            pst.setDouble(5, sueldo);
+            pst.setString(6, "INACTIVO");
+            pst.setBoolean(7, false);
 
             if (pst.executeUpdate() == 1) {
 
@@ -649,17 +654,21 @@ public class Consultas extends Conexion {
         return 0;
     }
     
-    public boolean crearTarea(String nombre, String descripcion, String fecha) {
+    public boolean crearTarea(String creador, String nombre, String descripcion, String fechainicio, String fechacierre) {
 
         PreparedStatement pst = null;
 
         try {
 
-            String consulta = "insert into TAREA (NOMBRE, DESCRIPCION, FECHA_I) values (?,?,?)";
+            String consulta = "insert into TAREA (CREADOR, NOMBRE, DESCRIPCION, FECHA_I, FECHA_C, ESTADO, DENUNCIA) values (?,?,?,?,?,?,?)";
             pst = getConexion().prepareStatement(consulta);
-            pst.setString(1, nombre);
-            pst.setString(2, descripcion);
-            pst.setString(3, fecha);
+            pst.setString(1, creador);
+            pst.setString(2, nombre);
+            pst.setString(3, descripcion);
+            pst.setString(4, fechainicio);
+            pst.setString(5, fechacierre);
+            pst.setString(6, "INACTIVO");
+            pst.setBoolean(7, false);
 
             if (pst.executeUpdate() == 1) {
 

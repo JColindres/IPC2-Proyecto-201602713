@@ -162,7 +162,7 @@ namespace Proyecto_APSNET
         protected void CrearProyecto(object sender, EventArgs e)
         {
             int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            bool proyecto = proxy.CrearProyecto(NombreProyecto.Text, FechaProyecto.Text);
+            bool proyecto = proxy.CrearProyecto(Convert.ToString(Session["NombreUsuario"]), NombreProyecto.Text, FechaProyecto.Text, FechaCierreP.Text, Convert.ToInt16(Sueldo.Text));
 
             if (proyecto == true)
             {
@@ -181,12 +181,12 @@ namespace Proyecto_APSNET
         protected void CrearTarea(object sender, EventArgs e)
         {
             int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            bool tarea = proxy.CrearTarea(NombreTarea.Text, DescripcionTarea.Text, FechaTarea.Text);
+            bool tarea = proxy.CrearTarea(Convert.ToString(Session["NombreUsuario"]), NombreTarea.Text, DescripcionTarea.Text, FechaTarea.Text, FechaCierreT.Text);
 
             if (tarea == true)
             {
                 int idTarea = proxy.ObtenerTarea(NombreTarea.Text);
-                int idProy = proxy.ObtenerProyecto(NombreProyecto.Text);
+                int idProy = proxy.ObtenerProyecto(NombreProy.Text);
                 proxy.CrearListaTAREA(idProy, idTarea);
                 proxy.USTAR(idUsuario, idTarea);
                 Response.Write("Se agregó tarea al proyecto");

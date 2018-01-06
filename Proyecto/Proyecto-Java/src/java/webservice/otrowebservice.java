@@ -124,4 +124,16 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "CREARBACKUPEYC")
+    public boolean CREARBACKUPEYC() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.crearBackupEyC();
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
 }
