@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://webservice/" targetNamespace="http://webservice/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AGREGARCONOCIMIENTO" type="tns:AGREGARCONOCIMIENTO" />
+  <xs:element name="AGREGARCONOCIMIENTOResponse" type="tns:AGREGARCONOCIMIENTOResponse" />
+  <xs:element name="AGREGARHABILIDAD" type="tns:AGREGARHABILIDAD" />
+  <xs:element name="AGREGARHABILIDADResponse" type="tns:AGREGARHABILIDADResponse" />
   <xs:element name="CREARBACKUPEYC" type="tns:CREARBACKUPEYC" />
   <xs:element name="CREARBACKUPEYCResponse" type="tns:CREARBACKUPEYCResponse" />
   <xs:element name="ELIMINARCOMENTARIO" type="tns:ELIMINARCOMENTARIO" />
@@ -20,6 +24,63 @@
   <xs:element name="ELIMINARUSPROYResponse" type="tns:ELIMINARUSPROYResponse" />
   <xs:element name="ELIMINARUSTAR" type="tns:ELIMINARUSTAR" />
   <xs:element name="ELIMINARUSTARResponse" type="tns:ELIMINARUSTARResponse" />
+  <xs:element name="LISTACON" type="tns:LISTACON" />
+  <xs:element name="LISTACONResponse" type="tns:LISTACONResponse" />
+  <xs:element name="LISTAPROYNF" type="tns:LISTAPROYNF" />
+  <xs:element name="LISTAPROYNFResponse" type="tns:LISTAPROYNFResponse" />
+  <xs:element name="LISTATAREASNF" type="tns:LISTATAREASNF" />
+  <xs:element name="LISTATAREASNFResponse" type="tns:LISTATAREASNFResponse" />
+  <xs:element name="OBTENERCON" type="tns:OBTENERCON" />
+  <xs:element name="OBTENERCONResponse" type="tns:OBTENERCONResponse" />
+  <xs:complexType name="LISTAPROYNF">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LISTAPROYNFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AGREGARHABILIDAD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hab" type="xs:string" />
+      <xs:element name="con" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AGREGARHABILIDADResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OBTENERCON">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OBTENERCONResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARTARLISTATAREA">
+    <xs:sequence>
+      <xs:element name="Tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARTARLISTATAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARPROYLISTATAREA">
+    <xs:sequence>
+      <xs:element name="Proyecto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ELIMINARPROYLISTATAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ELIMINARTAREA">
     <xs:sequence>
       <xs:element name="Tarea" type="xs:int" />
@@ -28,6 +89,14 @@
   <xs:complexType name="ELIMINARTAREAResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LISTACON">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LISTACONResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CREARBACKUPEYC">
@@ -78,6 +147,24 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="AGREGARCONOCIMIENTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="conocimiento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AGREGARCONOCIMIENTOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LISTATAREASNF">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LISTATAREASNFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ELIMINARPROYECTO">
     <xs:sequence>
       <xs:element name="Proyecto" type="xs:int" />
@@ -94,26 +181,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ELIMINARUSPROYResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ELIMINARTARLISTATAREA">
-    <xs:sequence>
-      <xs:element name="Tarea" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ELIMINARTARLISTATAREAResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ELIMINARPROYLISTATAREA">
-    <xs:sequence>
-      <xs:element name="Proyecto" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ELIMINARPROYLISTATAREAResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>

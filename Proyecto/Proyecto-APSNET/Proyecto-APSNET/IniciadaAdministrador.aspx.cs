@@ -98,13 +98,31 @@ namespace Proyecto_APSNET
             String lista45 = Convert.ToString(proxy.MOSTRARSANCIONADOS());
             Array listus45 = lista45.Split(',');
 
-            foreach (string item in listus4)
+            foreach (string item in listus45)
             {
                 for (int i = 0; i < item.Length; i++)
                 {
                     try
                     {
                         ListBox5.Items.Add(listus45.GetValue(i).ToString());
+                    }
+                    catch (Exception exx)
+                    {
+                        Console.WriteLine(exx);
+                    }
+                }
+            }
+
+            String lista455 = Convert.ToString(proxy2.LISTACON());
+            Array listus455 = lista455.Split(',');
+
+            foreach (string item in listus455)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        DropDownList1.Items.Add(listus455.GetValue(i).ToString());
                     }
                     catch (Exception exx)
                     {
@@ -151,17 +169,7 @@ namespace Proyecto_APSNET
                 Response.Write("</script>");
             }
         }
-
-        protected void CargarUsuarios(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void CargarAsociaciones(object sender, EventArgs e)
-        {
-
-        }
-
+        
         protected void CerrarSesion(object sender, EventArgs e)
         {
             Session.Remove("NombreUsuario");
@@ -466,7 +474,36 @@ namespace Proyecto_APSNET
             }
         }
 
-        protected void EstadosComentarios(object sender, EventArgs e)
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            if (proxy2.AGREGARCONOCIMIENTO(Conocimiento.Text) == true)
+            {
+                Response.Write("Se agregó conocimiento");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo agregar')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void Button10_Click(object sender, EventArgs e)
+        {
+            int idCon = proxy2.OBTENERCON(Conocimiento.Text);
+            if (proxy2.AGREGARHABILIDAD(Habilidad.Text, idCon) == true)
+            {
+                Response.Write("Se agregó habilidad");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo agregar')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void Button11_Click(object sender, EventArgs e)
         {
             if (proxy2.CREARBACKUPEYC() == true)
             {

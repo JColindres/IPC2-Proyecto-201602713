@@ -157,47 +157,7 @@ namespace Proyecto_APSNET
                 Response.Write("alert('No se pudo realizar el comentario')");
                 Response.Write("</script>");
             }
-        }
-
-        protected void CrearProyecto(object sender, EventArgs e)
-        {
-            int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            bool proyecto = proxy.CrearProyecto(Convert.ToString(Session["NombreUsuario"]), NombreProyecto.Text, FechaProyecto.Text, FechaCierreP.Text, Convert.ToInt16(Sueldo.Text));
-
-            if (proyecto == true)
-            {
-                int idProy = proxy.ObtenerProyecto(NombreProyecto.Text);
-                proxy.USPROY(idUsuario, idProy);
-                Response.Write("Se creó proyecto, ahora eres un Project Manager");
-            }
-            else
-            {
-                Response.Write("<script language=javascript>");
-                Response.Write("alert('No se pudo crear')");
-                Response.Write("</script>");
-            }
-        }
-
-        protected void CrearTarea(object sender, EventArgs e)
-        {
-            int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            bool tarea = proxy.CrearTarea(Convert.ToString(Session["NombreUsuario"]), NombreTarea.Text, DescripcionTarea.Text, FechaTarea.Text, FechaCierreT.Text);
-
-            if (tarea == true)
-            {
-                int idTarea = proxy.ObtenerTarea(NombreTarea.Text);
-                int idProy = proxy.ObtenerProyecto(NombreProy.Text);
-                proxy.CrearListaTAREA(idProy, idTarea);
-                proxy.USTAR(idUsuario, idTarea);
-                Response.Write("Se agregó tarea al proyecto");
-            }
-            else
-            {
-                Response.Write("<script language=javascript>");
-                Response.Write("alert('No se pudo crear')");
-                Response.Write("</script>");
-            }
-        }
+        }               
 
         protected void CerrarSesion(object sender, EventArgs e)
         {

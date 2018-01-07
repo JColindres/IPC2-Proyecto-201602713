@@ -480,4 +480,276 @@ public class MasConsultas extends Conexion{
         }
         return false;
     }
+    
+    public boolean agregarConocimiento(String conocimiento) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into CONOCIMIENTO (DESCRIPCION) values (?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, conocimiento);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean agregarHabilidad(String habilidad, int id_con) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into HABILIDAD (DESCRIPCION, ID_CON) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, habilidad);
+            pst.setInt(2, id_con);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String ListaCon() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from CONOCIMIENTO";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("DESCRIPCION") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public int obtenerConocimiento(String descripcion) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from CONOCIMIENTO where DESCRIPCION like ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, descripcion);
+            rs = pst.executeQuery();
+            int id = 0;
+
+            if (rs.absolute(1)) {
+
+                id = rs.getInt("ID_CON");
+                return id;
+
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return 0;
+    }
+    
+    public String ListaProyectosNF() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select p.ID_PROY, p.NOMBRE from proyecto p where p.ESTADO = 'Inactivo' or p.ESTADO = 'En Proceso'";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " [" + rs.getString("p.ID_PROY") + "]" + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String ListaTareasNF() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.ID_TAR, t.NOMBRE from tarea t where t.ESTADO = 'Inactivo' or t.ESTADO = 'En Proceso'";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " [" + rs.getString("t.ID_TAR") + "]" + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
 }

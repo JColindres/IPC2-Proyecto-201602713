@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="EstadosComentarios" Text="Crear copia de Estados y Comentarios" CssClass="btn btn-default" />
+                            <asp:Button ID="Button11" runat="server" OnClick="Button11_Click" Text="Crear copia de Estados y Comentarios" CssClass="btn btn-default" />
                         </div>
                     </div>
                 </div>
@@ -44,16 +44,32 @@
             <section id="loginForm2">
                 <div class="form-horizontal">
                     <hr />
-                    <h4>¿Desea Cargar Backups?</h4>
+                    <h4>Agrega conocimientos y habilidades</h4>
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="CargarUsuarios" Text="Cargar copia de Usuarios" CssClass="btn btn-default" />
+                            Conocimiento:&nbsp;
+                            <asp:TextBox ID="Conocimiento" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            
+                            <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="Agregar Conocimiento" />
+                            
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="CargarAsociaciones" Text="Cargar copia de Asociaciones" CssClass="btn btn-default" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:DropDownList ID="DropDownList1" runat="server">
+                            </asp:DropDownList>
+                        &nbsp;&nbsp; Seleccione el conocimiento&nbsp; </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Habilidad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Habilidad" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            
+                            <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="Agregar Habilidad" />
+                            
                         </div>
                     </div>
                 </div>

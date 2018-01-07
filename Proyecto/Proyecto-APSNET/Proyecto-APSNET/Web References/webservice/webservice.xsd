@@ -134,16 +134,6 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DENUNCIATAREA">
-    <xs:sequence>
-      <xs:element name="Tarea" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DENUNCIATAREAResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="ObtenerASO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Nombre" type="xs:string" />
@@ -152,6 +142,16 @@
   <xs:complexType name="ObtenerASOResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIATAREA">
+    <xs:sequence>
+      <xs:element name="Tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DENUNCIATAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="LISTAESTADOS">

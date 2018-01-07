@@ -136,4 +136,76 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "AGREGARCONOCIMIENTO")
+    public boolean AGREGARCONOCIMIENTO(@WebParam(name = "conocimiento") String conocimiento) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.agregarConocimiento(conocimiento);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }    
+        
+    @WebMethod(operationName = "AGREGARHABILIDAD")
+    public boolean AGREGARHABILIDAD(@WebParam(name = "hab") String hab, @WebParam(name = "con") int con) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.agregarHabilidad(hab, con);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTACON")
+    public String LISTACON() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.ListaCon();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "OBTENERCON")
+    public int OBTENERCON(@WebParam(name = "Nombre") String Nombre) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.obtenerConocimiento(Nombre);
+        } catch (Exception e) {
+        
+            return 0;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTATAREASNF")
+    public String LISTATAREASNF() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.ListaTareasNF();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTAPROYNF")
+    public String LISTAPROYNF() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.ListaProyectosNF();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }
