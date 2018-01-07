@@ -11,6 +11,30 @@
   <message name="OBTENERCONResponse">
     <part name="parameters" element="tns:OBTENERCONResponse" />
   </message>
+  <message name="PROYECTOINACTIVO">
+    <part name="parameters" element="tns:PROYECTOINACTIVO" />
+  </message>
+  <message name="PROYECTOINACTIVOResponse">
+    <part name="parameters" element="tns:PROYECTOINACTIVOResponse" />
+  </message>
+  <message name="TAREAINACTIVO">
+    <part name="parameters" element="tns:TAREAINACTIVO" />
+  </message>
+  <message name="TAREAINACTIVOResponse">
+    <part name="parameters" element="tns:TAREAINACTIVOResponse" />
+  </message>
+  <message name="TAREAENPROCESO">
+    <part name="parameters" element="tns:TAREAENPROCESO" />
+  </message>
+  <message name="TAREAENPROCESOResponse">
+    <part name="parameters" element="tns:TAREAENPROCESOResponse" />
+  </message>
+  <message name="TAREAFINALIZADO">
+    <part name="parameters" element="tns:TAREAFINALIZADO" />
+  </message>
+  <message name="TAREAFINALIZADOResponse">
+    <part name="parameters" element="tns:TAREAFINALIZADOResponse" />
+  </message>
   <message name="LISTAPROYNF">
     <part name="parameters" element="tns:LISTAPROYNF" />
   </message>
@@ -95,6 +119,24 @@
   <message name="AGREGARCONOCIMIENTOResponse">
     <part name="parameters" element="tns:AGREGARCONOCIMIENTOResponse" />
   </message>
+  <message name="PROYECTOENPROCESO">
+    <part name="parameters" element="tns:PROYECTOENPROCESO" />
+  </message>
+  <message name="PROYECTOENPROCESOResponse">
+    <part name="parameters" element="tns:PROYECTOENPROCESOResponse" />
+  </message>
+  <message name="PROYECTOFINALIZADO">
+    <part name="parameters" element="tns:PROYECTOFINALIZADO" />
+  </message>
+  <message name="PROYECTOFINALIZADOResponse">
+    <part name="parameters" element="tns:PROYECTOFINALIZADOResponse" />
+  </message>
+  <message name="ESPROYECTOMANAGER">
+    <part name="parameters" element="tns:ESPROYECTOMANAGER" />
+  </message>
+  <message name="ESPROYECTOMANAGERResponse">
+    <part name="parameters" element="tns:ESPROYECTOMANAGERResponse" />
+  </message>
   <message name="AGREGARHABILIDAD">
     <part name="parameters" element="tns:AGREGARHABILIDAD" />
   </message>
@@ -105,6 +147,22 @@
     <operation name="OBTENERCON">
       <input wsam:Action="http://webservice/otrowebservice/OBTENERCONRequest" message="tns:OBTENERCON" />
       <output wsam:Action="http://webservice/otrowebservice/OBTENERCONResponse" message="tns:OBTENERCONResponse" />
+    </operation>
+    <operation name="PROYECTOINACTIVO">
+      <input wsam:Action="http://webservice/otrowebservice/PROYECTOINACTIVORequest" message="tns:PROYECTOINACTIVO" />
+      <output wsam:Action="http://webservice/otrowebservice/PROYECTOINACTIVOResponse" message="tns:PROYECTOINACTIVOResponse" />
+    </operation>
+    <operation name="TAREAINACTIVO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAINACTIVORequest" message="tns:TAREAINACTIVO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAINACTIVOResponse" message="tns:TAREAINACTIVOResponse" />
+    </operation>
+    <operation name="TAREAENPROCESO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAENPROCESORequest" message="tns:TAREAENPROCESO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAENPROCESOResponse" message="tns:TAREAENPROCESOResponse" />
+    </operation>
+    <operation name="TAREAFINALIZADO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADORequest" message="tns:TAREAFINALIZADO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADOResponse" message="tns:TAREAFINALIZADOResponse" />
     </operation>
     <operation name="LISTAPROYNF">
       <input wsam:Action="http://webservice/otrowebservice/LISTAPROYNFRequest" message="tns:LISTAPROYNF" />
@@ -162,6 +220,18 @@
       <input wsam:Action="http://webservice/otrowebservice/AGREGARCONOCIMIENTORequest" message="tns:AGREGARCONOCIMIENTO" />
       <output wsam:Action="http://webservice/otrowebservice/AGREGARCONOCIMIENTOResponse" message="tns:AGREGARCONOCIMIENTOResponse" />
     </operation>
+    <operation name="PROYECTOENPROCESO">
+      <input wsam:Action="http://webservice/otrowebservice/PROYECTOENPROCESORequest" message="tns:PROYECTOENPROCESO" />
+      <output wsam:Action="http://webservice/otrowebservice/PROYECTOENPROCESOResponse" message="tns:PROYECTOENPROCESOResponse" />
+    </operation>
+    <operation name="PROYECTOFINALIZADO">
+      <input wsam:Action="http://webservice/otrowebservice/PROYECTOFINALIZADORequest" message="tns:PROYECTOFINALIZADO" />
+      <output wsam:Action="http://webservice/otrowebservice/PROYECTOFINALIZADOResponse" message="tns:PROYECTOFINALIZADOResponse" />
+    </operation>
+    <operation name="ESPROYECTOMANAGER">
+      <input wsam:Action="http://webservice/otrowebservice/ESPROYECTOMANAGERRequest" message="tns:ESPROYECTOMANAGER" />
+      <output wsam:Action="http://webservice/otrowebservice/ESPROYECTOMANAGERResponse" message="tns:ESPROYECTOMANAGERResponse" />
+    </operation>
     <operation name="AGREGARHABILIDAD">
       <input wsam:Action="http://webservice/otrowebservice/AGREGARHABILIDADRequest" message="tns:AGREGARHABILIDAD" />
       <output wsam:Action="http://webservice/otrowebservice/AGREGARHABILIDADResponse" message="tns:AGREGARHABILIDADResponse" />
@@ -170,6 +240,42 @@
   <binding name="otrowebservicePortBinding" type="tns:otrowebservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="OBTENERCON">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PROYECTOINACTIVO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAINACTIVO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAENPROCESO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAFINALIZADO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -296,6 +402,33 @@
       </output>
     </operation>
     <operation name="AGREGARCONOCIMIENTO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PROYECTOENPROCESO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PROYECTOFINALIZADO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ESPROYECTOMANAGER">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

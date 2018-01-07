@@ -127,5 +127,24 @@ namespace Proyecto_APSNET.Account
                 Response.Write(exxx);
             }
         }
+
+        protected void VerTrabajo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void VerTuProyecto_Click(object sender, EventArgs e)
+        {
+            if (proxy2.ESPROYECTOMANAGER(Convert.ToString(Session["NombreUsuario"])) == true)
+            {
+                Response.Redirect("/Account/TuProyecto.aspx");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No eres Proyect Manager')");
+                Response.Write("</script>");
+            }
+        }
     }
 }

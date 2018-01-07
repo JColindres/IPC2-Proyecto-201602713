@@ -752,4 +752,338 @@ public class MasConsultas extends Conexion{
         }
         return "No se encontraron resultados";
     }
+    
+    public String ProyectoInactivo(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select p.NOMBRE from proyecto p where p.CREADOR = ? and p.ESTADO = 'INACTIVO'";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String ProyectoEnProceso(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select p.NOMBRE from proyecto p where p.CREADOR = ? and p.ESTADO = 'EN PROCESO'";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String ProyectoFinalizado(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select p.NOMBRE from proyecto p where p.CREADOR = ? and p.ESTADO = 'FINALIZADO'";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String TareaInactivo(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE from lista_tarea lt, tarea t where t.NOMBRE not in (select t.NOMBRE from lista_tarea lt, tarea t, proyecto p where lt.ID_PROY = p.ID_PROY and lt.ID_TAR = t.ID_TAR) and t.CREADOR = ? and t.ESTADO = 'INACTIVO' group by t.NOMBRE";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String TareaEnProceso(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE from lista_tarea lt, tarea t where t.NOMBRE not in (select t.NOMBRE from lista_tarea lt, tarea t, proyecto p where lt.ID_PROY = p.ID_PROY and lt.ID_TAR = t.ID_TAR) and t.CREADOR = ? and t.ESTADO = 'EN PROCESO' group by t.NOMBRE";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String TareaFinalizado(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE from lista_tarea lt, tarea t where t.NOMBRE not in (select t.NOMBRE from lista_tarea lt, tarea t, proyecto p where lt.ID_PROY = p.ID_PROY and lt.ID_TAR = t.ID_TAR) and t.CREADOR = ? and t.ESTADO = 'FINALIZADO' group by t.NOMBRE";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public boolean esproyectmanager(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from proyecto p where p.CREADOR = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+
+            if (rs.absolute(1)) {
+
+                return true;
+
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return false;
+    }
 }

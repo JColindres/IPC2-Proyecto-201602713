@@ -208,4 +208,88 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "PROYECTOINACTIVO")
+    public String PROYECTOINACTIVO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.ProyectoInactivo(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "PROYECTOENPROCESO")
+    public String PROYECTOENPROCESO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.ProyectoEnProceso(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "PROYECTOFINALIZADO")
+    public String PROYECTOFINALIZADO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.ProyectoFinalizado(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREAINACTIVO")
+    public String TAREAINACTIVO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TareaInactivo(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREAENPROCESO")
+    public String TAREAENPROCESO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TareaEnProceso(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREAFINALIZADO")
+    public String TAREAFINALIZADO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TareaFinalizado(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "ESPROYECTOMANAGER")
+    public boolean ESPROYECTOMANAGER(@WebParam(name = "Creador") String Creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.esproyectmanager(Creador);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
 }

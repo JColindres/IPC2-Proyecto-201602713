@@ -8,6 +8,14 @@
             <section id="loginForm3">
                 <div class="form-horizontal">
                     <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button ID="VerTrabajo" runat="server" Text="Ver Trabajo" CssClass="btn btn-default" OnClick="VerTrabajo_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="VerTuProyecto" runat="server" Text="Ver Tu Proyecto" CssClass="btn btn-default" OnClick="VerTuProyecto_Click" />
+                        </div>
+                    </div>
+                    <hr />
                     <h4>¿Deseas crear un proyecto? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ¿Deseas unirte a un proyecto/tarea?</h4>
                     <hr />
                     <div class="form-group">
@@ -20,7 +28,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="TextBox1" runat="server" Width="35px"></asp:TextBox>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="proy" runat="server" Text="Unirse a Proyecto" OnClick="proy_Click" Width="133px" />
+                            <asp:Button ID="proy" runat="server" Text="Unirse a Proyecto" OnClick="proy_Click" Width="140px" CssClass="btn btn-default" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -33,7 +41,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="TextBox2" runat="server" Width="35px"></asp:TextBox>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="tar" runat="server" Text="Unirse a Tarea" OnClick="tar_Click" Width="122px" />
+                            <asp:Button ID="tar" runat="server" Text="Unirse a Tarea" OnClick="tar_Click" Width="122px" CssClass="btn btn-default" />
                         </div>
                     </div>
                     <div class="form-group">

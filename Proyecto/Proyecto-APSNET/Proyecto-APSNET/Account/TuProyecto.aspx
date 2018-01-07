@@ -1,42 +1,45 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TuProyecto.aspx.cs" Inherits="Proyecto_APSNET.Account.ManageLogins" %>
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+﻿<%@ Page Title="Tu Proyecto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TuProyecto.aspx.cs" Inherits="Proyecto_APSNET.Account.ManageLogins" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Manage your external logins.</h2>
-    <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-            <p class="text-success"><%: SuccessMessage %></p>
-        </asp:PlaceHolder>
-    <div>
-        <section id="externalLoginsForm">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <h2><%: Title %></h2>
 
-            <asp:ListView runat="server"
-                ItemType="Microsoft.AspNet.Identity.UserLoginInfo"
-                SelectMethod="GetLogins" DeleteMethod="RemoveLogin" DataKeyNames="LoginProvider,ProviderKey">
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm5">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Mira el progreso de tu Proyecto</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tus Tareas Individuales:<br />
+                            <br />
+                            Inactivo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En Proceso:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Finalizado:<br />
+                            <asp:ListBox ID="ListBox1" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox2" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox3" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                            <br />
+                            <br />
+                            <br />
+                            Tu Proyecto:<br />
+                            <br />
+                            Inactivo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En Proceso:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Finalizado:<br />
+                            <asp:ListBox ID="ListBox4" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox5" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox6" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+        </div>
 
-                <LayoutTemplate>
-                    <h4>Registered Logins</h4>
-                    <table class="table">
-                        <tbody>
-                            <tr runat="server" id="itemPlaceholder"></tr>
-                        </tbody>
-                    </table>
-
-                </LayoutTemplate>
-                <ItemTemplate>
-                    <tr>
-                        <td><%#: Item.LoginProvider %></td>
-                        <td>
-                            <asp:Button runat="server" Text="Remove" CommandName="Delete" CausesValidation="false"
-                                ToolTip='<%# "Remove this " + Item.LoginProvider + " login from your account" %>'
-                                Visible="<%# CanRemoveExternalLogins %>" CssClass="btn btn-default" />
-                        </td>
-                    </tr>
-                </ItemTemplate>
-            </asp:ListView>
-
-        </section>
-    </div>
-    <div>
-        <uc:OpenAuthProviders runat="server" ReturnUrl="~/Account/ManageLogins" />
+        <div class="col-md-4">
+            <section id="socialLoginForm5">
+            </section>
+        </div>
     </div>
 </asp:Content>

@@ -13,6 +13,24 @@ namespace Proyecto_APSNET.Account {
     public partial class Manage {
         
         /// <summary>
+        /// VerTrabajo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button VerTrabajo;
+        
+        /// <summary>
+        /// VerTuProyecto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button VerTuProyecto;
+        
+        /// <summary>
         /// NombreProyecto control.
         /// </summary>
         /// <remarks>
