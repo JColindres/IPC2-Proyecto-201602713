@@ -11,6 +11,7 @@ namespace Proyecto_APSNET.Account
     public partial class ForgotPassword : Page
     {
         webservice.webservice proxy;
+        otrowebservice.otrowebservice proxy2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +21,7 @@ namespace Proyecto_APSNET.Account
             }
 
             proxy = new webservice.webservice();
+            proxy2 = new otrowebservice.otrowebservice();
 
             int id = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
             String usuarios = Convert.ToString(proxy.DATOSUSUARIO(id));
@@ -84,6 +86,51 @@ namespace Proyecto_APSNET.Account
                     {
                         Console.WriteLine(exx);
                     }
+                }
+            }
+
+            String lista3 = Convert.ToString(proxy2.HASTRABAJADOI(Convert.ToString(Session["NombreUsuario"])));
+            Array listus3 = lista3.Split(',');
+
+            foreach (string item in listus3)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox3.Items.Add(listus3.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista4 = Convert.ToString(proxy2.HASTRABAJADOEP(Convert.ToString(Session["NombreUsuario"])));
+            Array listus4 = lista4.Split(',');
+
+            foreach (string item in listus4)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox4.Items.Add(listus4.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista5 = Convert.ToString(proxy2.HASTRABAJADOF(Convert.ToString(Session["NombreUsuario"])));
+            Array listus5 = lista5.Split(',');
+
+            foreach (string item in listus5)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox5.Items.Add(listus5.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
                 }
             }
         }

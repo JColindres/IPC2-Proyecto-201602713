@@ -1086,4 +1086,196 @@ public class MasConsultas extends Conexion{
         }
         return false;
     }
+    
+    public String hasTrabajadoI(String usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, p.NOMBRE from proyecto p, usuario u, us_proy up where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and p.ESTADO = 'INACTIVO' and u.USERNAME = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String hasTrabajadoEP(String usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, p.NOMBRE from proyecto p, usuario u, us_proy up where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and p.ESTADO = 'EN PROCESO' and u.USERNAME = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String hasTrabajadoF(String usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, p.NOMBRE from proyecto p, usuario u, us_proy up where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and p.ESTADO = 'FINALIZADO' and u.USERNAME = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String comparacionConocimientos(String creador) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, c.DESCRIPCION, z.KARMA_P, z.KARMA_N from us_con z, conocimiento c, usuario u, proyecto p, us_proy up where z.ID_CON = c.ID_CON and z.ID_US = u.ID_US and up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and p.CREADOR = ? order by u.USERNAME";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, creador);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + " posee el conocimiento de: " + rs.getString("c.DESCRIPCION") + " con Karma positivo: " + rs.getString("z.KARMA_P") + " y con Karma negativo: " + rs.getString("z.KARMA_N") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
 }

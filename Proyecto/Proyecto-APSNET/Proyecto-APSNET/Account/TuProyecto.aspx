@@ -34,6 +34,16 @@
                         </div>
                     </div>
                  </div>
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Compara los conocimientos de tus trabajadores</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:ListBox ID="ListBox7" runat="server" Height="125px" Width="677px"></asp:ListBox>
+                        </div>
+                    </div>
+                 </div>
             </section>
         </div>
 

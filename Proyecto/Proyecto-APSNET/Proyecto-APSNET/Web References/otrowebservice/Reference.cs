@@ -39,6 +39,12 @@ namespace Proyecto_APSNET.otrowebservice {
         
         private System.Threading.SendOrPostCallback TAREAFINALIZADOOperationCompleted;
         
+        private System.Threading.SendOrPostCallback HASTRABAJADOEPOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback HASTRABAJADOFOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback HASTRABAJADOIOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LISTAPROYNFOperationCompleted;
         
         private System.Threading.SendOrPostCallback LISTATAREASNFOperationCompleted;
@@ -70,6 +76,8 @@ namespace Proyecto_APSNET.otrowebservice {
         private System.Threading.SendOrPostCallback PROYECTOENPROCESOOperationCompleted;
         
         private System.Threading.SendOrPostCallback PROYECTOFINALIZADOOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback COMPARACIONCONOCIMIENTOOperationCompleted;
         
         private System.Threading.SendOrPostCallback ESPROYECTOMANAGEROperationCompleted;
         
@@ -129,6 +137,15 @@ namespace Proyecto_APSNET.otrowebservice {
         public event TAREAFINALIZADOCompletedEventHandler TAREAFINALIZADOCompleted;
         
         /// <remarks/>
+        public event HASTRABAJADOEPCompletedEventHandler HASTRABAJADOEPCompleted;
+        
+        /// <remarks/>
+        public event HASTRABAJADOFCompletedEventHandler HASTRABAJADOFCompleted;
+        
+        /// <remarks/>
+        public event HASTRABAJADOICompletedEventHandler HASTRABAJADOICompleted;
+        
+        /// <remarks/>
         public event LISTAPROYNFCompletedEventHandler LISTAPROYNFCompleted;
         
         /// <remarks/>
@@ -175,6 +192,9 @@ namespace Proyecto_APSNET.otrowebservice {
         
         /// <remarks/>
         public event PROYECTOFINALIZADOCompletedEventHandler PROYECTOFINALIZADOCompleted;
+        
+        /// <remarks/>
+        public event COMPARACIONCONOCIMIENTOCompletedEventHandler COMPARACIONCONOCIMIENTOCompleted;
         
         /// <remarks/>
         public event ESPROYECTOMANAGERCompletedEventHandler ESPROYECTOMANAGERCompleted;
@@ -329,6 +349,96 @@ namespace Proyecto_APSNET.otrowebservice {
             if ((this.TAREAFINALIZADOCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.TAREAFINALIZADOCompleted(this, new TAREAFINALIZADOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string HASTRABAJADOEP([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string usuario) {
+            object[] results = this.Invoke("HASTRABAJADOEP", new object[] {
+                        usuario});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void HASTRABAJADOEPAsync(string usuario) {
+            this.HASTRABAJADOEPAsync(usuario, null);
+        }
+        
+        /// <remarks/>
+        public void HASTRABAJADOEPAsync(string usuario, object userState) {
+            if ((this.HASTRABAJADOEPOperationCompleted == null)) {
+                this.HASTRABAJADOEPOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHASTRABAJADOEPOperationCompleted);
+            }
+            this.InvokeAsync("HASTRABAJADOEP", new object[] {
+                        usuario}, this.HASTRABAJADOEPOperationCompleted, userState);
+        }
+        
+        private void OnHASTRABAJADOEPOperationCompleted(object arg) {
+            if ((this.HASTRABAJADOEPCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.HASTRABAJADOEPCompleted(this, new HASTRABAJADOEPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string HASTRABAJADOF([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string usuario) {
+            object[] results = this.Invoke("HASTRABAJADOF", new object[] {
+                        usuario});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void HASTRABAJADOFAsync(string usuario) {
+            this.HASTRABAJADOFAsync(usuario, null);
+        }
+        
+        /// <remarks/>
+        public void HASTRABAJADOFAsync(string usuario, object userState) {
+            if ((this.HASTRABAJADOFOperationCompleted == null)) {
+                this.HASTRABAJADOFOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHASTRABAJADOFOperationCompleted);
+            }
+            this.InvokeAsync("HASTRABAJADOF", new object[] {
+                        usuario}, this.HASTRABAJADOFOperationCompleted, userState);
+        }
+        
+        private void OnHASTRABAJADOFOperationCompleted(object arg) {
+            if ((this.HASTRABAJADOFCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.HASTRABAJADOFCompleted(this, new HASTRABAJADOFCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string HASTRABAJADOI([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string usuario) {
+            object[] results = this.Invoke("HASTRABAJADOI", new object[] {
+                        usuario});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void HASTRABAJADOIAsync(string usuario) {
+            this.HASTRABAJADOIAsync(usuario, null);
+        }
+        
+        /// <remarks/>
+        public void HASTRABAJADOIAsync(string usuario, object userState) {
+            if ((this.HASTRABAJADOIOperationCompleted == null)) {
+                this.HASTRABAJADOIOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHASTRABAJADOIOperationCompleted);
+            }
+            this.InvokeAsync("HASTRABAJADOI", new object[] {
+                        usuario}, this.HASTRABAJADOIOperationCompleted, userState);
+        }
+        
+        private void OnHASTRABAJADOIOperationCompleted(object arg) {
+            if ((this.HASTRABAJADOICompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.HASTRABAJADOICompleted(this, new HASTRABAJADOICompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -807,6 +917,36 @@ namespace Proyecto_APSNET.otrowebservice {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string COMPARACIONCONOCIMIENTO([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string creador) {
+            object[] results = this.Invoke("COMPARACIONCONOCIMIENTO", new object[] {
+                        creador});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void COMPARACIONCONOCIMIENTOAsync(string creador) {
+            this.COMPARACIONCONOCIMIENTOAsync(creador, null);
+        }
+        
+        /// <remarks/>
+        public void COMPARACIONCONOCIMIENTOAsync(string creador, object userState) {
+            if ((this.COMPARACIONCONOCIMIENTOOperationCompleted == null)) {
+                this.COMPARACIONCONOCIMIENTOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCOMPARACIONCONOCIMIENTOOperationCompleted);
+            }
+            this.InvokeAsync("COMPARACIONCONOCIMIENTO", new object[] {
+                        creador}, this.COMPARACIONCONOCIMIENTOOperationCompleted, userState);
+        }
+        
+        private void OnCOMPARACIONCONOCIMIENTOOperationCompleted(object arg) {
+            if ((this.COMPARACIONCONOCIMIENTOCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.COMPARACIONCONOCIMIENTOCompleted(this, new COMPARACIONCONOCIMIENTOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public bool ESPROYECTOMANAGER([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string Creador) {
             object[] results = this.Invoke("ESPROYECTOMANAGER", new object[] {
                         Creador});
@@ -1002,6 +1142,84 @@ namespace Proyecto_APSNET.otrowebservice {
         private object[] results;
         
         internal TAREAFINALIZADOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void HASTRABAJADOEPCompletedEventHandler(object sender, HASTRABAJADOEPCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class HASTRABAJADOEPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal HASTRABAJADOEPCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void HASTRABAJADOFCompletedEventHandler(object sender, HASTRABAJADOFCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class HASTRABAJADOFCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal HASTRABAJADOFCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void HASTRABAJADOICompletedEventHandler(object sender, HASTRABAJADOICompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class HASTRABAJADOICompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal HASTRABAJADOICompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1418,6 +1636,32 @@ namespace Proyecto_APSNET.otrowebservice {
         private object[] results;
         
         internal PROYECTOFINALIZADOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void COMPARACIONCONOCIMIENTOCompletedEventHandler(object sender, COMPARACIONCONOCIMIENTOCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class COMPARACIONCONOCIMIENTOCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal COMPARACIONCONOCIMIENTOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

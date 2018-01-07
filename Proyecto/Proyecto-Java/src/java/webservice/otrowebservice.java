@@ -292,4 +292,52 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "HASTRABAJADOI")
+    public String HASTRABAJADOI(@WebParam(name = "usuario") String usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.hasTrabajadoI(usuario);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "HASTRABAJADOEP")
+    public String HASTRABAJADOEP(@WebParam(name = "usuario") String usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.hasTrabajadoEP(usuario);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "HASTRABAJADOF")
+    public String HASTRABAJADOF(@WebParam(name = "usuario") String usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.hasTrabajadoF(usuario);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "COMPARACIONCONOCIMIENTO")
+    public String COMPARACIONCONOCIMIENTO(@WebParam(name = "creador") String creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.comparacionConocimientos(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

@@ -35,6 +35,24 @@
   <message name="TAREAFINALIZADOResponse">
     <part name="parameters" element="tns:TAREAFINALIZADOResponse" />
   </message>
+  <message name="HASTRABAJADOEP">
+    <part name="parameters" element="tns:HASTRABAJADOEP" />
+  </message>
+  <message name="HASTRABAJADOEPResponse">
+    <part name="parameters" element="tns:HASTRABAJADOEPResponse" />
+  </message>
+  <message name="HASTRABAJADOF">
+    <part name="parameters" element="tns:HASTRABAJADOF" />
+  </message>
+  <message name="HASTRABAJADOFResponse">
+    <part name="parameters" element="tns:HASTRABAJADOFResponse" />
+  </message>
+  <message name="HASTRABAJADOI">
+    <part name="parameters" element="tns:HASTRABAJADOI" />
+  </message>
+  <message name="HASTRABAJADOIResponse">
+    <part name="parameters" element="tns:HASTRABAJADOIResponse" />
+  </message>
   <message name="LISTAPROYNF">
     <part name="parameters" element="tns:LISTAPROYNF" />
   </message>
@@ -131,6 +149,12 @@
   <message name="PROYECTOFINALIZADOResponse">
     <part name="parameters" element="tns:PROYECTOFINALIZADOResponse" />
   </message>
+  <message name="COMPARACIONCONOCIMIENTO">
+    <part name="parameters" element="tns:COMPARACIONCONOCIMIENTO" />
+  </message>
+  <message name="COMPARACIONCONOCIMIENTOResponse">
+    <part name="parameters" element="tns:COMPARACIONCONOCIMIENTOResponse" />
+  </message>
   <message name="ESPROYECTOMANAGER">
     <part name="parameters" element="tns:ESPROYECTOMANAGER" />
   </message>
@@ -163,6 +187,18 @@
     <operation name="TAREAFINALIZADO">
       <input wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADORequest" message="tns:TAREAFINALIZADO" />
       <output wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADOResponse" message="tns:TAREAFINALIZADOResponse" />
+    </operation>
+    <operation name="HASTRABAJADOEP">
+      <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPRequest" message="tns:HASTRABAJADOEP" />
+      <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPResponse" message="tns:HASTRABAJADOEPResponse" />
+    </operation>
+    <operation name="HASTRABAJADOF">
+      <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOFRequest" message="tns:HASTRABAJADOF" />
+      <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOFResponse" message="tns:HASTRABAJADOFResponse" />
+    </operation>
+    <operation name="HASTRABAJADOI">
+      <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOIRequest" message="tns:HASTRABAJADOI" />
+      <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOIResponse" message="tns:HASTRABAJADOIResponse" />
     </operation>
     <operation name="LISTAPROYNF">
       <input wsam:Action="http://webservice/otrowebservice/LISTAPROYNFRequest" message="tns:LISTAPROYNF" />
@@ -228,6 +264,10 @@
       <input wsam:Action="http://webservice/otrowebservice/PROYECTOFINALIZADORequest" message="tns:PROYECTOFINALIZADO" />
       <output wsam:Action="http://webservice/otrowebservice/PROYECTOFINALIZADOResponse" message="tns:PROYECTOFINALIZADOResponse" />
     </operation>
+    <operation name="COMPARACIONCONOCIMIENTO">
+      <input wsam:Action="http://webservice/otrowebservice/COMPARACIONCONOCIMIENTORequest" message="tns:COMPARACIONCONOCIMIENTO" />
+      <output wsam:Action="http://webservice/otrowebservice/COMPARACIONCONOCIMIENTOResponse" message="tns:COMPARACIONCONOCIMIENTOResponse" />
+    </operation>
     <operation name="ESPROYECTOMANAGER">
       <input wsam:Action="http://webservice/otrowebservice/ESPROYECTOMANAGERRequest" message="tns:ESPROYECTOMANAGER" />
       <output wsam:Action="http://webservice/otrowebservice/ESPROYECTOMANAGERResponse" message="tns:ESPROYECTOMANAGERResponse" />
@@ -276,6 +316,33 @@
       </output>
     </operation>
     <operation name="TAREAFINALIZADO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HASTRABAJADOEP">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HASTRABAJADOF">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HASTRABAJADOI">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -420,6 +487,15 @@
       </output>
     </operation>
     <operation name="PROYECTOFINALIZADO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="COMPARACIONCONOCIMIENTO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

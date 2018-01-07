@@ -114,6 +114,21 @@ namespace Proyecto_APSNET.Account
                     catch (Exception exxx) { }
                 }
             }
+
+            String lista7 = Convert.ToString(proxy2.COMPARACIONCONOCIMIENTO(creador));
+            Array listus7 = lista7.Split(',');
+
+            foreach (string item in listus7)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox7.Items.Add(listus7.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
         }
     }       
 }
