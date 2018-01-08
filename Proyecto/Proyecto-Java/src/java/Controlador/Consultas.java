@@ -355,13 +355,13 @@ public class Consultas extends Conexion {
 
         try {
 
-            String consulta = "select u.USERNAME, e.MENSAJE from estado e, usuario u where e.ID_US = u.ID_US";
+            String consulta = "select u.USERNAME, e.ID_EST, e.MENSAJE from estado e, usuario u where e.ID_US = u.ID_US";
             pst = getConexion().prepareStatement(consulta);
             rs = pst.executeQuery();
             String resultado = "";
             while (rs.next()) {
 
-                resultado = resultado + " " + rs.getString("e.MENSAJE") + ",";
+                resultado = resultado + " " + rs.getString("u.USERNAME") + " dice:" + " [" + rs.getString("e.ID_EST") +"]" + rs.getString("e.MENSAJE") + ",";
                 System.out.println(resultado);
             }
 

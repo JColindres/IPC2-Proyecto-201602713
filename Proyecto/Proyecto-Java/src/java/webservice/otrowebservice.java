@@ -496,4 +496,76 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "CONOCIMIENTOSDISPONIBLES")
+    public String CONOCIMIENTOSDISPONIBLES() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.conocimientosDisponibles();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "ASIGNARCONOCIMIENTO")
+    public boolean ASIGNARCONOCIMIENTO(@WebParam(name = "usuario") int usuario, @WebParam(name = "con") int con) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.asignarConocimiento(usuario, con);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "LISTADOPARACALIFICAR")
+    public String LISTADOPARACALIFICAR() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.listadoParaCalificar();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "CALIFICARCONOCIMIENTO")
+    public boolean CALIFICARCONOCIMIENTO(@WebParam(name = "positivo") int positivo, @WebParam(name = "negativo") int negativo, @WebParam(name = "usuario") int usuario, @WebParam(name = "con") int con) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.calificarConocimiento(positivo, negativo, usuario, con);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TUSCONOCIMIENTOS")
+    public String TUSCONOCIMIENTOS(@WebParam(name = "usuario") int usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.tusConocimientos(usuario);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TUSHABILIDADES")
+    public String TUSHABILIDADES(@WebParam(name = "usuario") int usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.tusHabilidades(usuario);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

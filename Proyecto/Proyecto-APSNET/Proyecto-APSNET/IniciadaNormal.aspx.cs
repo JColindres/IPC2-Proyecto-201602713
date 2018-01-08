@@ -11,6 +11,7 @@ namespace Proyecto_APSNET
     {
 
         webservice.webservice proxy;
+        otrowebservice.otrowebservice proxy2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,32 +21,8 @@ namespace Proyecto_APSNET
             }
 
             proxy = new webservice.webservice();
-
-            String usuarios = Convert.ToString(proxy.desplegarUS());
-            Array us = usuarios.Split(',');
-            foreach (string item in us)
-            {
-                for (int i = 0; i < item.Length; i++)
-                {
-                    if (i == 0)
-                    {
-                        Label1.Text = us.GetValue(0).ToString();
-                    }
-                    if (i == 1)
-                    {
-                        Label3.Text = us.GetValue(1).ToString();
-                    }
-                    if (i == 2)
-                    {
-                        Label5.Text = us.GetValue(2).ToString();
-                    }
-                    if (i == 3)
-                    {
-                        Label7.Text = us.GetValue(3).ToString();
-                    }
-
-                }
-            }
+            proxy2 = new otrowebservice.otrowebservice();
+                       
 
             String estados = Convert.ToString(proxy.desplegarEstados());
             Array est = estados.Split(',');
@@ -53,23 +30,50 @@ namespace Proyecto_APSNET
             {
                 for (int i = 0; i < item.Length; i++)
                 {
-                    if (i == 0)
+                    try
                     {
-                        TextBox2.Text = est.GetValue(0).ToString();
+                        ListBox1.Items.Add(est.GetValue(i).ToString());
                     }
-                    if (i == 1)
+                    catch (Exception exx)
                     {
-                        TextBox4.Text = est.GetValue(1).ToString();
+                        Console.WriteLine(exx);
                     }
-                    if (i == 2)
-                    {
-                        TextBox6.Text = est.GetValue(2).ToString();
-                    }
-                    if (i == 3)
-                    {
-                        TextBox8.Text = est.GetValue(3).ToString();
-                    }
+                }
+            }
 
+            String lista2 = Convert.ToString(proxy2.CONOCIMIENTOSDISPONIBLES());
+            Array listus2 = lista2.Split(',');
+
+            foreach (string item in listus2)
+            {
+                for (int j = 0; j < item.Length; j++)
+                {
+                    try
+                    {
+                        DropDownList1.Items.Add(listus2.GetValue(j).ToString());
+                    }
+                    catch (Exception exx)
+                    {
+                        Console.WriteLine(exx);
+                    }
+                }
+            }
+
+            String lista = Convert.ToString(proxy2.LISTADOPARACALIFICAR());
+            Array listus = lista.Split(',');
+
+            foreach (string item in listus)
+            {
+                for (int j = 0; j < item.Length; j++)
+                {
+                    try
+                    {
+                        DropDownList2.Items.Add(listus.GetValue(j).ToString());
+                    }
+                    catch (Exception exx)
+                    {
+                        Console.WriteLine(exx);
+                    }
                 }
             }
         }
@@ -94,11 +98,12 @@ namespace Proyecto_APSNET
         protected void Comentar(object sender, EventArgs e)
         {
             int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            int idE = proxy.obtenerIDEst(TextBox2.Text);
+            int idE = Convert.ToInt32(TextBox15.Text);
+            bool comentario = proxy.PublicarComentario(TextBox3.Text, idU, idE); ;
 
-            if (idE != 0)
-            {
-                proxy.PublicarComentario(TextBox3.Text, idU, idE);
+            if (idE != 0 && comentario == true)
+            {                
+                Response.Write("Se comentó estado");
             }
             else
             {
@@ -106,63 +111,49 @@ namespace Proyecto_APSNET
                 Response.Write("alert('No se pudo realizar el comentario')");
                 Response.Write("</script>");
             }
-        }
-
-        protected void Comentar2(object sender, EventArgs e)
-        {
-            int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            int idE = proxy.obtenerIDEst(TextBox2.Text);
-
-            if (idE != 0)
-            {
-                proxy.PublicarComentario(TextBox5.Text, idU, idE);
-            }
-            else
-            {
-                Response.Write("<script language=javascript>");
-                Response.Write("alert('No se pudo realizar el comentario')");
-                Response.Write("</script>");
-            }
-        }
-
-        protected void Comentar3(object sender, EventArgs e)
-        {
-            int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            int idE = proxy.obtenerIDEst(TextBox2.Text);
-
-            if (idE != 0)
-            {
-                proxy.PublicarComentario(TextBox7.Text, idU, idE);
-            }
-            else
-            {
-                Response.Write("<script language=javascript>");
-                Response.Write("alert('No se pudo realizar el comentario')");
-                Response.Write("</script>");
-            }
-        }
-
-        protected void Comentar4(object sender, EventArgs e)
-        {
-            int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
-            int idE = proxy.obtenerIDEst(TextBox9.Text);
-
-            if (idE != 0)
-            {
-                proxy.PublicarComentario(TextBox3.Text, idU, idE);
-            }
-            else
-            {
-                Response.Write("<script language=javascript>");
-                Response.Write("alert('No se pudo realizar el comentario')");
-                Response.Write("</script>");
-            }
-        }               
+        }            
 
         protected void CerrarSesion(object sender, EventArgs e)
         {
             Session.Remove("NombreUsuario");
             Response.Redirect("/Default.aspx");
+        }
+
+        protected void Asignar(object sender, EventArgs e)
+        {
+            int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
+            int con = Convert.ToInt32(TextBox10.Text);
+            if (TextBox10.Text != null)
+            {
+                proxy2.ASIGNARCONOCIMIENTO(idU, con);
+                Response.Write("Se realizó la asignacion");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo realizar la asignaicon')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void Calificar(object sender, EventArgs e)
+        {
+            int pos = Convert.ToInt32(TextBox11.Text);
+            int neg = Convert.ToInt32(TextBox12.Text);
+            int us = Convert.ToInt32(TextBox13.Text);
+            int con = Convert.ToInt32(TextBox14.Text);
+            bool calficacion = proxy2.CALIFICARCONOCIMIENTO(pos, neg, us, con);
+
+            if (calficacion == true)
+            {
+                Response.Write("Se calificó");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo realizar la calificacion')");
+                Response.Write("</script>");
+            }
         }
     }
 }

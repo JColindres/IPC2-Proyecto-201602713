@@ -107,6 +107,57 @@
     </div>
     <div class="row">
         <div class="col-md-8">
+            <section id="loginForm9">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Elige tus conocimientos</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:TextBox ID="TextBox10" runat="server" Height="20px" Width="19px"></asp:TextBox>
+                        &nbsp;
+                            <asp:DropDownList ID="DropDownList1" runat="server">
+                            </asp:DropDownList>
+                        &nbsp;Ingrese el identificador</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button runat="server" OnClick="Asignar" Text="Asignar" CssClass="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Califica conocimientos</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            &nbsp;<asp:DropDownList ID="DropDownList2" runat="server" Height="56px" Width="468px">
+                            </asp:DropDownList>
+                            &nbsp;&nbsp;&nbsp; +<asp:TextBox ID="TextBox11" runat="server" Height="20px" Width="16px"></asp:TextBox>
+                        &nbsp; -<asp:TextBox ID="TextBox12" runat="server" Height="20px" Width="16px"></asp:TextBox>
+                        &nbsp;
+                            <asp:TextBox ID="TextBox13" runat="server" Height="20px" Width="16px"></asp:TextBox>
+                        &nbsp;
+                            <asp:TextBox ID="TextBox14" runat="server" Height="20px" Width="16px"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button runat="server" OnClick="Calificar" Text="Calificar" CssClass="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm9">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
             <section id="loginForm">
                 <div class="form-horizontal">
                     <hr />
@@ -114,7 +165,7 @@
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox1" runat="server" Height="66px" TextMode="MultiLine" Width="674px"></asp:TextBox>
+                            <asp:TextBox ID="TextBox1" runat="server" Height="66px" TextMode="MultiLine" Width="373px"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
@@ -145,80 +196,20 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox2" runat="server" Height="66px" TextMode="MultiLine" Width="674px" ReadOnly="True" BackColor="Silver"></asp:TextBox>
+                            <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox3" runat="server" Height="66px" TextMode="MultiLine" Width="674px"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" Height="66px" TextMode="MultiLine" Width="373px"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
+                            &nbsp;
+                            <asp:TextBox ID="TextBox15" runat="server" Width="21px"></asp:TextBox>
+&nbsp;Ingrese el identificador del estado
                             <asp:Button runat="server" OnClick="Comentar" Text="Comentar" CssClass="btn btn-default" />
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-                        &nbsp;dice:</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox4" runat="server" Height="66px" TextMode="MultiLine" Width="674px" ReadOnly="True" BackColor="Silver"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox5" runat="server" Height="66px" TextMode="MultiLine" Width="674px"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="Comentar2" Text="Comentar" CssClass="btn btn-default" />
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
-                        &nbsp;dice:</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox6" runat="server" Height="66px" TextMode="MultiLine" Width="674px" ReadOnly="True" BackColor="Silver"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox7" runat="server" Height="66px" TextMode="MultiLine" Width="674px"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="Comentar3" Text="Comentar" CssClass="btn btn-default" />
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Label ID="Label7" runat="server" Text=""></asp:Label>
-                        &nbsp;dice:</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox8" runat="server" Height="66px" TextMode="MultiLine" Width="674px" ReadOnly="True" BackColor="Silver"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:TextBox ID="TextBox9" runat="server" Height="66px" TextMode="MultiLine" Width="674px"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="Comentar4" Text="Comentar" CssClass="btn btn-default" />
                         </div>
                     </div>
                 </div>

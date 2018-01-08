@@ -12,7 +12,7 @@
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:ListBox ID="ListBox1" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                            <asp:ListBox ID="ListBox1" runat="server" Height="125px" Width="285px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:ListBox ID="ListBox2" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                            <asp:ListBox ID="ListBox2" runat="server" Height="125px" Width="285px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:ListBox ID="ListBox3" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                            <asp:ListBox ID="ListBox3" runat="server" Height="125px" Width="166px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:ListBox ID="ListBox4" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                            <asp:ListBox ID="ListBox4" runat="server" Height="125px" Width="166px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>

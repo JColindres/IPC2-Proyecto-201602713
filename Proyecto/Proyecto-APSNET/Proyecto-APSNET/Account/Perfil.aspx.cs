@@ -133,6 +133,36 @@ namespace Proyecto_APSNET.Account
                     catch (Exception exxx) { }
                 }
             }
+
+            String lista6 = Convert.ToString(proxy2.TUSCONOCIMIENTOS(id));
+            Array listus6 = lista6.Split(',');
+
+            foreach (string item in listus6)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox6.Items.Add(listus6.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista7 = Convert.ToString(proxy2.TUSHABILIDADES(id));
+            Array listus7 = lista7.Split(',');
+
+            foreach (string item in listus7)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox7.Items.Add(listus7.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
         }
         
     }

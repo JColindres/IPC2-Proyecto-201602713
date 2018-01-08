@@ -1999,4 +1999,290 @@ public class MasConsultas extends Conexion{
         }
         return "No se encontraron resultados";
     }
+    
+    public String conocimientosDisponibles() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select * from conocimiento";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " [" + rs.getString("ID_CON") + "] " + rs.getString("DESCRIPCION") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public boolean asignarConocimiento(int usuario, int conocimiento) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into US_CON(KARMA_P, KARMA_N, ID_US, ID_CON) values (0,0,?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            pst.setInt(2, conocimiento);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String listadoParaCalificar() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.ID_US, u.USERNAME, c.ID_CON, c.DESCRIPCION, z.KARMA_P, z.KARMA_N from us_con z, conocimiento c, usuario u  where z.ID_US = u.ID_US and z.ID_CON = c.ID_CON order by u.USERNAME";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " [" + rs.getString("u.ID_US") + "] " + rs.getString("u.USERNAME") + " posee el conocimiento de: " + " [" + rs.getString("c.ID_CON") + "] " + rs.getString("c.DESCRIPCION") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public boolean calificarConocimiento(int positivo, int negativo, int usuario, int conocimiento) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update us_con set KARMA_P = ?, KARMA_N = ? where ID_US = ? and ID_CON = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, positivo);
+            pst.setInt(2, negativo);
+            pst.setInt(3, usuario);
+            pst.setInt(4, conocimiento);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String tusConocimientos(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select c.ID_CON, c.DESCRIPCION, uc.KARMA_P, uc.KARMA_N \n" +
+"from conocimiento c, us_con uc \n" +
+"where uc.ID_US = ? \n" +
+"and uc.ID_CON = c.ID_CON\n" +
+"group by c.ID_CON ";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("c.DESCRIPCION") + " con +" + rs.getString("uc.KARMA_P") + " y -" + rs.getString("uc.KARMA_N") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String tusHabilidades(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.ID_US, u.USERNAME, h.DESCRIPCION \n" +
+"from conocimiento c, us_con uc, habilidad h, usuario u \n" +
+"where uc.ID_US = u.ID_US \n" +
+"and uc.ID_CON = c.ID_CON\n" +
+"and h.ID_CON = c.ID_CON\n" +
+"and u.ID_US = ? \n" +
+"group by h.DESCRIPCION";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("h.DESCRIPCION") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
 }

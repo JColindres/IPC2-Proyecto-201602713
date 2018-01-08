@@ -4,8 +4,14 @@
   <xs:element name="AGREGARCONOCIMIENTOResponse" type="tns:AGREGARCONOCIMIENTOResponse" />
   <xs:element name="AGREGARHABILIDAD" type="tns:AGREGARHABILIDAD" />
   <xs:element name="AGREGARHABILIDADResponse" type="tns:AGREGARHABILIDADResponse" />
+  <xs:element name="ASIGNARCONOCIMIENTO" type="tns:ASIGNARCONOCIMIENTO" />
+  <xs:element name="ASIGNARCONOCIMIENTOResponse" type="tns:ASIGNARCONOCIMIENTOResponse" />
+  <xs:element name="CALIFICARCONOCIMIENTO" type="tns:CALIFICARCONOCIMIENTO" />
+  <xs:element name="CALIFICARCONOCIMIENTOResponse" type="tns:CALIFICARCONOCIMIENTOResponse" />
   <xs:element name="COMPARACIONCONOCIMIENTO" type="tns:COMPARACIONCONOCIMIENTO" />
   <xs:element name="COMPARACIONCONOCIMIENTOResponse" type="tns:COMPARACIONCONOCIMIENTOResponse" />
+  <xs:element name="CONOCIMIENTOSDISPONIBLES" type="tns:CONOCIMIENTOSDISPONIBLES" />
+  <xs:element name="CONOCIMIENTOSDISPONIBLESResponse" type="tns:CONOCIMIENTOSDISPONIBLESResponse" />
   <xs:element name="CREARBACKUPEYC" type="tns:CREARBACKUPEYC" />
   <xs:element name="CREARBACKUPEYCResponse" type="tns:CREARBACKUPEYCResponse" />
   <xs:element name="CREARBACKUPP" type="tns:CREARBACKUPP" />
@@ -46,6 +52,8 @@
   <xs:element name="INICIARTAREAResponse" type="tns:INICIARTAREAResponse" />
   <xs:element name="LISTACON" type="tns:LISTACON" />
   <xs:element name="LISTACONResponse" type="tns:LISTACONResponse" />
+  <xs:element name="LISTADOPARACALIFICAR" type="tns:LISTADOPARACALIFICAR" />
+  <xs:element name="LISTADOPARACALIFICARResponse" type="tns:LISTADOPARACALIFICARResponse" />
   <xs:element name="LISTAPROYNF" type="tns:LISTAPROYNF" />
   <xs:element name="LISTAPROYNFResponse" type="tns:LISTAPROYNFResponse" />
   <xs:element name="LISTATAREASNF" type="tns:LISTATAREASNF" />
@@ -80,6 +88,10 @@
   <xs:element name="TUSCOMPAÑEROSSONResponse" type="tns:TUSCOMPAÑEROSSONResponse" />
   <xs:element name="TUSCOMPAÑEROSTAREA" type="tns:TUSCOMPAÑEROSTAREA" />
   <xs:element name="TUSCOMPAÑEROSTAREAResponse" type="tns:TUSCOMPAÑEROSTAREAResponse" />
+  <xs:element name="TUSCONOCIMIENTOS" type="tns:TUSCONOCIMIENTOS" />
+  <xs:element name="TUSCONOCIMIENTOSResponse" type="tns:TUSCONOCIMIENTOSResponse" />
+  <xs:element name="TUSHABILIDADES" type="tns:TUSHABILIDADES" />
+  <xs:element name="TUSHABILIDADESResponse" type="tns:TUSHABILIDADESResponse" />
   <xs:complexType name="LISTAPROYNF">
     <xs:sequence />
   </xs:complexType>
@@ -126,6 +138,17 @@
   <xs:complexType name="TAREAFINALIZADOResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASIGNARCONOCIMIENTO">
+    <xs:sequence>
+      <xs:element name="usuario" type="xs:int" />
+      <xs:element name="con" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASIGNARCONOCIMIENTOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="OBTENERCON">
@@ -184,6 +207,16 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="TUSCONOCIMIENTOS">
+    <xs:sequence>
+      <xs:element name="usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TUSCONOCIMIENTOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="INICIARPROYECTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="proyecto" type="xs:string" />
@@ -234,6 +267,19 @@
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="CALIFICARCONOCIMIENTO">
+    <xs:sequence>
+      <xs:element name="positivo" type="xs:int" />
+      <xs:element name="negativo" type="xs:int" />
+      <xs:element name="usuario" type="xs:int" />
+      <xs:element name="con" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CALIFICARCONOCIMIENTOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="PROYECTOINACTIVO">
     <xs:sequence>
       <xs:element minOccurs="0" name="creador" type="xs:string" />
@@ -242,16 +288,6 @@
   <xs:complexType name="PROYECTOINACTIVOResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="AGREGARCONOCIMIENTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="conocimiento" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="AGREGARCONOCIMIENTOResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ELIMINARCOMENTARIO">
@@ -264,6 +300,24 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="AGREGARCONOCIMIENTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="conocimiento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AGREGARCONOCIMIENTOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LISTADOPARACALIFICAR">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="LISTADOPARACALIFICARResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ELIMINARPROYECTO">
     <xs:sequence>
       <xs:element name="Proyecto" type="xs:int" />
@@ -272,6 +326,14 @@
   <xs:complexType name="ELIMINARPROYECTOResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CONOCIMIENTOSDISPONIBLES">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="CONOCIMIENTOSDISPONIBLESResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AGREGARHABILIDAD">
@@ -363,16 +425,6 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="HASTRABAJADOI">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="usuario" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="HASTRABAJADOIResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="ELIMINARTAREA">
     <xs:sequence>
       <xs:element name="Tarea" type="xs:int" />
@@ -383,12 +435,22 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="HASTRABAJADOF">
+  <xs:complexType name="HASTRABAJADOI">
     <xs:sequence>
       <xs:element minOccurs="0" name="usuario" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="HASTRABAJADOFResponse">
+  <xs:complexType name="HASTRABAJADOIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TUSHABILIDADES">
+    <xs:sequence>
+      <xs:element name="usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TUSHABILIDADESResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
@@ -397,6 +459,16 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="LISTACONResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HASTRABAJADOF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HASTRABAJADOFResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>

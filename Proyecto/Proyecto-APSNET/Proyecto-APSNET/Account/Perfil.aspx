@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Forgot password" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="Proyecto_APSNET.Account.ForgotPassword" Async="true" %>
+﻿<%@ Page Title="Perfil" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="Proyecto_APSNET.Account.ForgotPassword" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2>Perfil</h2>
@@ -57,6 +57,19 @@
                             <asp:ListBox ID="ListBox4" runat="server" Height="81px" Width="196px"></asp:ListBox>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:ListBox ID="ListBox5" runat="server" Height="81px" Width="196px"></asp:ListBox>
+                        </div>
+                    </div>
+                </div>                
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Visualiza tus conocimientos y habilidades</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tus Conocimientos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tus Habilidades:<br />
+                            <asp:ListBox ID="ListBox6" runat="server" Height="81px" Width="196px"></asp:ListBox>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox7" runat="server" Height="81px" Width="196px"></asp:ListBox>
                         </div>
                     </div>
                 </div>
