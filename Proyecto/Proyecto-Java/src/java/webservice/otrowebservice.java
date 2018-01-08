@@ -137,6 +137,30 @@ public class otrowebservice {
         
     }
     
+    @WebMethod(operationName = "CREARBACKUPTI")
+    public boolean CREARBACKUPTI() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.crearBackupTareasIndependientes();
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "CREARBACKUPP")
+    public boolean CREARBACKUPP() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.crearBackupProyectos();
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
     @WebMethod(operationName = "AGREGARCONOCIMIENTO")
     public boolean AGREGARCONOCIMIENTO(@WebParam(name = "conocimiento") String conocimiento) {
         MasConsultas consultas = new MasConsultas();
@@ -430,6 +454,42 @@ public class otrowebservice {
         MasConsultas consultas = new MasConsultas();
         try {
             return consultas.tusCompañerosTarea();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREAINACTIVOPUBLICO")
+    public String TAREAINACTIVOPUBLICO(@WebParam(name = "creador") int creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TareaInactivoPublico(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREAENPROCESOPUBLICO")
+    public String TAREAENPROCESOPUBLICO(@WebParam(name = "creador") int creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TareaEnProcesoPublico(creador);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREAFINALIZADOPUBLICO")
+    public String TAREAFINALIZADOPUBLICO(@WebParam(name = "creador") int creador) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TareaFinalizadoPublico(creador);
         } catch (Exception e) {
         
             return "Sorry not sorry";        

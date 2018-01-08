@@ -8,6 +8,10 @@
   <xs:element name="COMPARACIONCONOCIMIENTOResponse" type="tns:COMPARACIONCONOCIMIENTOResponse" />
   <xs:element name="CREARBACKUPEYC" type="tns:CREARBACKUPEYC" />
   <xs:element name="CREARBACKUPEYCResponse" type="tns:CREARBACKUPEYCResponse" />
+  <xs:element name="CREARBACKUPP" type="tns:CREARBACKUPP" />
+  <xs:element name="CREARBACKUPPResponse" type="tns:CREARBACKUPPResponse" />
+  <xs:element name="CREARBACKUPTI" type="tns:CREARBACKUPTI" />
+  <xs:element name="CREARBACKUPTIResponse" type="tns:CREARBACKUPTIResponse" />
   <xs:element name="ELIMINARCOMENTARIO" type="tns:ELIMINARCOMENTARIO" />
   <xs:element name="ELIMINARCOMENTARIOResponse" type="tns:ELIMINARCOMENTARIOResponse" />
   <xs:element name="ELIMINARESTADODEFINITIVO" type="tns:ELIMINARESTADODEFINITIVO" />
@@ -55,10 +59,16 @@
   <xs:element name="PROYECTOINACTIVO" type="tns:PROYECTOINACTIVO" />
   <xs:element name="PROYECTOINACTIVOResponse" type="tns:PROYECTOINACTIVOResponse" />
   <xs:element name="TAREAENPROCESO" type="tns:TAREAENPROCESO" />
+  <xs:element name="TAREAENPROCESOPUBLICO" type="tns:TAREAENPROCESOPUBLICO" />
+  <xs:element name="TAREAENPROCESOPUBLICOResponse" type="tns:TAREAENPROCESOPUBLICOResponse" />
   <xs:element name="TAREAENPROCESOResponse" type="tns:TAREAENPROCESOResponse" />
   <xs:element name="TAREAFINALIZADO" type="tns:TAREAFINALIZADO" />
+  <xs:element name="TAREAFINALIZADOPUBLICO" type="tns:TAREAFINALIZADOPUBLICO" />
+  <xs:element name="TAREAFINALIZADOPUBLICOResponse" type="tns:TAREAFINALIZADOPUBLICOResponse" />
   <xs:element name="TAREAFINALIZADOResponse" type="tns:TAREAFINALIZADOResponse" />
   <xs:element name="TAREAINACTIVO" type="tns:TAREAINACTIVO" />
+  <xs:element name="TAREAINACTIVOPUBLICO" type="tns:TAREAINACTIVOPUBLICO" />
+  <xs:element name="TAREAINACTIVOPUBLICOResponse" type="tns:TAREAINACTIVOPUBLICOResponse" />
   <xs:element name="TAREAINACTIVOResponse" type="tns:TAREAINACTIVOResponse" />
   <xs:element name="TERMINARPROYECTO" type="tns:TERMINARPROYECTO" />
   <xs:element name="TERMINARPROYECTOResponse" type="tns:TERMINARPROYECTOResponse" />
@@ -86,6 +96,16 @@
   <xs:complexType name="ESTRABAJADORResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAREAENPROCESOPUBLICO">
+    <xs:sequence>
+      <xs:element name="creador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAREAENPROCESOPUBLICOResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TERMINARPROYECTO">
@@ -118,12 +138,30 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="TAREAFINALIZADOPUBLICO">
+    <xs:sequence>
+      <xs:element name="creador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAREAFINALIZADOPUBLICOResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ELIMINARPROYLISTATAREA">
     <xs:sequence>
       <xs:element name="Proyecto" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ELIMINARPROYLISTATAREAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CREARBACKUPTI">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="CREARBACKUPTIResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
@@ -317,6 +355,14 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="CREARBACKUPP">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="CREARBACKUPPResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="HASTRABAJADOI">
     <xs:sequence>
       <xs:element minOccurs="0" name="usuario" type="xs:string" />
@@ -371,6 +417,16 @@
   <xs:complexType name="ESPROYECTOMANAGERResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAREAINACTIVOPUBLICO">
+    <xs:sequence>
+      <xs:element name="creador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAREAINACTIVOPUBLICOResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ELIMINARESTADODEFINITIVO">

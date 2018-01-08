@@ -30,6 +30,16 @@
                             <asp:Button ID="Button11" runat="server" OnClick="Button11_Click" Text="Crear copia de Estados y Comentarios" CssClass="btn btn-default" />
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="Crear copia de Tareas Independientes" CssClass="btn btn-default" />
+                        </div>
+                    </div>                    
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button ID="Button13" runat="server" OnClick="Button13_Click" Text="Crear copia de Proyectos" CssClass="btn btn-default" />
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

@@ -8,7 +8,7 @@
             <section id="loginForm5">
                 <div class="form-horizontal">
                     <hr />
-                    <h4>Mira el progreso de tu Proyecto</h4>
+                    <h4>Tus Compañeros</h4>
                     <hr />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -29,6 +29,62 @@
 
         <div class="col-md-4">
             <section id="socialLoginForm5">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Mira el progreso de tu Proyecto</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            Tus Tareas Individuales:<br />
+                            <br />
+                            Inactivo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En Proceso:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Finalizado:<br />
+                            <asp:ListBox ID="ListBox3" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox4" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox5" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm2">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Comentarios</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:TextBox ID="TextBox1" runat="server" Height="63px" TextMode="MultiLine" Width="423px"></asp:TextBox>
+&nbsp;
+                            <br />
+                            <br />
+                            <asp:Button ID="publicar" runat="server" Text="Publicar" OnClick="publicar_Click" />
+                            <br />
+                            <br />
+                            <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm2">
             </section>
         </div>
     </div>

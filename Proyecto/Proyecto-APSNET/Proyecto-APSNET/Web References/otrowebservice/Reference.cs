@@ -29,6 +29,10 @@ namespace Proyecto_APSNET.otrowebservice {
     [System.Web.Services.WebServiceBindingAttribute(Name="otrowebservicePortBinding", Namespace="http://webservice/")]
     public partial class otrowebservice : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback CREARBACKUPPOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CREARBACKUPTIOperationCompleted;
+        
         private System.Threading.SendOrPostCallback CREARBACKUPEYCOperationCompleted;
         
         private System.Threading.SendOrPostCallback HASTRABAJADOFOperationCompleted;
@@ -70,6 +74,12 @@ namespace Proyecto_APSNET.otrowebservice {
         private System.Threading.SendOrPostCallback LISTACONOperationCompleted;
         
         private System.Threading.SendOrPostCallback TERMINARTAREAOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback TAREAINACTIVOPUBLICOOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback TAREAENPROCESOPUBLICOOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback TAREAFINALIZADOPUBLICOOperationCompleted;
         
         private System.Threading.SendOrPostCallback TUSCOMPAÑEROSTAREAOperationCompleted;
         
@@ -138,6 +148,12 @@ namespace Proyecto_APSNET.otrowebservice {
         }
         
         /// <remarks/>
+        public event CREARBACKUPPCompletedEventHandler CREARBACKUPPCompleted;
+        
+        /// <remarks/>
+        public event CREARBACKUPTICompletedEventHandler CREARBACKUPTICompleted;
+        
+        /// <remarks/>
         public event CREARBACKUPEYCCompletedEventHandler CREARBACKUPEYCCompleted;
         
         /// <remarks/>
@@ -201,6 +217,15 @@ namespace Proyecto_APSNET.otrowebservice {
         public event TERMINARTAREACompletedEventHandler TERMINARTAREACompleted;
         
         /// <remarks/>
+        public event TAREAINACTIVOPUBLICOCompletedEventHandler TAREAINACTIVOPUBLICOCompleted;
+        
+        /// <remarks/>
+        public event TAREAENPROCESOPUBLICOCompletedEventHandler TAREAENPROCESOPUBLICOCompleted;
+        
+        /// <remarks/>
+        public event TAREAFINALIZADOPUBLICOCompletedEventHandler TAREAFINALIZADOPUBLICOCompleted;
+        
+        /// <remarks/>
         public event TUSCOMPAÑEROSTAREACompletedEventHandler TUSCOMPAÑEROSTAREACompleted;
         
         /// <remarks/>
@@ -241,6 +266,62 @@ namespace Proyecto_APSNET.otrowebservice {
         
         /// <remarks/>
         public event TUSCOMPAÑEROSSONCompletedEventHandler TUSCOMPAÑEROSSONCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool CREARBACKUPP() {
+            object[] results = this.Invoke("CREARBACKUPP", new object[0]);
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CREARBACKUPPAsync() {
+            this.CREARBACKUPPAsync(null);
+        }
+        
+        /// <remarks/>
+        public void CREARBACKUPPAsync(object userState) {
+            if ((this.CREARBACKUPPOperationCompleted == null)) {
+                this.CREARBACKUPPOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCREARBACKUPPOperationCompleted);
+            }
+            this.InvokeAsync("CREARBACKUPP", new object[0], this.CREARBACKUPPOperationCompleted, userState);
+        }
+        
+        private void OnCREARBACKUPPOperationCompleted(object arg) {
+            if ((this.CREARBACKUPPCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CREARBACKUPPCompleted(this, new CREARBACKUPPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool CREARBACKUPTI() {
+            object[] results = this.Invoke("CREARBACKUPTI", new object[0]);
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CREARBACKUPTIAsync() {
+            this.CREARBACKUPTIAsync(null);
+        }
+        
+        /// <remarks/>
+        public void CREARBACKUPTIAsync(object userState) {
+            if ((this.CREARBACKUPTIOperationCompleted == null)) {
+                this.CREARBACKUPTIOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCREARBACKUPTIOperationCompleted);
+            }
+            this.InvokeAsync("CREARBACKUPTI", new object[0], this.CREARBACKUPTIOperationCompleted, userState);
+        }
+        
+        private void OnCREARBACKUPTIOperationCompleted(object arg) {
+            if ((this.CREARBACKUPTICompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CREARBACKUPTICompleted(this, new CREARBACKUPTICompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -869,6 +950,96 @@ namespace Proyecto_APSNET.otrowebservice {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string TAREAINACTIVOPUBLICO([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int creador) {
+            object[] results = this.Invoke("TAREAINACTIVOPUBLICO", new object[] {
+                        creador});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TAREAINACTIVOPUBLICOAsync(int creador) {
+            this.TAREAINACTIVOPUBLICOAsync(creador, null);
+        }
+        
+        /// <remarks/>
+        public void TAREAINACTIVOPUBLICOAsync(int creador, object userState) {
+            if ((this.TAREAINACTIVOPUBLICOOperationCompleted == null)) {
+                this.TAREAINACTIVOPUBLICOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTAREAINACTIVOPUBLICOOperationCompleted);
+            }
+            this.InvokeAsync("TAREAINACTIVOPUBLICO", new object[] {
+                        creador}, this.TAREAINACTIVOPUBLICOOperationCompleted, userState);
+        }
+        
+        private void OnTAREAINACTIVOPUBLICOOperationCompleted(object arg) {
+            if ((this.TAREAINACTIVOPUBLICOCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TAREAINACTIVOPUBLICOCompleted(this, new TAREAINACTIVOPUBLICOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string TAREAENPROCESOPUBLICO([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int creador) {
+            object[] results = this.Invoke("TAREAENPROCESOPUBLICO", new object[] {
+                        creador});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TAREAENPROCESOPUBLICOAsync(int creador) {
+            this.TAREAENPROCESOPUBLICOAsync(creador, null);
+        }
+        
+        /// <remarks/>
+        public void TAREAENPROCESOPUBLICOAsync(int creador, object userState) {
+            if ((this.TAREAENPROCESOPUBLICOOperationCompleted == null)) {
+                this.TAREAENPROCESOPUBLICOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTAREAENPROCESOPUBLICOOperationCompleted);
+            }
+            this.InvokeAsync("TAREAENPROCESOPUBLICO", new object[] {
+                        creador}, this.TAREAENPROCESOPUBLICOOperationCompleted, userState);
+        }
+        
+        private void OnTAREAENPROCESOPUBLICOOperationCompleted(object arg) {
+            if ((this.TAREAENPROCESOPUBLICOCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TAREAENPROCESOPUBLICOCompleted(this, new TAREAENPROCESOPUBLICOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string TAREAFINALIZADOPUBLICO([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int creador) {
+            object[] results = this.Invoke("TAREAFINALIZADOPUBLICO", new object[] {
+                        creador});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TAREAFINALIZADOPUBLICOAsync(int creador) {
+            this.TAREAFINALIZADOPUBLICOAsync(creador, null);
+        }
+        
+        /// <remarks/>
+        public void TAREAFINALIZADOPUBLICOAsync(int creador, object userState) {
+            if ((this.TAREAFINALIZADOPUBLICOOperationCompleted == null)) {
+                this.TAREAFINALIZADOPUBLICOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTAREAFINALIZADOPUBLICOOperationCompleted);
+            }
+            this.InvokeAsync("TAREAFINALIZADOPUBLICO", new object[] {
+                        creador}, this.TAREAFINALIZADOPUBLICOOperationCompleted, userState);
+        }
+        
+        private void OnTAREAFINALIZADOPUBLICOOperationCompleted(object arg) {
+            if ((this.TAREAFINALIZADOPUBLICOCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TAREAFINALIZADOPUBLICOCompleted(this, new TAREAFINALIZADOPUBLICOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string TUSCOMPAÑEROSTAREA() {
             object[] results = this.Invoke("TUSCOMPAÑEROSTAREA", new object[0]);
             return ((string)(results[0]));
@@ -1300,6 +1471,58 @@ namespace Proyecto_APSNET.otrowebservice {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void CREARBACKUPPCompletedEventHandler(object sender, CREARBACKUPPCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CREARBACKUPPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CREARBACKUPPCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void CREARBACKUPTICompletedEventHandler(object sender, CREARBACKUPTICompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CREARBACKUPTICompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CREARBACKUPTICompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
         }
     }
     
@@ -1845,6 +2068,84 @@ namespace Proyecto_APSNET.otrowebservice {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void TAREAINACTIVOPUBLICOCompletedEventHandler(object sender, TAREAINACTIVOPUBLICOCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TAREAINACTIVOPUBLICOCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TAREAINACTIVOPUBLICOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void TAREAENPROCESOPUBLICOCompletedEventHandler(object sender, TAREAENPROCESOPUBLICOCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TAREAENPROCESOPUBLICOCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TAREAENPROCESOPUBLICOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void TAREAFINALIZADOPUBLICOCompletedEventHandler(object sender, TAREAFINALIZADOPUBLICOCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TAREAFINALIZADOPUBLICOCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TAREAFINALIZADOPUBLICOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

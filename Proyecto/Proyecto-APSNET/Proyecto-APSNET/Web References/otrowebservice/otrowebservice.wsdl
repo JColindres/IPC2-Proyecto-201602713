@@ -5,6 +5,18 @@
       <xsd:import schemaLocation="http://localhost:8080/Proyecto-Java/otrowebservice?xsd=1" namespace="http://webservice/" />
     </xsd:schema>
   </types>
+  <message name="CREARBACKUPP">
+    <part name="parameters" element="tns:CREARBACKUPP" />
+  </message>
+  <message name="CREARBACKUPPResponse">
+    <part name="parameters" element="tns:CREARBACKUPPResponse" />
+  </message>
+  <message name="CREARBACKUPTI">
+    <part name="parameters" element="tns:CREARBACKUPTI" />
+  </message>
+  <message name="CREARBACKUPTIResponse">
+    <part name="parameters" element="tns:CREARBACKUPTIResponse" />
+  </message>
   <message name="CREARBACKUPEYC">
     <part name="parameters" element="tns:CREARBACKUPEYC" />
   </message>
@@ -131,6 +143,24 @@
   <message name="TERMINARTAREAResponse">
     <part name="parameters" element="tns:TERMINARTAREAResponse" />
   </message>
+  <message name="TAREAINACTIVOPUBLICO">
+    <part name="parameters" element="tns:TAREAINACTIVOPUBLICO" />
+  </message>
+  <message name="TAREAINACTIVOPUBLICOResponse">
+    <part name="parameters" element="tns:TAREAINACTIVOPUBLICOResponse" />
+  </message>
+  <message name="TAREAENPROCESOPUBLICO">
+    <part name="parameters" element="tns:TAREAENPROCESOPUBLICO" />
+  </message>
+  <message name="TAREAENPROCESOPUBLICOResponse">
+    <part name="parameters" element="tns:TAREAENPROCESOPUBLICOResponse" />
+  </message>
+  <message name="TAREAFINALIZADOPUBLICO">
+    <part name="parameters" element="tns:TAREAFINALIZADOPUBLICO" />
+  </message>
+  <message name="TAREAFINALIZADOPUBLICOResponse">
+    <part name="parameters" element="tns:TAREAFINALIZADOPUBLICOResponse" />
+  </message>
   <message name="TUSCOMPAÑEROSTAREA">
     <part name="parameters" element="tns:TUSCOMPAÑEROSTAREA" />
   </message>
@@ -216,6 +246,14 @@
     <part name="parameters" element="tns:TUSCOMPAÑEROSSONResponse" />
   </message>
   <portType name="otrowebservice">
+    <operation name="CREARBACKUPP">
+      <input wsam:Action="http://webservice/otrowebservice/CREARBACKUPPRequest" message="tns:CREARBACKUPP" />
+      <output wsam:Action="http://webservice/otrowebservice/CREARBACKUPPResponse" message="tns:CREARBACKUPPResponse" />
+    </operation>
+    <operation name="CREARBACKUPTI">
+      <input wsam:Action="http://webservice/otrowebservice/CREARBACKUPTIRequest" message="tns:CREARBACKUPTI" />
+      <output wsam:Action="http://webservice/otrowebservice/CREARBACKUPTIResponse" message="tns:CREARBACKUPTIResponse" />
+    </operation>
     <operation name="CREARBACKUPEYC">
       <input wsam:Action="http://webservice/otrowebservice/CREARBACKUPEYCRequest" message="tns:CREARBACKUPEYC" />
       <output wsam:Action="http://webservice/otrowebservice/CREARBACKUPEYCResponse" message="tns:CREARBACKUPEYCResponse" />
@@ -300,6 +338,18 @@
       <input wsam:Action="http://webservice/otrowebservice/TERMINARTAREARequest" message="tns:TERMINARTAREA" />
       <output wsam:Action="http://webservice/otrowebservice/TERMINARTAREAResponse" message="tns:TERMINARTAREAResponse" />
     </operation>
+    <operation name="TAREAINACTIVOPUBLICO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAINACTIVOPUBLICORequest" message="tns:TAREAINACTIVOPUBLICO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAINACTIVOPUBLICOResponse" message="tns:TAREAINACTIVOPUBLICOResponse" />
+    </operation>
+    <operation name="TAREAENPROCESOPUBLICO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAENPROCESOPUBLICORequest" message="tns:TAREAENPROCESOPUBLICO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAENPROCESOPUBLICOResponse" message="tns:TAREAENPROCESOPUBLICOResponse" />
+    </operation>
+    <operation name="TAREAFINALIZADOPUBLICO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADOPUBLICORequest" message="tns:TAREAFINALIZADOPUBLICO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADOPUBLICOResponse" message="tns:TAREAFINALIZADOPUBLICOResponse" />
+    </operation>
     <operation name="TUSCOMPAÑEROSTAREA">
       <input wsam:Action="http://webservice/otrowebservice/TUSCOMPAÑEROSTAREARequest" message="tns:TUSCOMPAÑEROSTAREA" />
       <output wsam:Action="http://webservice/otrowebservice/TUSCOMPAÑEROSTAREAResponse" message="tns:TUSCOMPAÑEROSTAREAResponse" />
@@ -359,6 +409,24 @@
   </portType>
   <binding name="otrowebservicePortBinding" type="tns:otrowebservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CREARBACKUPP">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CREARBACKUPTI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="CREARBACKUPEYC">
       <soap:operation soapAction="" />
       <input>
@@ -540,6 +608,33 @@
       </output>
     </operation>
     <operation name="TERMINARTAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAINACTIVOPUBLICO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAENPROCESOPUBLICO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAFINALIZADOPUBLICO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

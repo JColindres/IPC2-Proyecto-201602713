@@ -481,6 +481,235 @@ public class MasConsultas extends Conexion{
         return false;
     }
     
+    public boolean crearBackupTareasIndependientes() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        int id = 0;
+        String creador = "";
+        String nombre = "";
+        String descripcion = "";
+        String fechaI = "";
+        String fechaC = "";
+        String estado = "";
+        String asignados = "";
+
+        try {
+
+            String consulta = "select t.ID_TAR, t.CREADOR, t.NOMBRE, t.DESCRIPCION, t.FECHA_I, t.FECHA_C, t.ESTADO, u.USERNAME \n" +
+"from lista_tarea lt, tarea t, us_tar ut, usuario u \n" +
+"where t.NOMBRE not in (select t.NOMBRE \n" +
+"from lista_tarea lt, tarea t, proyecto p \n" +
+"where lt.ID_PROY = p.ID_PROY \n" +
+"and lt.ID_TAR = t.ID_TAR) \n" +
+"and ut.ID_US = u.ID_US \n" +
+"group by u.USERNAME";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+
+            JSONObject root = new JSONObject();
+            JSONArray Tareas = new JSONArray();
+            JSONArray Asignados = new JSONArray();
+            while (rs.next()) {
+                                
+                id = rs.getInt("t.ID_TAR");
+                creador = rs.getString("t.CREADOR");
+                nombre = rs.getString("t.NOMBRE");
+                descripcion = rs.getString("t.DESCRIPCION");
+                fechaI = rs.getString("t.FECHA_I");
+                fechaC = rs.getString("t.FECHA_C");
+                estado = rs.getString("t.ESTADO");
+                asignados = rs.getString("u.USERNAME");
+
+                JSONObject tareas = new JSONObject();
+
+                tareas.put("id", id);
+                tareas.put("creador", creador);
+                tareas.put("nombre", nombre);
+                tareas.put("descripcion", descripcion);
+                tareas.put("fechainicio", fechaI);
+                tareas.put("fechacierre", fechaC);
+                tareas.put("estado", estado);
+                tareas.put("Asignados", Asignados);
+
+                ItemList miembros = new ItemList();
+
+                miembros.add(asignados);
+                Asignados.add(String.valueOf(miembros));
+
+                Tareas.add(tareas);
+
+            }
+            root.put("Tareas Independientes", Tareas);
+            System.out.println(root.toJSONString());
+
+            File file = new File("C:/Users/pablo/Desktop/tareasIndependientes.json");
+
+            try (PrintWriter writer = new PrintWriter(file)) {
+                writer.print(root.toJSONString());
+            } catch (FileNotFoundException ex) {
+                System.out.println(ex.toString());
+            }
+            return true;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return false;
+    }
+    
+    public boolean crearBackupProyectos() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        int idp = 0;
+        String creadorp = "";
+        String nombrep = "";
+        String fechaIp = "";
+        String fechaCp = "";
+        int sueldo = 0;
+        String estadop = "";
+        int id = 0;
+        String creador = "";
+        String nombre = "";
+        String descripcion = "";
+        String fechaI = "";
+        String fechaC = "";
+        String estado = "";
+        String asignados = "";
+
+        try {
+
+            String consulta = "select p.ID_PROY, p.CREADOR, p.NOMBRE, p.FECHA_I, p.FECHA_C, p.SUELDO, p.ESTADO, t.ID_TAR, t.CREADOR, t.NOMBRE, t.DESCRIPCION, t.FECHA_I, t.FECHA_C, t.ESTADO, u.USERNAME \n" +
+"from lista_tarea lt, tarea t, us_tar ut, usuario u, proyecto p \n" +
+"where t.NOMBRE in (select t.NOMBRE \n" +
+"from lista_tarea lt, tarea t, proyecto p \n" +
+"where lt.ID_PROY = p.ID_PROY \n" +
+"and lt.ID_TAR = t.ID_TAR) \n" +
+"and ut.ID_US = u.ID_US \n" +
+"group by u.USERNAME ";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+
+            JSONObject root = new JSONObject();
+            JSONArray Proyectos = new JSONArray();
+            JSONArray Tareas = new JSONArray();
+            JSONArray Asignados = new JSONArray();
+            while (rs.next()) {
+                
+                idp = rs.getInt("p.ID_PROY");
+                creadorp = rs.getString("p.CREADOR");
+                nombrep = rs.getString("p.NOMBRE");
+                fechaIp = rs.getString("p.FECHA_I");
+                fechaCp = rs.getString("p.FECHA_C");
+                sueldo = rs.getInt("p.SUELDO");
+                estadop = rs.getString("P.ESTADO");
+                
+                id = rs.getInt("t.ID_TAR");
+                creador = rs.getString("t.CREADOR");
+                nombre = rs.getString("t.NOMBRE");
+                descripcion = rs.getString("t.DESCRIPCION");
+                fechaI = rs.getString("t.FECHA_I");
+                fechaC = rs.getString("t.FECHA_C");
+                estado = rs.getString("t.ESTADO");
+                asignados = rs.getString("u.USERNAME");
+                                
+                JSONObject proyectos = new JSONObject();
+                
+                proyectos.put("id", idp);
+                proyectos.put("creador", creadorp);
+                proyectos.put("nombre", nombrep);
+                proyectos.put("fechainicio", fechaIp);
+                proyectos.put("fechacierre", fechaCp);
+                proyectos.put("sueldo", sueldo);
+                proyectos.put("estado", estadop);
+                proyectos.put("Tareas", Tareas);
+                
+                Proyectos.add(proyectos);
+                
+                JSONObject tareas = new JSONObject();
+
+                tareas.put("id", id);
+                tareas.put("creador", creador);
+                tareas.put("nombre", nombre);
+                tareas.put("descripcion", descripcion);
+                tareas.put("fechainicio", fechaI);
+                tareas.put("fechacierre", fechaC);
+                tareas.put("estado", estado);
+                tareas.put("Asignados", Asignados);
+
+                ItemList miembros = new ItemList();
+
+                miembros.add(asignados);
+                Asignados.add(String.valueOf(miembros));
+
+                Tareas.add(tareas);
+
+            }
+            root.put("Proyectos", Proyectos);
+            System.out.println(root.toJSONString());
+
+            File file = new File("C:/Users/pablo/Desktop/proyectos.json");
+
+            try (PrintWriter writer = new PrintWriter(file)) {
+                writer.print(root.toJSONString());
+            } catch (FileNotFoundException ex) {
+                System.out.println(ex.toString());
+            }
+            return true;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return false;
+    }
+    
     public boolean agregarConocimiento(String conocimiento) {
 
         PreparedStatement pst = null;
@@ -1594,6 +1823,150 @@ public class MasConsultas extends Conexion{
             while (rs.next()) {
 
                 resultado = resultado + " " + rs.getString("u.USERNAME") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String TareaInactivoPublico(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE from tarea t, proyecto p, usuario u, lista_tarea lt, us_tar ut where lt.ID_TAR = t.ID_TAR and lt.ID_PROY = p.ID_PROY and ut.ID_US = u.ID_US and t.ESTADO = 'inactivo' and u.ID_US = ? group by t.NOMBRE";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String TareaEnProcesoPublico(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE from tarea t, proyecto p, usuario u, lista_tarea lt, us_tar ut where lt.ID_TAR = t.ID_TAR and lt.ID_PROY = p.ID_PROY and ut.ID_US = u.ID_US and t.ESTADO = 'en proceso' and u.ID_US = ? group by t.NOMBRE";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String TareaFinalizadoPublico(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE from tarea t, proyecto p, usuario u, lista_tarea lt, us_tar ut where lt.ID_TAR = t.ID_TAR and lt.ID_PROY = p.ID_PROY and ut.ID_US = u.ID_US and t.ESTADO = 'finalizado' and u.ID_US = ? group by t.NOMBRE";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + ",";
                 System.out.println(resultado);
             }
 

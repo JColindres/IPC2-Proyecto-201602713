@@ -24,6 +24,7 @@ namespace Proyecto_APSNET.Account
             proxy = new webservice.webservice();
             proxy2 = new otrowebservice.otrowebservice();
 
+            Label1.Text = "No hay Comentarios";
             int idU = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
             Label1.Text = proxy2.TRABAJASPARA(idU);
 
@@ -56,7 +57,64 @@ namespace Proyecto_APSNET.Account
                     catch (Exception exxx) { }
                 }
             }
+
+            String lista3 = Convert.ToString(proxy2.TAREAINACTIVOPUBLICO(idU));
+            Array listus3 = lista3.Split(',');
+
+            foreach (string item in listus3)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox3.Items.Add(listus3.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista4 = Convert.ToString(proxy2.TAREAENPROCESOPUBLICO(idU));
+            Array listus4 = lista4.Split(',');
+
+            foreach (string item in listus4)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox4.Items.Add(listus4.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista5 = Convert.ToString(proxy2.TAREAFINALIZADOPUBLICO(idU));
+            Array listus5 = lista5.Split(',');
+
+            foreach (string item in listus5)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox5.Items.Add(listus5.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
         }
-        
+
+        protected void publicar_Click(object sender, EventArgs e)
+        {
+            //Label2.Text = " ";
+            if (TextBox1.Text != null)
+            {
+                Label2.Text = Label2.Text + " " + Convert.ToString(Session["NombreUsuario"]) + " dice: " + TextBox1.Text + ",";
+            }
+            else
+            {
+
+            }
+        }
     }
 }
