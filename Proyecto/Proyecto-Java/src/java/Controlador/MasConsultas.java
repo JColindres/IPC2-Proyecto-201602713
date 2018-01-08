@@ -1278,4 +1278,352 @@ public class MasConsultas extends Conexion{
         }
         return "No se encontraron resultados";
     }
+    
+    public boolean IniciarProyecto(String proyecto) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update PROYECTO set ESTADO = 'EN PROCESO' where NOMBRE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, proyecto);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean IniciarTarea(String tarea) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update TAREA set ESTADO = 'EN PROCESO' where NOMBRE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, tarea);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean TerminarProyecto(String proyecto) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update PROYECTO set ESTADO = 'FINALIZADO' where NOMBRE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, proyecto);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean TerminarTarea(String tarea) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "update TAREA set ESTADO = 'FINALIZADO' where NOMBRE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, tarea);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public boolean EsTrabajador(int usuario) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "select u.ID_US, u.USERNAME, p.NOMBRE from usuario u, proyecto p, us_proy up where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and u.ID_US = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String Trabajaspara(int usuario) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, p.NOMBRE from usuario u, proyecto p, us_proy up where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and u.ID_US = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, usuario);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = rs.getString("p.NOMBRE");
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String tusCompañerosSon(String proyecto) {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.USERNAME, p.NOMBRE from usuario u, proyecto p, us_proy up where up.ID_US = u.ID_US and up.ID_PROY = p.ID_PROY and p.NOMBRE = ?";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setString(1, proyecto);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String tusCompañerosTarea() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select u.ID_US, u.USERNAME from usuario u, tarea p, us_tar ut where ut.ID_US = u.ID_US and ut.ID_TAR = p.ID_TAR GROUP BY u.USERNAME";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("u.USERNAME") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
 }

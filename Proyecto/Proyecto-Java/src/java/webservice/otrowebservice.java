@@ -340,4 +340,100 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "INICIARPROYECTO")
+    public boolean INICIARPROYECTO(@WebParam(name = "proyecto") String proyecto) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.IniciarProyecto(proyecto);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "INICIARTAREA")
+    public boolean INICIARTAREA(@WebParam(name = "tarea") String tarea) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.IniciarTarea(tarea);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TERMINARPROYECTO")
+    public boolean TERMINARPROYECTO(@WebParam(name = "proyecto") String proyecto) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.TerminarProyecto(proyecto);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TERMINARTAREA")
+    public boolean TERMINARTAREA(@WebParam(name = "tarea") String tarea) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.IniciarTarea(tarea);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "ESTRABAJADOR")
+    public boolean ESTRABAJADOR(@WebParam(name = "usuario") int usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.EsTrabajador(usuario);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TRABAJASPARA")
+    public String TRABAJASPARA(@WebParam(name = "usuario") int usuario) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.Trabajaspara(usuario);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TUSCOMPAÑEROSSON")
+    public String TUSCOMPAÑEROSSON(@WebParam(name = "proyecto") String proyecto) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.tusCompañerosSon(proyecto);
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TUSCOMPAÑEROSTAREA")
+    public String TUSCOMPAÑEROSTAREA() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.tusCompañerosTarea();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

@@ -5,41 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/Proyecto-Java/otrowebservice?xsd=1" namespace="http://webservice/" />
     </xsd:schema>
   </types>
-  <message name="OBTENERCON">
-    <part name="parameters" element="tns:OBTENERCON" />
+  <message name="CREARBACKUPEYC">
+    <part name="parameters" element="tns:CREARBACKUPEYC" />
   </message>
-  <message name="OBTENERCONResponse">
-    <part name="parameters" element="tns:OBTENERCONResponse" />
-  </message>
-  <message name="PROYECTOINACTIVO">
-    <part name="parameters" element="tns:PROYECTOINACTIVO" />
-  </message>
-  <message name="PROYECTOINACTIVOResponse">
-    <part name="parameters" element="tns:PROYECTOINACTIVOResponse" />
-  </message>
-  <message name="TAREAINACTIVO">
-    <part name="parameters" element="tns:TAREAINACTIVO" />
-  </message>
-  <message name="TAREAINACTIVOResponse">
-    <part name="parameters" element="tns:TAREAINACTIVOResponse" />
-  </message>
-  <message name="TAREAENPROCESO">
-    <part name="parameters" element="tns:TAREAENPROCESO" />
-  </message>
-  <message name="TAREAENPROCESOResponse">
-    <part name="parameters" element="tns:TAREAENPROCESOResponse" />
-  </message>
-  <message name="TAREAFINALIZADO">
-    <part name="parameters" element="tns:TAREAFINALIZADO" />
-  </message>
-  <message name="TAREAFINALIZADOResponse">
-    <part name="parameters" element="tns:TAREAFINALIZADOResponse" />
-  </message>
-  <message name="HASTRABAJADOEP">
-    <part name="parameters" element="tns:HASTRABAJADOEP" />
-  </message>
-  <message name="HASTRABAJADOEPResponse">
-    <part name="parameters" element="tns:HASTRABAJADOEPResponse" />
+  <message name="CREARBACKUPEYCResponse">
+    <part name="parameters" element="tns:CREARBACKUPEYCResponse" />
   </message>
   <message name="HASTRABAJADOF">
     <part name="parameters" element="tns:HASTRABAJADOF" />
@@ -53,17 +23,11 @@
   <message name="HASTRABAJADOIResponse">
     <part name="parameters" element="tns:HASTRABAJADOIResponse" />
   </message>
-  <message name="LISTAPROYNF">
-    <part name="parameters" element="tns:LISTAPROYNF" />
+  <message name="TAREAENPROCESO">
+    <part name="parameters" element="tns:TAREAENPROCESO" />
   </message>
-  <message name="LISTAPROYNFResponse">
-    <part name="parameters" element="tns:LISTAPROYNFResponse" />
-  </message>
-  <message name="LISTATAREASNF">
-    <part name="parameters" element="tns:LISTATAREASNF" />
-  </message>
-  <message name="LISTATAREASNFResponse">
-    <part name="parameters" element="tns:LISTATAREASNFResponse" />
+  <message name="TAREAENPROCESOResponse">
+    <part name="parameters" element="tns:TAREAENPROCESOResponse" />
   </message>
   <message name="ELIMINARUSPROY">
     <part name="parameters" element="tns:ELIMINARUSPROY" />
@@ -71,17 +35,11 @@
   <message name="ELIMINARUSPROYResponse">
     <part name="parameters" element="tns:ELIMINARUSPROYResponse" />
   </message>
-  <message name="LISTACON">
-    <part name="parameters" element="tns:LISTACON" />
+  <message name="INICIARPROYECTO">
+    <part name="parameters" element="tns:INICIARPROYECTO" />
   </message>
-  <message name="LISTACONResponse">
-    <part name="parameters" element="tns:LISTACONResponse" />
-  </message>
-  <message name="ELIMINARPROYECTO">
-    <part name="parameters" element="tns:ELIMINARPROYECTO" />
-  </message>
-  <message name="ELIMINARPROYECTOResponse">
-    <part name="parameters" element="tns:ELIMINARPROYECTOResponse" />
+  <message name="INICIARPROYECTOResponse">
+    <part name="parameters" element="tns:INICIARPROYECTOResponse" />
   </message>
   <message name="ELIMINARUSTAR">
     <part name="parameters" element="tns:ELIMINARUSTAR" />
@@ -89,23 +47,95 @@
   <message name="ELIMINARUSTARResponse">
     <part name="parameters" element="tns:ELIMINARUSTARResponse" />
   </message>
+  <message name="LISTAPROYNF">
+    <part name="parameters" element="tns:LISTAPROYNF" />
+  </message>
+  <message name="LISTAPROYNFResponse">
+    <part name="parameters" element="tns:LISTAPROYNFResponse" />
+  </message>
+  <message name="HASTRABAJADOEP">
+    <part name="parameters" element="tns:HASTRABAJADOEP" />
+  </message>
+  <message name="HASTRABAJADOEPResponse">
+    <part name="parameters" element="tns:HASTRABAJADOEPResponse" />
+  </message>
+  <message name="TAREAFINALIZADO">
+    <part name="parameters" element="tns:TAREAFINALIZADO" />
+  </message>
+  <message name="TAREAFINALIZADOResponse">
+    <part name="parameters" element="tns:TAREAFINALIZADOResponse" />
+  </message>
+  <message name="INICIARTAREA">
+    <part name="parameters" element="tns:INICIARTAREA" />
+  </message>
+  <message name="INICIARTAREAResponse">
+    <part name="parameters" element="tns:INICIARTAREAResponse" />
+  </message>
+  <message name="TERMINARPROYECTO">
+    <part name="parameters" element="tns:TERMINARPROYECTO" />
+  </message>
+  <message name="TERMINARPROYECTOResponse">
+    <part name="parameters" element="tns:TERMINARPROYECTOResponse" />
+  </message>
+  <message name="OBTENERCON">
+    <part name="parameters" element="tns:OBTENERCON" />
+  </message>
+  <message name="OBTENERCONResponse">
+    <part name="parameters" element="tns:OBTENERCONResponse" />
+  </message>
+  <message name="LISTATAREASNF">
+    <part name="parameters" element="tns:LISTATAREASNF" />
+  </message>
+  <message name="LISTATAREASNFResponse">
+    <part name="parameters" element="tns:LISTATAREASNFResponse" />
+  </message>
   <message name="ELIMINARTAREA">
     <part name="parameters" element="tns:ELIMINARTAREA" />
   </message>
   <message name="ELIMINARTAREAResponse">
     <part name="parameters" element="tns:ELIMINARTAREAResponse" />
   </message>
-  <message name="CREARBACKUPEYC">
-    <part name="parameters" element="tns:CREARBACKUPEYC" />
+  <message name="ELIMINARPROYECTO">
+    <part name="parameters" element="tns:ELIMINARPROYECTO" />
   </message>
-  <message name="CREARBACKUPEYCResponse">
-    <part name="parameters" element="tns:CREARBACKUPEYCResponse" />
+  <message name="ELIMINARPROYECTOResponse">
+    <part name="parameters" element="tns:ELIMINARPROYECTOResponse" />
   </message>
-  <message name="ELIMINARPROYLISTATAREA">
-    <part name="parameters" element="tns:ELIMINARPROYLISTATAREA" />
+  <message name="TAREAINACTIVO">
+    <part name="parameters" element="tns:TAREAINACTIVO" />
   </message>
-  <message name="ELIMINARPROYLISTATAREAResponse">
-    <part name="parameters" element="tns:ELIMINARPROYLISTATAREAResponse" />
+  <message name="TAREAINACTIVOResponse">
+    <part name="parameters" element="tns:TAREAINACTIVOResponse" />
+  </message>
+  <message name="PROYECTOINACTIVO">
+    <part name="parameters" element="tns:PROYECTOINACTIVO" />
+  </message>
+  <message name="PROYECTOINACTIVOResponse">
+    <part name="parameters" element="tns:PROYECTOINACTIVOResponse" />
+  </message>
+  <message name="AGREGARHABILIDAD">
+    <part name="parameters" element="tns:AGREGARHABILIDAD" />
+  </message>
+  <message name="AGREGARHABILIDADResponse">
+    <part name="parameters" element="tns:AGREGARHABILIDADResponse" />
+  </message>
+  <message name="LISTACON">
+    <part name="parameters" element="tns:LISTACON" />
+  </message>
+  <message name="LISTACONResponse">
+    <part name="parameters" element="tns:LISTACONResponse" />
+  </message>
+  <message name="TERMINARTAREA">
+    <part name="parameters" element="tns:TERMINARTAREA" />
+  </message>
+  <message name="TERMINARTAREAResponse">
+    <part name="parameters" element="tns:TERMINARTAREAResponse" />
+  </message>
+  <message name="TUSCOMPAÑEROSTAREA">
+    <part name="parameters" element="tns:TUSCOMPAÑEROSTAREA" />
+  </message>
+  <message name="TUSCOMPAÑEROSTAREAResponse">
+    <part name="parameters" element="tns:TUSCOMPAÑEROSTAREAResponse" />
   </message>
   <message name="ELIMINARESTADODELCOMENTARIO">
     <part name="parameters" element="tns:ELIMINARESTADODELCOMENTARIO" />
@@ -119,11 +149,11 @@
   <message name="ELIMINARESTADODEFINITIVOResponse">
     <part name="parameters" element="tns:ELIMINARESTADODEFINITIVOResponse" />
   </message>
-  <message name="ELIMINARCOMENTARIO">
-    <part name="parameters" element="tns:ELIMINARCOMENTARIO" />
+  <message name="ELIMINARPROYLISTATAREA">
+    <part name="parameters" element="tns:ELIMINARPROYLISTATAREA" />
   </message>
-  <message name="ELIMINARCOMENTARIOResponse">
-    <part name="parameters" element="tns:ELIMINARCOMENTARIOResponse" />
+  <message name="ELIMINARPROYLISTATAREAResponse">
+    <part name="parameters" element="tns:ELIMINARPROYLISTATAREAResponse" />
   </message>
   <message name="ELIMINARTARLISTATAREA">
     <part name="parameters" element="tns:ELIMINARTARLISTATAREA" />
@@ -149,48 +179,46 @@
   <message name="PROYECTOFINALIZADOResponse">
     <part name="parameters" element="tns:PROYECTOFINALIZADOResponse" />
   </message>
-  <message name="COMPARACIONCONOCIMIENTO">
-    <part name="parameters" element="tns:COMPARACIONCONOCIMIENTO" />
-  </message>
-  <message name="COMPARACIONCONOCIMIENTOResponse">
-    <part name="parameters" element="tns:COMPARACIONCONOCIMIENTOResponse" />
-  </message>
   <message name="ESPROYECTOMANAGER">
     <part name="parameters" element="tns:ESPROYECTOMANAGER" />
   </message>
   <message name="ESPROYECTOMANAGERResponse">
     <part name="parameters" element="tns:ESPROYECTOMANAGERResponse" />
   </message>
-  <message name="AGREGARHABILIDAD">
-    <part name="parameters" element="tns:AGREGARHABILIDAD" />
+  <message name="ELIMINARCOMENTARIO">
+    <part name="parameters" element="tns:ELIMINARCOMENTARIO" />
   </message>
-  <message name="AGREGARHABILIDADResponse">
-    <part name="parameters" element="tns:AGREGARHABILIDADResponse" />
+  <message name="ELIMINARCOMENTARIOResponse">
+    <part name="parameters" element="tns:ELIMINARCOMENTARIOResponse" />
+  </message>
+  <message name="COMPARACIONCONOCIMIENTO">
+    <part name="parameters" element="tns:COMPARACIONCONOCIMIENTO" />
+  </message>
+  <message name="COMPARACIONCONOCIMIENTOResponse">
+    <part name="parameters" element="tns:COMPARACIONCONOCIMIENTOResponse" />
+  </message>
+  <message name="TRABAJASPARA">
+    <part name="parameters" element="tns:TRABAJASPARA" />
+  </message>
+  <message name="TRABAJASPARAResponse">
+    <part name="parameters" element="tns:TRABAJASPARAResponse" />
+  </message>
+  <message name="ESTRABAJADOR">
+    <part name="parameters" element="tns:ESTRABAJADOR" />
+  </message>
+  <message name="ESTRABAJADORResponse">
+    <part name="parameters" element="tns:ESTRABAJADORResponse" />
+  </message>
+  <message name="TUSCOMPAÑEROSSON">
+    <part name="parameters" element="tns:TUSCOMPAÑEROSSON" />
+  </message>
+  <message name="TUSCOMPAÑEROSSONResponse">
+    <part name="parameters" element="tns:TUSCOMPAÑEROSSONResponse" />
   </message>
   <portType name="otrowebservice">
-    <operation name="OBTENERCON">
-      <input wsam:Action="http://webservice/otrowebservice/OBTENERCONRequest" message="tns:OBTENERCON" />
-      <output wsam:Action="http://webservice/otrowebservice/OBTENERCONResponse" message="tns:OBTENERCONResponse" />
-    </operation>
-    <operation name="PROYECTOINACTIVO">
-      <input wsam:Action="http://webservice/otrowebservice/PROYECTOINACTIVORequest" message="tns:PROYECTOINACTIVO" />
-      <output wsam:Action="http://webservice/otrowebservice/PROYECTOINACTIVOResponse" message="tns:PROYECTOINACTIVOResponse" />
-    </operation>
-    <operation name="TAREAINACTIVO">
-      <input wsam:Action="http://webservice/otrowebservice/TAREAINACTIVORequest" message="tns:TAREAINACTIVO" />
-      <output wsam:Action="http://webservice/otrowebservice/TAREAINACTIVOResponse" message="tns:TAREAINACTIVOResponse" />
-    </operation>
-    <operation name="TAREAENPROCESO">
-      <input wsam:Action="http://webservice/otrowebservice/TAREAENPROCESORequest" message="tns:TAREAENPROCESO" />
-      <output wsam:Action="http://webservice/otrowebservice/TAREAENPROCESOResponse" message="tns:TAREAENPROCESOResponse" />
-    </operation>
-    <operation name="TAREAFINALIZADO">
-      <input wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADORequest" message="tns:TAREAFINALIZADO" />
-      <output wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADOResponse" message="tns:TAREAFINALIZADOResponse" />
-    </operation>
-    <operation name="HASTRABAJADOEP">
-      <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPRequest" message="tns:HASTRABAJADOEP" />
-      <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPResponse" message="tns:HASTRABAJADOEPResponse" />
+    <operation name="CREARBACKUPEYC">
+      <input wsam:Action="http://webservice/otrowebservice/CREARBACKUPEYCRequest" message="tns:CREARBACKUPEYC" />
+      <output wsam:Action="http://webservice/otrowebservice/CREARBACKUPEYCResponse" message="tns:CREARBACKUPEYCResponse" />
     </operation>
     <operation name="HASTRABAJADOF">
       <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOFRequest" message="tns:HASTRABAJADOF" />
@@ -200,41 +228,81 @@
       <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOIRequest" message="tns:HASTRABAJADOI" />
       <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOIResponse" message="tns:HASTRABAJADOIResponse" />
     </operation>
-    <operation name="LISTAPROYNF">
-      <input wsam:Action="http://webservice/otrowebservice/LISTAPROYNFRequest" message="tns:LISTAPROYNF" />
-      <output wsam:Action="http://webservice/otrowebservice/LISTAPROYNFResponse" message="tns:LISTAPROYNFResponse" />
-    </operation>
-    <operation name="LISTATAREASNF">
-      <input wsam:Action="http://webservice/otrowebservice/LISTATAREASNFRequest" message="tns:LISTATAREASNF" />
-      <output wsam:Action="http://webservice/otrowebservice/LISTATAREASNFResponse" message="tns:LISTATAREASNFResponse" />
+    <operation name="TAREAENPROCESO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAENPROCESORequest" message="tns:TAREAENPROCESO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAENPROCESOResponse" message="tns:TAREAENPROCESOResponse" />
     </operation>
     <operation name="ELIMINARUSPROY">
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARUSPROYRequest" message="tns:ELIMINARUSPROY" />
       <output wsam:Action="http://webservice/otrowebservice/ELIMINARUSPROYResponse" message="tns:ELIMINARUSPROYResponse" />
     </operation>
-    <operation name="LISTACON">
-      <input wsam:Action="http://webservice/otrowebservice/LISTACONRequest" message="tns:LISTACON" />
-      <output wsam:Action="http://webservice/otrowebservice/LISTACONResponse" message="tns:LISTACONResponse" />
-    </operation>
-    <operation name="ELIMINARPROYECTO">
-      <input wsam:Action="http://webservice/otrowebservice/ELIMINARPROYECTORequest" message="tns:ELIMINARPROYECTO" />
-      <output wsam:Action="http://webservice/otrowebservice/ELIMINARPROYECTOResponse" message="tns:ELIMINARPROYECTOResponse" />
+    <operation name="INICIARPROYECTO">
+      <input wsam:Action="http://webservice/otrowebservice/INICIARPROYECTORequest" message="tns:INICIARPROYECTO" />
+      <output wsam:Action="http://webservice/otrowebservice/INICIARPROYECTOResponse" message="tns:INICIARPROYECTOResponse" />
     </operation>
     <operation name="ELIMINARUSTAR">
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARUSTARRequest" message="tns:ELIMINARUSTAR" />
       <output wsam:Action="http://webservice/otrowebservice/ELIMINARUSTARResponse" message="tns:ELIMINARUSTARResponse" />
     </operation>
+    <operation name="LISTAPROYNF">
+      <input wsam:Action="http://webservice/otrowebservice/LISTAPROYNFRequest" message="tns:LISTAPROYNF" />
+      <output wsam:Action="http://webservice/otrowebservice/LISTAPROYNFResponse" message="tns:LISTAPROYNFResponse" />
+    </operation>
+    <operation name="HASTRABAJADOEP">
+      <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPRequest" message="tns:HASTRABAJADOEP" />
+      <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPResponse" message="tns:HASTRABAJADOEPResponse" />
+    </operation>
+    <operation name="TAREAFINALIZADO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADORequest" message="tns:TAREAFINALIZADO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAFINALIZADOResponse" message="tns:TAREAFINALIZADOResponse" />
+    </operation>
+    <operation name="INICIARTAREA">
+      <input wsam:Action="http://webservice/otrowebservice/INICIARTAREARequest" message="tns:INICIARTAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/INICIARTAREAResponse" message="tns:INICIARTAREAResponse" />
+    </operation>
+    <operation name="TERMINARPROYECTO">
+      <input wsam:Action="http://webservice/otrowebservice/TERMINARPROYECTORequest" message="tns:TERMINARPROYECTO" />
+      <output wsam:Action="http://webservice/otrowebservice/TERMINARPROYECTOResponse" message="tns:TERMINARPROYECTOResponse" />
+    </operation>
+    <operation name="OBTENERCON">
+      <input wsam:Action="http://webservice/otrowebservice/OBTENERCONRequest" message="tns:OBTENERCON" />
+      <output wsam:Action="http://webservice/otrowebservice/OBTENERCONResponse" message="tns:OBTENERCONResponse" />
+    </operation>
+    <operation name="LISTATAREASNF">
+      <input wsam:Action="http://webservice/otrowebservice/LISTATAREASNFRequest" message="tns:LISTATAREASNF" />
+      <output wsam:Action="http://webservice/otrowebservice/LISTATAREASNFResponse" message="tns:LISTATAREASNFResponse" />
+    </operation>
     <operation name="ELIMINARTAREA">
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARTAREARequest" message="tns:ELIMINARTAREA" />
       <output wsam:Action="http://webservice/otrowebservice/ELIMINARTAREAResponse" message="tns:ELIMINARTAREAResponse" />
     </operation>
-    <operation name="CREARBACKUPEYC">
-      <input wsam:Action="http://webservice/otrowebservice/CREARBACKUPEYCRequest" message="tns:CREARBACKUPEYC" />
-      <output wsam:Action="http://webservice/otrowebservice/CREARBACKUPEYCResponse" message="tns:CREARBACKUPEYCResponse" />
+    <operation name="ELIMINARPROYECTO">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARPROYECTORequest" message="tns:ELIMINARPROYECTO" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARPROYECTOResponse" message="tns:ELIMINARPROYECTOResponse" />
     </operation>
-    <operation name="ELIMINARPROYLISTATAREA">
-      <input wsam:Action="http://webservice/otrowebservice/ELIMINARPROYLISTATAREARequest" message="tns:ELIMINARPROYLISTATAREA" />
-      <output wsam:Action="http://webservice/otrowebservice/ELIMINARPROYLISTATAREAResponse" message="tns:ELIMINARPROYLISTATAREAResponse" />
+    <operation name="TAREAINACTIVO">
+      <input wsam:Action="http://webservice/otrowebservice/TAREAINACTIVORequest" message="tns:TAREAINACTIVO" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREAINACTIVOResponse" message="tns:TAREAINACTIVOResponse" />
+    </operation>
+    <operation name="PROYECTOINACTIVO">
+      <input wsam:Action="http://webservice/otrowebservice/PROYECTOINACTIVORequest" message="tns:PROYECTOINACTIVO" />
+      <output wsam:Action="http://webservice/otrowebservice/PROYECTOINACTIVOResponse" message="tns:PROYECTOINACTIVOResponse" />
+    </operation>
+    <operation name="AGREGARHABILIDAD">
+      <input wsam:Action="http://webservice/otrowebservice/AGREGARHABILIDADRequest" message="tns:AGREGARHABILIDAD" />
+      <output wsam:Action="http://webservice/otrowebservice/AGREGARHABILIDADResponse" message="tns:AGREGARHABILIDADResponse" />
+    </operation>
+    <operation name="LISTACON">
+      <input wsam:Action="http://webservice/otrowebservice/LISTACONRequest" message="tns:LISTACON" />
+      <output wsam:Action="http://webservice/otrowebservice/LISTACONResponse" message="tns:LISTACONResponse" />
+    </operation>
+    <operation name="TERMINARTAREA">
+      <input wsam:Action="http://webservice/otrowebservice/TERMINARTAREARequest" message="tns:TERMINARTAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/TERMINARTAREAResponse" message="tns:TERMINARTAREAResponse" />
+    </operation>
+    <operation name="TUSCOMPAÑEROSTAREA">
+      <input wsam:Action="http://webservice/otrowebservice/TUSCOMPAÑEROSTAREARequest" message="tns:TUSCOMPAÑEROSTAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/TUSCOMPAÑEROSTAREAResponse" message="tns:TUSCOMPAÑEROSTAREAResponse" />
     </operation>
     <operation name="ELIMINARESTADODELCOMENTARIO">
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODELCOMENTARIORequest" message="tns:ELIMINARESTADODELCOMENTARIO" />
@@ -244,9 +312,9 @@
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODEFINITIVORequest" message="tns:ELIMINARESTADODEFINITIVO" />
       <output wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODEFINITIVOResponse" message="tns:ELIMINARESTADODEFINITIVOResponse" />
     </operation>
-    <operation name="ELIMINARCOMENTARIO">
-      <input wsam:Action="http://webservice/otrowebservice/ELIMINARCOMENTARIORequest" message="tns:ELIMINARCOMENTARIO" />
-      <output wsam:Action="http://webservice/otrowebservice/ELIMINARCOMENTARIOResponse" message="tns:ELIMINARCOMENTARIOResponse" />
+    <operation name="ELIMINARPROYLISTATAREA">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARPROYLISTATAREARequest" message="tns:ELIMINARPROYLISTATAREA" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARPROYLISTATAREAResponse" message="tns:ELIMINARPROYLISTATAREAResponse" />
     </operation>
     <operation name="ELIMINARTARLISTATAREA">
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARTARLISTATAREARequest" message="tns:ELIMINARTARLISTATAREA" />
@@ -264,67 +332,34 @@
       <input wsam:Action="http://webservice/otrowebservice/PROYECTOFINALIZADORequest" message="tns:PROYECTOFINALIZADO" />
       <output wsam:Action="http://webservice/otrowebservice/PROYECTOFINALIZADOResponse" message="tns:PROYECTOFINALIZADOResponse" />
     </operation>
-    <operation name="COMPARACIONCONOCIMIENTO">
-      <input wsam:Action="http://webservice/otrowebservice/COMPARACIONCONOCIMIENTORequest" message="tns:COMPARACIONCONOCIMIENTO" />
-      <output wsam:Action="http://webservice/otrowebservice/COMPARACIONCONOCIMIENTOResponse" message="tns:COMPARACIONCONOCIMIENTOResponse" />
-    </operation>
     <operation name="ESPROYECTOMANAGER">
       <input wsam:Action="http://webservice/otrowebservice/ESPROYECTOMANAGERRequest" message="tns:ESPROYECTOMANAGER" />
       <output wsam:Action="http://webservice/otrowebservice/ESPROYECTOMANAGERResponse" message="tns:ESPROYECTOMANAGERResponse" />
     </operation>
-    <operation name="AGREGARHABILIDAD">
-      <input wsam:Action="http://webservice/otrowebservice/AGREGARHABILIDADRequest" message="tns:AGREGARHABILIDAD" />
-      <output wsam:Action="http://webservice/otrowebservice/AGREGARHABILIDADResponse" message="tns:AGREGARHABILIDADResponse" />
+    <operation name="ELIMINARCOMENTARIO">
+      <input wsam:Action="http://webservice/otrowebservice/ELIMINARCOMENTARIORequest" message="tns:ELIMINARCOMENTARIO" />
+      <output wsam:Action="http://webservice/otrowebservice/ELIMINARCOMENTARIOResponse" message="tns:ELIMINARCOMENTARIOResponse" />
+    </operation>
+    <operation name="COMPARACIONCONOCIMIENTO">
+      <input wsam:Action="http://webservice/otrowebservice/COMPARACIONCONOCIMIENTORequest" message="tns:COMPARACIONCONOCIMIENTO" />
+      <output wsam:Action="http://webservice/otrowebservice/COMPARACIONCONOCIMIENTOResponse" message="tns:COMPARACIONCONOCIMIENTOResponse" />
+    </operation>
+    <operation name="TRABAJASPARA">
+      <input wsam:Action="http://webservice/otrowebservice/TRABAJASPARARequest" message="tns:TRABAJASPARA" />
+      <output wsam:Action="http://webservice/otrowebservice/TRABAJASPARAResponse" message="tns:TRABAJASPARAResponse" />
+    </operation>
+    <operation name="ESTRABAJADOR">
+      <input wsam:Action="http://webservice/otrowebservice/ESTRABAJADORRequest" message="tns:ESTRABAJADOR" />
+      <output wsam:Action="http://webservice/otrowebservice/ESTRABAJADORResponse" message="tns:ESTRABAJADORResponse" />
+    </operation>
+    <operation name="TUSCOMPAÑEROSSON">
+      <input wsam:Action="http://webservice/otrowebservice/TUSCOMPAÑEROSSONRequest" message="tns:TUSCOMPAÑEROSSON" />
+      <output wsam:Action="http://webservice/otrowebservice/TUSCOMPAÑEROSSONResponse" message="tns:TUSCOMPAÑEROSSONResponse" />
     </operation>
   </portType>
   <binding name="otrowebservicePortBinding" type="tns:otrowebservice">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="OBTENERCON">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="PROYECTOINACTIVO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="TAREAINACTIVO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="TAREAENPROCESO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="TAREAFINALIZADO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="HASTRABAJADOEP">
+    <operation name="CREARBACKUPEYC">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -351,16 +386,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="LISTAPROYNF">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="LISTATAREASNF">
+    <operation name="TAREAENPROCESO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -378,16 +404,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="LISTACON">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ELIMINARPROYECTO">
+    <operation name="INICIARPROYECTO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -405,6 +422,69 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="LISTAPROYNF">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HASTRABAJADOEP">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREAFINALIZADO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="INICIARTAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TERMINARPROYECTO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OBTENERCON">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LISTATAREASNF">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="ELIMINARTAREA">
       <soap:operation soapAction="" />
       <input>
@@ -414,7 +494,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="CREARBACKUPEYC">
+    <operation name="ELIMINARPROYECTO">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -423,7 +503,52 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="ELIMINARPROYLISTATAREA">
+    <operation name="TAREAINACTIVO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PROYECTOINACTIVO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AGREGARHABILIDAD">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LISTACON">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TERMINARTAREA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TUSCOMPAÑEROSTAREA">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -450,7 +575,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="ELIMINARCOMENTARIO">
+    <operation name="ELIMINARPROYLISTATAREA">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -495,15 +620,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="COMPARACIONCONOCIMIENTO">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="ESPROYECTOMANAGER">
       <soap:operation soapAction="" />
       <input>
@@ -513,7 +629,43 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="AGREGARHABILIDAD">
+    <operation name="ELIMINARCOMENTARIO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="COMPARACIONCONOCIMIENTO">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TRABAJASPARA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ESTRABAJADOR">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TUSCOMPAÑEROSSON">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

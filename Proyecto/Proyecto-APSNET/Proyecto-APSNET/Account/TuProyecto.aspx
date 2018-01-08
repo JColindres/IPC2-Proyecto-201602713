@@ -20,6 +20,12 @@
                             <asp:ListBox ID="ListBox2" runat="server" Height="125px" Width="121px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:ListBox ID="ListBox3" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                            &nbsp;&nbsp;&nbsp;&nbsp; Tarea:
+                            <asp:TextBox ID="TextBox1" runat="server" Width="100px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="IniciarTarea" runat="server" Text="Iniciar" OnClick="IniciarTarea_Click" Width="46px" />
+                            &nbsp; o&nbsp;
+                            <asp:Button ID="FinalizarTarea" runat="server" Text="Finalizar" OnClick="FinalizarTarea_Click" Width="67px" />
                             <br />
                             <br />
                             <br />
@@ -31,6 +37,12 @@
                             <asp:ListBox ID="ListBox5" runat="server" Height="125px" Width="121px"></asp:ListBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:ListBox ID="ListBox6" runat="server" Height="125px" Width="121px"></asp:ListBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp; Proyecto:
+                            <asp:TextBox ID="TextBox2" runat="server" Width="100px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="IniciarProyecto" runat="server" Text="Iniciar" OnClick="IniciarProyecto_Click" Width="51px" />
+                        &nbsp; o&nbsp;
+                            <asp:Button ID="FinalizarProyecto" runat="server" Text="Finalizar" OnClick="FinalizarProyecto_Click" Width="68px" />
                         </div>
                     </div>
                  </div>

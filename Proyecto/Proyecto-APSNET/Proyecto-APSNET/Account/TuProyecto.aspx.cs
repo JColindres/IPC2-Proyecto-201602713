@@ -130,5 +130,74 @@ namespace Proyecto_APSNET.Account
                 }
             }
         }
+
+        protected void IniciarTarea_Click(object sender, EventArgs e)
+        {
+            string tarea = TextBox1.Text;
+            bool iniciado = proxy2.INICIARTAREA(tarea);
+
+            if (iniciado == true)
+            {
+                Response.Write("Se inició tarea");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo iniciar')");
+                Response.Write("</script>");
+            }
+           
+        }
+
+        protected void FinalizarTarea_Click(object sender, EventArgs e)
+        {
+            string tarea = TextBox1.Text;
+            bool finalizado = proxy2.TERMINARPROYECTO(tarea);
+
+            if (finalizado == true)
+            {
+                Response.Write("Se terminó tarea");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo iniciar')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void IniciarProyecto_Click(object sender, EventArgs e)
+        {
+            string proyecto = TextBox2.Text;
+            bool iniciado = proxy2.INICIARPROYECTO(proyecto);
+
+            if (iniciado == true)
+            {
+                Response.Write("Se inició proyecto");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo iniciar')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void FinalizarProyecto_Click(object sender, EventArgs e)
+        {
+            string proyecto = TextBox2.Text;
+            bool finalizado = proxy2.TERMINARPROYECTO(proyecto);
+
+            if (finalizado == true)
+            {
+                Response.Write("Se terminó tarea");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo iniciar')");
+                Response.Write("</script>");
+            }
+        }
     }       
 }

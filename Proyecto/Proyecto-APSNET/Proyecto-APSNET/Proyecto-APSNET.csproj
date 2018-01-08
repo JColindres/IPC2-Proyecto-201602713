@@ -190,7 +190,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Actividades.aspx" />
     <Content Include="Account\TuProyecto.aspx" />
-    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\TuTrabajo.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
@@ -328,12 +328,12 @@
     <Compile Include="Account\TuProyecto.aspx.designer.cs">
       <DependentUpon>TuProyecto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ManagePassword.aspx.cs">
-      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    <Compile Include="Account\TuTrabajo.aspx.cs">
+      <DependentUpon>TuTrabajo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\ManagePassword.aspx.designer.cs">
-      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    <Compile Include="Account\TuTrabajo.aspx.designer.cs">
+      <DependentUpon>TuTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>

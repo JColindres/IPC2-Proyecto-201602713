@@ -130,7 +130,17 @@ namespace Proyecto_APSNET.Account
 
         protected void VerTrabajo_Click(object sender, EventArgs e)
         {
-
+            //int idUsuario = proxy.obtenerIDUS(Convert.ToString(Session["NombreUsuario"]));
+            //if (proxy2.ESTRABAJADOR(idUsuario) == true)
+            //{
+                Response.Redirect("/Account/TuTrabajo.aspx");
+            /*}
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No trabajas para ningun proyecto')");
+                Response.Write("</script>");
+            }*/
         }
 
         protected void VerTuProyecto_Click(object sender, EventArgs e)
