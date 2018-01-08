@@ -568,4 +568,40 @@ public class otrowebservice {
         }        
         
     }
+    
+    @WebMethod(operationName = "CREARLISTACON")
+    public boolean CREARLISTACON(@WebParam(name = "tarea") int tarea, @WebParam(name = "con") int con) {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.crearListaCon(tarea, con);
+        } catch (Exception e) {
+        
+            return false;        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "PROYECTOCONOCIMIENTOS")
+    public String PROYECTOCONOCIMIENTOS() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.proyectoConocimientos();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
+    
+    @WebMethod(operationName = "TAREACONOCIMIENTOS")
+    public String TAREACONOCIMIENTOS() {
+        MasConsultas consultas = new MasConsultas();
+        try {
+            return consultas.tareaConocimientos();
+        } catch (Exception e) {
+        
+            return "Sorry not sorry";        
+        }        
+        
+    }
 }

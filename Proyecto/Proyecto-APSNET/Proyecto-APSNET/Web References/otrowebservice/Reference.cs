@@ -83,6 +83,8 @@ namespace Proyecto_APSNET.otrowebservice {
         
         private System.Threading.SendOrPostCallback HASTRABAJADOEPOperationCompleted;
         
+        private System.Threading.SendOrPostCallback CREARLISTACONOperationCompleted;
+        
         private System.Threading.SendOrPostCallback ELIMINARESTADODELCOMENTARIOOperationCompleted;
         
         private System.Threading.SendOrPostCallback ASIGNARCONOCIMIENTOOperationCompleted;
@@ -120,6 +122,10 @@ namespace Proyecto_APSNET.otrowebservice {
         private System.Threading.SendOrPostCallback TUSCONOCIMIENTOSOperationCompleted;
         
         private System.Threading.SendOrPostCallback TUSHABILIDADESOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback TAREACONOCIMIENTOSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback PROYECTOCONOCIMIENTOSOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -241,6 +247,9 @@ namespace Proyecto_APSNET.otrowebservice {
         public event HASTRABAJADOEPCompletedEventHandler HASTRABAJADOEPCompleted;
         
         /// <remarks/>
+        public event CREARLISTACONCompletedEventHandler CREARLISTACONCompleted;
+        
+        /// <remarks/>
         public event ELIMINARESTADODELCOMENTARIOCompletedEventHandler ELIMINARESTADODELCOMENTARIOCompleted;
         
         /// <remarks/>
@@ -296,6 +305,12 @@ namespace Proyecto_APSNET.otrowebservice {
         
         /// <remarks/>
         public event TUSHABILIDADESCompletedEventHandler TUSHABILIDADESCompleted;
+        
+        /// <remarks/>
+        public event TAREACONOCIMIENTOSCompletedEventHandler TAREACONOCIMIENTOSCompleted;
+        
+        /// <remarks/>
+        public event PROYECTOCONOCIMIENTOSCompletedEventHandler PROYECTOCONOCIMIENTOSCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1104,6 +1119,38 @@ namespace Proyecto_APSNET.otrowebservice {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool CREARLISTACON([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int tarea, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int con) {
+            object[] results = this.Invoke("CREARLISTACON", new object[] {
+                        tarea,
+                        con});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CREARLISTACONAsync(int tarea, int con) {
+            this.CREARLISTACONAsync(tarea, con, null);
+        }
+        
+        /// <remarks/>
+        public void CREARLISTACONAsync(int tarea, int con, object userState) {
+            if ((this.CREARLISTACONOperationCompleted == null)) {
+                this.CREARLISTACONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCREARLISTACONOperationCompleted);
+            }
+            this.InvokeAsync("CREARLISTACON", new object[] {
+                        tarea,
+                        con}, this.CREARLISTACONOperationCompleted, userState);
+        }
+        
+        private void OnCREARLISTACONOperationCompleted(object arg) {
+            if ((this.CREARLISTACONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CREARLISTACONCompleted(this, new CREARLISTACONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public bool ELIMINARESTADODELCOMENTARIO([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int Estado) {
             object[] results = this.Invoke("ELIMINARESTADODELCOMENTARIO", new object[] {
                         Estado});
@@ -1666,6 +1713,62 @@ namespace Proyecto_APSNET.otrowebservice {
             if ((this.TUSHABILIDADESCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.TUSHABILIDADESCompleted(this, new TUSHABILIDADESCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string TAREACONOCIMIENTOS() {
+            object[] results = this.Invoke("TAREACONOCIMIENTOS", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TAREACONOCIMIENTOSAsync() {
+            this.TAREACONOCIMIENTOSAsync(null);
+        }
+        
+        /// <remarks/>
+        public void TAREACONOCIMIENTOSAsync(object userState) {
+            if ((this.TAREACONOCIMIENTOSOperationCompleted == null)) {
+                this.TAREACONOCIMIENTOSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTAREACONOCIMIENTOSOperationCompleted);
+            }
+            this.InvokeAsync("TAREACONOCIMIENTOS", new object[0], this.TAREACONOCIMIENTOSOperationCompleted, userState);
+        }
+        
+        private void OnTAREACONOCIMIENTOSOperationCompleted(object arg) {
+            if ((this.TAREACONOCIMIENTOSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TAREACONOCIMIENTOSCompleted(this, new TAREACONOCIMIENTOSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://webservice/", ResponseNamespace="http://webservice/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PROYECTOCONOCIMIENTOS() {
+            object[] results = this.Invoke("PROYECTOCONOCIMIENTOS", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void PROYECTOCONOCIMIENTOSAsync() {
+            this.PROYECTOCONOCIMIENTOSAsync(null);
+        }
+        
+        /// <remarks/>
+        public void PROYECTOCONOCIMIENTOSAsync(object userState) {
+            if ((this.PROYECTOCONOCIMIENTOSOperationCompleted == null)) {
+                this.PROYECTOCONOCIMIENTOSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPROYECTOCONOCIMIENTOSOperationCompleted);
+            }
+            this.InvokeAsync("PROYECTOCONOCIMIENTOS", new object[0], this.PROYECTOCONOCIMIENTOSOperationCompleted, userState);
+        }
+        
+        private void OnPROYECTOCONOCIMIENTOSOperationCompleted(object arg) {
+            if ((this.PROYECTOCONOCIMIENTOSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.PROYECTOCONOCIMIENTOSCompleted(this, new PROYECTOCONOCIMIENTOSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2392,6 +2495,32 @@ namespace Proyecto_APSNET.otrowebservice {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void CREARLISTACONCompletedEventHandler(object sender, CREARLISTACONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CREARLISTACONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CREARLISTACONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void ELIMINARESTADODELCOMENTARIOCompletedEventHandler(object sender, ELIMINARESTADODELCOMENTARIOCompletedEventArgs e);
     
     /// <remarks/>
@@ -2871,6 +3000,58 @@ namespace Proyecto_APSNET.otrowebservice {
         private object[] results;
         
         internal TUSHABILIDADESCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void TAREACONOCIMIENTOSCompletedEventHandler(object sender, TAREACONOCIMIENTOSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TAREACONOCIMIENTOSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TAREACONOCIMIENTOSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void PROYECTOCONOCIMIENTOSCompletedEventHandler(object sender, PROYECTOCONOCIMIENTOSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PROYECTOCONOCIMIENTOSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal PROYECTOCONOCIMIENTOSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

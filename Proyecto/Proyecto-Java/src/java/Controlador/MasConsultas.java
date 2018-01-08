@@ -806,7 +806,7 @@ public class MasConsultas extends Conexion{
             String resultado = "";
             while (rs.next()) {
 
-                resultado = resultado + " " + rs.getString("DESCRIPCION") + ",";
+                resultado = resultado + " [" + rs.getString("ID_CON") + "] " + rs.getString("DESCRIPCION") + ",";
                 System.out.println(resultado);
             }
 
@@ -2253,6 +2253,150 @@ public class MasConsultas extends Conexion{
             while (rs.next()) {
 
                 resultado = resultado + " " + rs.getString("h.DESCRIPCION") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public boolean crearListaCon(int tarea, int conocimiento) {
+
+        PreparedStatement pst = null;
+
+        try {
+
+            String consulta = "insert into LISTA_CON(ID_TAR, ID_CON) values (?,?)";
+            pst = getConexion().prepareStatement(consulta);
+            pst.setInt(1, tarea);
+            pst.setInt(2, conocimiento);
+
+            if (pst.executeUpdate() == 1) {
+
+                return true;
+            }
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+
+        return false;
+    }
+    
+    public String proyectoConocimientos() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select p.NOMBRE, c.DESCRIPCION\n" +
+"from proyecto p, tarea t, lista_tarea lt, lista_con lc, conocimiento c\n" +
+"where lc.ID_CON = c.ID_CON\n" +
+"and lc.ID_TAR = t.ID_TAR \n" +
+"and lt.ID_PROY = p.ID_PROY \n" +
+"and lt.ID_TAR = t.ID_TAR";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("p.NOMBRE") + " pide conocimientos en: " + rs.getString("c.DESCRIPCION") + ",";
+                System.out.println(resultado);
+            }
+
+            return resultado;
+
+        } catch (Exception e) {
+
+            System.err.println("Error" + e);
+
+        } finally {
+
+            try {
+
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (Exception e) {
+
+                System.err.println("Error" + e);
+
+            }
+
+        }
+        return "No se encontraron resultados";
+    }
+    
+    public String tareaConocimientos() {
+
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+
+            String consulta = "select t.NOMBRE, c.DESCRIPCION  \n" +
+"from tarea t, lista_con lc, conocimiento c \n" +
+"where lc.ID_TAR = t.ID_TAR \n" +
+"and lc.ID_CON = c.ID_CON";
+            pst = getConexion().prepareStatement(consulta);
+            rs = pst.executeQuery();
+            String resultado = "";
+            while (rs.next()) {
+
+                resultado = resultado + " " + rs.getString("t.NOMBRE") + " pide conocimientos en: " + rs.getString("c.DESCRIPCION") + ",";
                 System.out.println(resultado);
             }
 

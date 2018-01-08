@@ -73,24 +73,34 @@
                         <asp:Label runat="server" AssociatedControlID="NombreTarea" CssClass="col-md-2 control-label">Nombre de la Tarea</asp:Label>
                         <div class="col-md-offset-2 col-md-10">
                             <asp:TextBox ID="NombreTarea" runat="server"></asp:TextBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:DropDownList ID="DropDownList3" runat="server" Height="17px" Width="170px">
+                            </asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="DescripcionTarea" CssClass="col-md-2 control-label">Descripcion de la Tarea</asp:Label>
                         <div class="col-md-offset-2 col-md-10">
                             <asp:TextBox ID="DescripcionTarea" runat="server"></asp:TextBox>
-                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:TextBox ID="TextBox3" runat="server" Width="16px"></asp:TextBox>
+&nbsp;Ingrese el identificador del conocimiento</div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="FechaTarea" CssClass="col-md-2 control-label">Fecha de la Tarea</asp:Label>
                         <div class="col-md-offset-2 col-md-10">
                             <asp:TextBox ID="FechaTarea" runat="server"></asp:TextBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:TextBox ID="TextBox4" runat="server" Width="16px"></asp:TextBox>
+&nbsp;Ingrese el identificador de la tarea (listado de arriba)
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="FechaCierreT" CssClass="col-md-2 control-label">Fecha de la Tarea</asp:Label>
                         <div class="col-md-offset-2 col-md-10">
                             <asp:TextBox ID="FechaCierreT" runat="server"></asp:TextBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button runat="server" OnClick="AgregarCon" Text="Agregar" CssClass="btn btn-default" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -104,6 +114,29 @@
 
         <div class="col-md-4">
             <section id="socialLoginForm3">
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm13">
+                <div class="form-horizontal">
+                    <hr />
+                    <h4>Requisitos de los proyectos y tareas</h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:ListBox ID="ListBox1" runat="server" Height="71px" Width="300px"></asp:ListBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ListBox ID="ListBox2" runat="server" Height="71px" Width="300px"></asp:ListBox>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section id="socialLoginForm13">
             </section>
         </div>
     </div>

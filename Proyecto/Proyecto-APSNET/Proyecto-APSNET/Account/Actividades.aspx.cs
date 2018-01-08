@@ -56,6 +56,51 @@ namespace Proyecto_APSNET.Account
                     catch (Exception exxx) { }
                 }
             }
+
+            String lista3 = Convert.ToString(proxy2.LISTACON());
+            Array listus3 = lista3.Split(',');
+
+            foreach (string item in listus3)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        DropDownList3.Items.Add(listus3.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista4 = Convert.ToString(proxy2.PROYECTOCONOCIMIENTOS());
+            Array listus4 = lista4.Split(',');
+
+            foreach (string item in listus4)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox1.Items.Add(listus4.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
+
+            String lista5 = Convert.ToString(proxy2.TAREACONOCIMIENTOS());
+            Array listus5 = lista5.Split(',');
+
+            foreach (string item in listus5)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    try
+                    {
+                        ListBox2.Items.Add(listus5.GetValue(i).ToString());
+                    }
+                    catch (Exception exxx) { }
+                }
+            }
         }
 
         protected void CrearProyecto(object sender, EventArgs e)
@@ -153,6 +198,23 @@ namespace Proyecto_APSNET.Account
             {
                 Response.Write("<script language=javascript>");
                 Response.Write("alert('No eres Proyect Manager')");
+                Response.Write("</script>");
+            }
+        }
+
+        protected void AgregarCon(object sender, EventArgs e)
+        {
+            int idTarea = proxy.ObtenerTarea(NombreTarea.Text);
+            int idCon = Convert.ToInt32(TextBox3.Text);
+            bool tarea = proxy2.CREARLISTACON(idTarea, idCon);
+            if (tarea == true)
+            {
+                Response.Write("Se agregó conocimiento");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>");
+                Response.Write("alert('No se pudo agregar')");
                 Response.Write("</script>");
             }
         }

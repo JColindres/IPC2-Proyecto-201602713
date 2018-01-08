@@ -167,6 +167,12 @@
   <message name="HASTRABAJADOEPResponse">
     <part name="parameters" element="tns:HASTRABAJADOEPResponse" />
   </message>
+  <message name="CREARLISTACON">
+    <part name="parameters" element="tns:CREARLISTACON" />
+  </message>
+  <message name="CREARLISTACONResponse">
+    <part name="parameters" element="tns:CREARLISTACONResponse" />
+  </message>
   <message name="ELIMINARESTADODELCOMENTARIO">
     <part name="parameters" element="tns:ELIMINARESTADODELCOMENTARIO" />
   </message>
@@ -281,6 +287,18 @@
   <message name="TUSHABILIDADESResponse">
     <part name="parameters" element="tns:TUSHABILIDADESResponse" />
   </message>
+  <message name="TAREACONOCIMIENTOS">
+    <part name="parameters" element="tns:TAREACONOCIMIENTOS" />
+  </message>
+  <message name="TAREACONOCIMIENTOSResponse">
+    <part name="parameters" element="tns:TAREACONOCIMIENTOSResponse" />
+  </message>
+  <message name="PROYECTOCONOCIMIENTOS">
+    <part name="parameters" element="tns:PROYECTOCONOCIMIENTOS" />
+  </message>
+  <message name="PROYECTOCONOCIMIENTOSResponse">
+    <part name="parameters" element="tns:PROYECTOCONOCIMIENTOSResponse" />
+  </message>
   <portType name="otrowebservice">
     <operation name="LISTADOPARACALIFICAR">
       <input wsam:Action="http://webservice/otrowebservice/LISTADOPARACALIFICARRequest" message="tns:LISTADOPARACALIFICAR" />
@@ -390,6 +408,10 @@
       <input wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPRequest" message="tns:HASTRABAJADOEP" />
       <output wsam:Action="http://webservice/otrowebservice/HASTRABAJADOEPResponse" message="tns:HASTRABAJADOEPResponse" />
     </operation>
+    <operation name="CREARLISTACON">
+      <input wsam:Action="http://webservice/otrowebservice/CREARLISTACONRequest" message="tns:CREARLISTACON" />
+      <output wsam:Action="http://webservice/otrowebservice/CREARLISTACONResponse" message="tns:CREARLISTACONResponse" />
+    </operation>
     <operation name="ELIMINARESTADODELCOMENTARIO">
       <input wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODELCOMENTARIORequest" message="tns:ELIMINARESTADODELCOMENTARIO" />
       <output wsam:Action="http://webservice/otrowebservice/ELIMINARESTADODELCOMENTARIOResponse" message="tns:ELIMINARESTADODELCOMENTARIOResponse" />
@@ -465,6 +487,14 @@
     <operation name="TUSHABILIDADES">
       <input wsam:Action="http://webservice/otrowebservice/TUSHABILIDADESRequest" message="tns:TUSHABILIDADES" />
       <output wsam:Action="http://webservice/otrowebservice/TUSHABILIDADESResponse" message="tns:TUSHABILIDADESResponse" />
+    </operation>
+    <operation name="TAREACONOCIMIENTOS">
+      <input wsam:Action="http://webservice/otrowebservice/TAREACONOCIMIENTOSRequest" message="tns:TAREACONOCIMIENTOS" />
+      <output wsam:Action="http://webservice/otrowebservice/TAREACONOCIMIENTOSResponse" message="tns:TAREACONOCIMIENTOSResponse" />
+    </operation>
+    <operation name="PROYECTOCONOCIMIENTOS">
+      <input wsam:Action="http://webservice/otrowebservice/PROYECTOCONOCIMIENTOSRequest" message="tns:PROYECTOCONOCIMIENTOS" />
+      <output wsam:Action="http://webservice/otrowebservice/PROYECTOCONOCIMIENTOSResponse" message="tns:PROYECTOCONOCIMIENTOSResponse" />
     </operation>
   </portType>
   <binding name="otrowebservicePortBinding" type="tns:otrowebservice">
@@ -712,6 +742,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="CREARLISTACON">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="ELIMINARESTADODELCOMENTARIO">
       <soap:operation soapAction="" />
       <input>
@@ -875,6 +914,24 @@
       </output>
     </operation>
     <operation name="TUSHABILIDADES">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TAREACONOCIMIENTOS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PROYECTOCONOCIMIENTOS">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
