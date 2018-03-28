@@ -152,7 +152,7 @@ namespace Proyecto_APSNET.Account
         protected void FinalizarTarea_Click(object sender, EventArgs e)
         {
             string tarea = TextBox1.Text;
-            bool finalizado = proxy2.TERMINARPROYECTO(tarea);
+            bool finalizado = proxy2.TERMINARTAREA(tarea);
 
             if (finalizado == true)
             {
